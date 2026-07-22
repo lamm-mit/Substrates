@@ -11,6 +11,26 @@ registered prompts, experiment scripts, tests, and documentation needed to run
 the study. Model weights, fitted lenses, caches, raw run records, figures, and
 reports are generated locally and are not distributed here.
 
+## 🤗 Hugging Face resources
+
+Companion Hugging Face repositories provide the reusable fitted artifacts and
+machine-readable datasets that are intentionally kept outside this source-only
+GitHub release:
+
+- [`lamm-mit/gemma4-jacobian-lenses`](https://huggingface.co/lamm-mit/gemma4-jacobian-lenses):
+  the three independently fitted paper-protocol Jacobian lens checkpoints for
+  `google/gemma-4-E4B-it` (seeds 0–2), together with provenance sidecars that
+  record the corresponding fit and model metadata.
+- [`lamm-mit/gemma4-materials-latent-vectors`](https://huggingface.co/datasets/lamm-mit/gemma4-materials-latent-vectors):
+  the extracted residual-stream and Jacobian-transported state arrays used in
+  the held-out latent-geometry analyses, plus the frozen prompt manifest,
+  extraction metadata, and analysis protocol.
+- [`lamm-mit/gemma4-materials-mechanism-prompts`](https://huggingface.co/datasets/lamm-mit/gemma4-materials-mechanism-prompts):
+  the exact materials-mechanism prompt corpus organized as 21 named dataset
+  configurations, with registered split metadata, a release manifest, and a
+  prompt-reuse map separating development, evaluation, falsification, and
+  exploratory cohorts.
+
 ## What is included
 
 - `jlens_materials/*.py`: fitting, readout, analysis, reporting, comparison,
