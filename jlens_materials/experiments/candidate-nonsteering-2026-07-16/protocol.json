@@ -1,0 +1,33 @@
+{
+  "frozen_at": "2026-07-16T22:10:18-04:00",
+  "status": "retrospective candidate protocol frozen before corresponding calculations",
+  "analysis_seed": 20260716,
+  "bootstrap_resamples": 30000,
+  "permutation_resamples": 10000,
+  "ontology_permutation_resamples": 30000,
+  "inputs": {
+    "heldout_statistics_sha256": "5f3904ced113e7ad965632043d3cb4216d750341ca021db1f600ad5ca7b6a54d",
+    "latent_vectors_sha256": "687bf12ce7beed5f78b55f45245d348474cca0a528e25e2b058256f1735791b0",
+    "latent_metadata_sha256": "7b4d7ce0458ed2ce15c3e9cf6aec96420b87f58713f5f0d625e617f1ea37671a",
+    "heldout_seed0_sha256": "8297783dd1314808f7a08d94abc2427f44554f68e494bf0fa940d493a327d46e",
+    "heldout_seed1_sha256": "6397e3faf19ef52082ef25845c3d6e51815c15c803d2b269c25edffc616169cc",
+    "heldout_seed2_sha256": "ae7d9e25df1a9179f2fce6dcd30efbdfd610bd8ae09563cc09e85234accad1c8"
+  },
+  "family_ontology": {
+    "ductile": {"response_class": "fracture_damage", "attributes": ["mechanical", "void", "crack_surface", "fracture"]},
+    "cleavage": {"response_class": "fracture_damage", "attributes": ["mechanical", "crystal_plane", "crack_surface", "fracture"]},
+    "cyclic": {"response_class": "fracture_damage", "attributes": ["mechanical", "crack", "time_dependent", "fracture"]},
+    "notch-resistance": {"response_class": "fracture_damage", "attributes": ["mechanical", "crack", "notch", "fracture", "property"]},
+    "line-defect-motion": {"response_class": "deformation_strengthening", "attributes": ["mechanical", "dislocation", "plastic_deformation"]},
+    "particle-strengthening": {"response_class": "deformation_strengthening", "attributes": ["mechanical", "dislocation", "particle", "strengthening"]},
+    "high-temperature-deformation": {"response_class": "deformation_strengthening", "attributes": ["mechanical", "thermal", "dislocation", "grain_boundary", "time_dependent", "plastic_deformation"]},
+    "rapid-transformation": {"response_class": "transformation", "attributes": ["thermal", "phase", "crystal_structure", "transformation"]},
+    "boundary-attack": {"response_class": "degradation", "attributes": ["chemical", "grain_boundary", "time_dependent", "degradation"]},
+    "hot-air-surface-layer": {"response_class": "degradation", "attributes": ["chemical", "thermal", "surface", "film", "degradation"]}
+  },
+  "concept_roles": {
+    "entity_state": ["void", "boundary", "crack", "cavity", "precipitation", "tetragonal", "dislocation", "oxide", "scale"],
+    "process_mechanism": ["nucleation", "coalescence", "corrosion", "sensitization", "fatigue", "propagation", "cleavage", "creep", "diffusion", "bowing", "shear", "Bain", "glide", "slip", "oxidation"],
+    "response_property_mode": ["ductile", "brittle", "strengthening", "toughness", "fracture"]
+  }
+}

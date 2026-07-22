@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or its prompt sets, please cite this repository and
+  the associated study.
+title: "Substrates: Jacobian-lens experiments for materials science"
+type: software
+version: 0.1.0
+date-released: 2026-07-22
+authors:
+  - family-names: Buehler
+    given-names: Markus J.
+    orcid: "https://orcid.org/0000-0002-4173-9659"
+    affiliation: Massachusetts Institute of Technology
+abstract: >-
+  Research code and frozen prompt sets for reading and causally testing
+  materials-science mechanism representations in an open-weight language model
+  with Jacobian-lens and matched direct-unembedding measurements.
+keywords:
+  - mechanistic interpretability
+  - Jacobian lens
+  - materials science
+  - language models
+license: Apache-2.0
+preferred-citation:
+  type: article
+  title: >-
+    Reading and Steering Materials Science-Mechanism Representations in an
+    Open-Weight Language Model
+  authors:
+    - family-names: Buehler
+      given-names: Markus J.
+      orcid: "https://orcid.org/0000-0002-4173-9659"
+  year: 2026

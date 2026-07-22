@@ -1,0 +1,819 @@
+<!doctype html>
+<!--
+Copyright 2026 Anthropic PBC
+SPDX-License-Identifier: Apache-2.0
+-->
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>__TITLE__</title>
+__D3__
+<style>
+/* Everything is scoped under .jlens-page so the stylesheet is safe to inject
+   into a host document; for inline notebook display use a srcdoc iframe. */
+body{margin:8px}
+.jlens-page{--bd:#eee;--fg:#333;--dim:#666;--bg:#fff;--hl:#f0f;--hl-soft:#fbe7fb;
+  height:calc(100vh - 16px);display:flex;flex-direction:column;overflow:hidden;
+  font:13px/1.4 system-ui,-apple-system,sans-serif;color:var(--fg);background:var(--bg);
+  color-scheme:light}
+.jlens-page,.jlens-page *{box-sizing:border-box}
+.jlens-page svg{display:block}
+.header{flex:none;padding:0 0 4px;display:flex;align-items:baseline;gap:1em}
+.header h1{font-size:15px;margin:0}.header .what{color:var(--dim);font-size:12px;flex:1}
+.main-content{flex:1;display:flex;gap:0;min-height:0}
+.column{display:flex;flex-direction:column;min-width:0;overflow:hidden;flex:1}
+.heatmap-column{flex:2}
+.resize-handle{flex:none;width:6px;cursor:col-resize;background:#fafafa}
+.resize-handle:hover{background:#ddd}
+.heatmap-wrapper{position:relative;flex:1;min-height:0;overflow:auto;cursor:pointer}
+.hm-spacer{position:relative}
+.hm-canvas{position:sticky;left:0;z-index:0;display:block}
+.hm-yaxis{position:sticky;left:0;z-index:2;background:var(--bg);box-shadow:1px 0 0 #ccc;
+          font:10px monospace;color:var(--dim);font-variant-numeric:tabular-nums;text-align:right}
+.hm-yaxis div{padding:0 4px;box-sizing:border-box}
+.hm-xaxis{position:sticky;bottom:0;left:0;z-index:2;height:32px;background:var(--bg);
+          box-shadow:0 -1px 0 #ccc;font:10px monospace;color:var(--dim);overflow:hidden;
+          font-variant-numeric:tabular-nums}
+.hm-xaxis-inner{position:absolute;display:flex;height:100%}
+.hm-xaxis-col{text-align:center;display:flex;flex-direction:column;justify-content:center;
+              white-space:nowrap;overflow:hidden}
+.hm-sel{position:absolute;border:2px solid var(--hl);pointer-events:none;z-index:1}
+.hm-hover{position:absolute;border:1px solid #999;pointer-events:none;z-index:1;display:none}
+.v-resize{flex:none;height:6px;cursor:row-resize;background:#fafafa}
+.v-resize:hover{background:#ddd}
+.unpin-all{font:10px system-ui;color:#999;background:none;border:none;cursor:pointer;padding:1px 4px}
+.unpin-all:hover{color:#000}
+.tooltip{position:fixed;background:#fff;border:1px solid #ccc;border-radius:4px;
+         box-shadow:0 2px 8px rgba(0,0,0,.15);padding:6px 8px;pointer-events:none;
+         z-index:1000;font-size:10px;display:none}
+.tooltip.visible{display:block}
+.tt-header{color:var(--dim);font-variant-numeric:tabular-nums;margin-bottom:4px}
+.tt-table{border-collapse:collapse}
+.tt-rank{color:#999;text-align:right;padding-right:6px;font-variant-numeric:tabular-nums;width:20px}
+.tt-token{font:10px monospace;padding-right:8px;max-width:120px;overflow:hidden;
+          text-overflow:ellipsis;white-space:nowrap}
+.tt-token.pinned{font-weight:600}
+.controls-bar{flex:none;display:flex;gap:1em;align-items:center;flex-wrap:wrap;padding:2px 0;
+              border-bottom:1px solid var(--bd)}
+.readout{font-size:11px;color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+.readout b{display:inline-block;width:2.4ch;color:#000;font-weight:600}
+.readout code{display:inline-block;width:9ch;overflow:hidden;text-overflow:ellipsis;
+              white-space:nowrap;vertical-align:bottom;font:11px monospace;color:#000}
+.hint{font-size:10px;color:#bbb;white-space:nowrap;margin-left:auto}
+.bottom-controls{flex:none;border-top:1px solid var(--bd);padding-top:2px}
+.tokens-area{flex:none;font:11px/1.5 monospace;height:5.2em;overflow-y:auto;padding:2px;
+             white-space:pre-wrap;word-break:break-all}
+.token{cursor:pointer;border-radius:2px}.token:hover{background:var(--hl-soft)}
+.token-prefix{color:#bbb;border-radius:2px}
+.token.selected{background:var(--hl-soft);outline:1px solid var(--hl)}
+.meta-line{font-size:10px;color:#999;padding:2px 0}
+.rank-row{display:flex;gap:6px;align-items:flex-start}
+.rank-col{flex:1;min-width:0;display:flex;flex-direction:column}
+.rank-title{font-size:10px;color:var(--dim);padding:0 0 1px 36px}
+.rank-title b{font:11px monospace}
+.chip-x{margin-left:5px;color:#aaa}.pinned-chip:hover .chip-x{color:#000}
+.pinned-row{flex:none;display:flex;flex-direction:column;gap:3px;align-items:flex-start;
+            max-height:200px;overflow-y:auto;padding:2px 0}
+.pinned-row > *{flex:none}
+.pinned-label{color:var(--dim);font-size:11px}
+.pinned-chip{font:10px monospace;border:2px solid;border-radius:3px;background:#fff;
+             padding:1px 5px;cursor:pointer;max-width:110px;overflow:hidden;
+             text-overflow:ellipsis;white-space:nowrap}
+.pinned-chip.chip-active{font-weight:600}
+.ws-row{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--dim);white-space:nowrap}
+.ws-row input{margin:0}
+.help{font-size:11px;color:#999;cursor:help;border:1px solid #ccc;border-radius:50%;
+      width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center}
+.panel-column{padding:0 6px}
+.panel-column h2{font-size:12px;margin:2px 0 4px;flex:none}
+.token-rows{flex:1;overflow-y:auto;min-height:0}
+.token-row{display:flex;align-items:baseline;gap:2px;padding:1px 0;cursor:pointer;
+           white-space:nowrap;overflow:hidden}
+.token-row:hover{background:#fafafa}.token-row.active-row{background:var(--hl-soft)}
+.row-label{flex:none;width:26px;text-align:right;color:var(--dim);font-size:10px;
+           font-variant-numeric:tabular-nums;padding-right:4px}
+.row-ctx-token{flex:none;width:48px;font:10px monospace;color:var(--dim);overflow:hidden;
+               text-overflow:ellipsis;white-space:nowrap}
+.token-cell{font:10px monospace;padding:0 3px;border-radius:2px;cursor:pointer;
+            max-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.token-cell:hover{outline:1px solid #ccc}
+.token-cell.fallback{color:#bbb}
+.rank-chart{flex:none;height:160px;min-height:160px;position:relative}
+.rank-heatmap{flex:none;height:200px;min-height:200px;position:relative}
+.legend{display:flex;align-items:center;gap:3px;font-size:9px;color:var(--dim)}
+.axis text{font-size:9px;fill:var(--dim);paint-order:stroke;stroke:var(--bg);
+           stroke-width:3px;stroke-linejoin:round}
+.axis line{stroke:#ddd}
+.axis .domain{display:none}
+.grid line{stroke:#fff;stroke-width:1}
+.chart-table text{font:9px monospace;paint-order:stroke;stroke:var(--bg);stroke-width:3px;stroke-linejoin:round}
+.loading{display:flex;align-items:center;justify-content:center;height:100%;color:var(--dim)}
+</style></head><body>
+<div class="jlens-page">
+<div class="header"><h1>__TITLE__</h1><span class="what">__WHAT__</span>
+<span class="help" title="Click a heatmap cell to select (pos, layer). Click a token to pin it for rank tracking. Click a pin to show its ranks on the heatmap; × unpins. Shift+hover to scrub. ←→ change position, ↑↓ change layer.">?</span></div>
+<div class="main-content" id="main"><div class="loading">Loading…</div></div>
+<div class="tooltip" id="tt"></div>
+</div>
+<script id="bootstrap" type="application/json">__BOOTSTRAP__</script>
+<script type="module">
+const COLORS = ['#e15759','#4e79a7','#76b7b2','#59a14f','#edc948','#b07aa1','#ff9da7','#9c755f','#bab0ac','#f28e2b'];
+const params = new URLSearchParams(location.search);
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+// ------- data loading -------
+// Both modes resolve to the same D shape so render code stays agnostic:
+//   { T, layers, top_n, ctx_strs, tracked, vocab, pinned, vocab_size?,
+//     top_ids/top_ranks: Int32Array[T*L*topN], ranks: Int32Array[T*L*NT] | null,
+//     fetchRank?: (tid)=>Promise<Int32Array[T*L]> }
+// slice.bin is gzip(token_id i32 || rank i32), each block T·L·top_n long,
+// [ctx, layer, k] row-major; ranks/{tid}.bin is gzip(rank i32 [T·L]).
+const b64bytes = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function gunzip(bytes) {
+  const ds = new DecompressionStream('gzip');
+  return new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(ds)).arrayBuffer());
+}
+const i32 = u8 => new Int32Array(u8.buffer, u8.byteOffset, u8.byteLength / 4);
+
+async function loadData() {
+  const boot = JSON.parse(document.getElementById('bootstrap').textContent);
+  // read(name) returns the gzip'd bytes for a sidecar file: from the embedded
+  // {filename: b64} dict in embed mode, or by fetching it in fetch mode. Both
+  // modes then share the same decode path.
+  let meta, read;
+  if (boot.mode === 'embed') {
+    meta = boot.meta;
+    read = async name => boot.files[name] ? b64bytes(boot.files[name]) : null;
+  } else if (boot.mode === 'fetch') {
+    // ?datapath= points at a directory of sidecar files. Restrict to the
+    // page's own origin and coerce the numeric meta fields, so a crafted
+    // link can't pull a hostile meta.json into innerHTML.
+    const base = new URL(params.get('datapath') || './', location.href);
+    if (base.origin !== location.origin) throw new Error('datapath must be same-origin');
+    const ints = a => a.map(Number).filter(Number.isFinite);
+    meta = await fetch(new URL('meta.json', base)).then(r => r.json());
+    meta.layers = ints(meta.layers);
+    meta.tracked = ints(meta.tracked);
+    meta.pinned = ints(meta.pinned || []);
+    read = async name => {
+      const r = await fetch(new URL(name, base));
+      return r.ok ? new Uint8Array(await r.arrayBuffer()) : null;
+    };
+  } else throw new Error(`unknown mode ${boot.mode}`);
+
+  // last_n_tokens pages: ctx_strs covers the full prompt, the slice arrays
+  // start at ctx_offset. Split into a display-only prefix + the windowed view.
+  meta.ctx_offset = Number(meta.ctx_offset) || 0;
+  meta.prefix_strs = meta.ctx_strs.slice(0, meta.ctx_offset);
+  meta.ctx_strs = meta.ctx_strs.slice(meta.ctx_offset);
+
+  const N = meta.T * meta.layers.length * meta.top_n;
+  const raw = await gunzip(await read('slice.bin'));
+  return { ...meta,
+    top_ids:   new Int32Array(raw.buffer, raw.byteOffset, N),
+    top_ranks: new Int32Array(raw.buffer, raw.byteOffset + N * 4, N),
+    fetchRank: async tid => {
+      const b = await read(`ranks/${tid}.bin`);
+      return b ? i32(await gunzip(b)) : null;
+    } };
+}
+
+// ------- main -------
+(async () => {
+const main = document.getElementById('main');
+let D;
+try { D = await loadData(); }
+catch (e) { main.innerHTML = `<div class="loading">Load failed: ${esc(String(e))}</div>`; throw e; }
+
+const T = D.T, layers = D.layers, L = layers.length, topN = D.top_n, OFF = D.ctx_offset;
+const tracked = D.tracked, NT = tracked.length;
+const tidIdx = new Map(tracked.map((t, i) => [t, i]));
+const layerIdx = new Map(layers.map((l, i) => [l, i]));
+const at = (arr, t, l, k) => arr[(t * L + l) * topN + k];
+const vocab = D.vocab, altToken = D.alt_token || {};
+const tokStr = tid => vocab[String(tid)] ?? `[${tid}]`;
+const argmax = []; // [T][L]
+for (let t = 0; t < T; t++) { argmax[t] = []; for (let l = 0; l < L; l++) argmax[t][l] = at(D.top_ids, t, l, 0); }
+// Log-rank axes run rank 1 → vocab size; without the real ceiling, deep
+// ranks plot past the axis floor.
+const VMAX = D.vocab_size || 1 + d3.max(D.top_ranks);
+
+// Per-token rank lookup: rankCache (Map<tid, Int32Array[T*L]>) filled lazily
+// from ranks/{tid}.bin (fetched or embedded) on first pin.
+const rankCache = new Map(), rankFetching = new Set();
+function rankAt(t, li, tid) {
+  const arr = rankCache.get(tid);
+  return arr ? arr[t * L + li] : -1;
+}
+// Only tracked tokens have a ranks/{tid}.bin file.
+function rankAvailable(tid) { return tidIdx.has(tid); }
+async function ensureRank(tid) {
+  if (rankCache.has(tid) || rankFetching.has(tid)) return;
+  rankFetching.add(tid);
+  try {
+    const arr = await D.fetchRank(tid);
+    if (arr) { rankCache.set(tid, arr); render(); }
+  } finally { rankFetching.delete(tid); }
+}
+
+// ------- state (URL-synced) -------
+const ip = (k, d) => params.has(k) ? +params.get(k) : d;
+const clampCtx = v => Number.isFinite(v) ? Math.min(Math.max(Math.round(v), 0), T - 1) : T - 1;
+let selCtx = clampCtx(ip('ctx', T - 1)), selLayer = ip('layer', layers[Math.floor(L * 0.5)]);
+let showWs = params.get('ws') === '1';
+let activeTid = params.has('ht') ? +params.get('ht') : null; // pinned token shown on the rank heatmap
+let pinned = new Map();
+function selLI() { return layerIdx.get(selLayer) ?? 0; }
+function nextColor() {
+  const used = new Set(pinned.values());
+  return COLORS.find(c => !used.has(c)) || COLORS[pinned.size % COLORS.length];
+}
+function pinToken(tid) {
+  if (pinned.has(tid)) {
+    pinned.delete(tid);
+    if (activeTid === tid) activeTid = pinned.size ? [...pinned.keys()][0] : null;
+  } else if (rankAvailable(tid)) { pinned.set(tid, nextColor()); activeTid = tid; ensureRank(tid); }
+  refillPanels(); render();
+}
+function pinnedStyle(c) { return `background:${c}20;text-decoration:underline 2px ${c};text-underline-offset:2px`; }
+let syncTimer;
+function syncUrl() {
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(() => {
+    const u = new URL(location.href);
+    u.searchParams.set('ctx', selCtx); u.searchParams.set('layer', selLayer);
+    pinned.size ? u.searchParams.set('pinned', [...pinned.keys()].join('-')) : u.searchParams.delete('pinned');
+    showWs ? u.searchParams.set('ws', '1') : u.searchParams.delete('ws');
+    activeTid != null ? u.searchParams.set('ht', activeTid) : u.searchParams.delete('ht');
+    history.replaceState({}, '', u);
+  }, 120);
+}
+
+function clean(tid) {
+  const s = tokStr(tid);
+  if (!s) return { text: `[${tid}]`, fallback: true };
+  let t = s.replace(/\n/g, '⏎');
+  // ws off: strip whitespace entirely (no marker); ws on: make every space visible.
+  t = showWs ? t.replace(/ /g, '␣') : t.replace(/^\s+|\s+$/g, '');
+  if (!t) t = '·'; // whole-whitespace token
+  const g = altToken[String(tid)];  // optional alt display (e.g. English gloss)
+  if (g) t = `${t} (${g})`;
+  return { text: t, fallback: false };
+}
+
+// ------- crisp (hidpi) canvas -------
+function crispCanvas(parentSel, W, H, { overlay = false } = {}) {
+  const dpr = window.devicePixelRatio || 1;
+  const sel = parentSel.append('canvas')
+    .attr('width', Math.round(W * dpr)).attr('height', Math.round(H * dpr))
+    .style('width', W + 'px').style('height', H + 'px');
+  if (overlay) sel.style('position', 'absolute').style('top', 0).style('left', 0).style('pointer-events', 'none');
+  const ctx = sel.node().getContext('2d');
+  ctx.scale(dpr, dpr);
+  return ctx;
+}
+
+// ggplot-style frame: shaded plot bg, white gridlines at ticks, no domain
+// path, no tick stubs (labels hug the plot edge — avoids a dead band
+// between plot and axis).
+function ggFrame(g, x, y, w, h, { xTicks = 5, yTicks = 4, yFmt = '~s' } = {}) {
+  g.append('rect').attr('width', w).attr('height', h).attr('fill', '#f4f4f4');
+  const grid = g.append('g').attr('class', 'grid');
+  grid.selectAll('.gx').data(x.ticks(xTicks)).join('line')
+    .attr('x1', d => x(d)).attr('x2', d => x(d)).attr('y1', 0).attr('y2', h);
+  grid.selectAll('.gy').data(y.ticks(yTicks)).join('line')
+    .attr('y1', d => y(d)).attr('y2', d => y(d)).attr('x1', 0).attr('x2', w);
+  g.append('g').attr('class', 'axis').attr('transform', `translate(0,${h})`)
+    .call(d3.axisBottom(x).ticks(xTicks).tickSize(0).tickPadding(4));
+  g.append('g').attr('class', 'axis')
+    .call(d3.axisLeft(y).ticks(yTicks, yFmt).tickSize(0).tickPadding(4));
+}
+
+// ------- layout -------
+const tooltip = document.getElementById('tt');
+main.innerHTML = `
+<div class="column heatmap-column" id="col0">
+  <div class="controls-bar">
+    <span class="readout">Pos <b id="ctxLabel"></b><code id="ctxTok"></code> Layer <b id="layerLabel"></b></span>
+    <label class="ws-row"><input type="checkbox" id="wsChk"> whitespace</label>
+    <span class="hint">hold ⇧ to scrub · ←→ pos · ↑↓ layer</span>
+  </div>
+  <div class="heatmap-wrapper" id="hm-wrap"></div>
+  <div class="v-resize" id="tokResize"></div>
+  <div class="bottom-controls">
+    <div class="tokens-area" id="tokens"></div>
+    <div class="rank-row">
+      <div class="rank-col">
+        <div class="rank-title" id="rankTitle"></div>
+        <div class="rank-heatmap" id="rankHm"></div>
+      </div>
+      <div class="pinned-row" id="pinned"></div>
+    </div>
+    <div class="meta-line" id="meta"></div>
+  </div>
+</div>
+<div class="resize-handle" data-col="0"></div>
+<div class="column panel-column" id="col1">
+  <h2 id="byLayerH"></h2><div class="token-rows" id="byLayer"></div>
+  <div class="rank-chart" id="byLayerChart"></div>
+</div>
+<div class="resize-handle" data-col="1"></div>
+<div class="column panel-column" id="col2">
+  <h2 id="byCtxH"></h2><div class="token-rows" id="byCtx"></div>
+  <div class="rank-chart" id="byCtxChart"></div>
+</div>`;
+document.getElementById('meta').textContent =
+  `${D.title || ''}  ·  ${T} positions × ${L} layers  ·  top-${topN}`;
+
+// ------- argmax heatmap (column-virtualized canvas) -------
+// A scrollable spacer sized to (T*CELL_W) × (L*CELL_H + foot) gives a real
+// scrollbar; a viewport-sized canvas is `position:sticky left:0` so it stays
+// put while the spacer scrolls under it. Only the visible column range is
+// drawn — paint cost is O(L × visibleCols), independent of T. Selection +
+// hover are absolutely-positioned outline divs on the spacer (so they scroll
+// with content). Pinned-token highlighting and showWs are handled by repaint.
+const hmWrap = document.getElementById('hm-wrap');
+const CELL_W = 56, CELL_H = 14, YAX_W = 28, XAX_H = 32;
+const HM_FONT = '9px monospace', HM_RANK_FONT = '7px monospace';
+const totalW = YAX_W + T * CELL_W, totalH = L * CELL_H + XAX_H;
+hmWrap.innerHTML = `
+  <div class="hm-spacer" style="width:${totalW}px;height:${totalH}px">
+    <canvas class="hm-canvas"></canvas>
+    <div class="hm-sel" style="width:${CELL_W-2}px;height:${CELL_H-2}px"></div>
+    <div class="hm-hover" style="width:${CELL_W-2}px;height:${CELL_H-2}px"></div>
+    <div class="hm-yaxis" style="width:${YAX_W}px;margin-top:${-L*CELL_H}px">
+      ${layers.map((l,i)=>`<div style="height:${CELL_H}px;line-height:${CELL_H}px">${layers[L-1-i]}</div>`).join('')}
+    </div>
+    <div class="hm-xaxis"><div class="hm-xaxis-inner"></div></div>
+  </div>`;
+const hmCanvas = hmWrap.querySelector('.hm-canvas');
+const hmSel = hmWrap.querySelector('.hm-sel'), hmHover = hmWrap.querySelector('.hm-hover');
+const hmXInner = hmWrap.querySelector('.hm-xaxis-inner');
+let hmCtx, hmVisW = 0, hmVisH = 0, hmCol0 = -1, hmCol1 = -1, hmSx = -1;
+
+function hmSizeCanvas() {
+  hmVisW = hmWrap.clientWidth; hmVisH = L * CELL_H;
+  const dpr = devicePixelRatio || 1;
+  hmCanvas.width = Math.round(hmVisW * dpr); hmCanvas.height = Math.round(hmVisH * dpr);
+  hmCanvas.style.width = hmVisW + 'px'; hmCanvas.style.height = hmVisH + 'px';
+  hmCtx = hmCanvas.getContext('2d'); hmCtx.scale(dpr, dpr);
+  hmSx = -1; // force repaint
+}
+function hmRepaint(force = false) {
+  const sx = hmWrap.scrollLeft;
+  // Cells are drawn at x = YAX_W + t·CELL_W − sx, so any scroll change must
+  // repaint — otherwise the sticky canvas drifts from the scrolling .hm-sel.
+  if (!force && sx === hmSx) return;
+  hmSx = sx;
+  const c0 = Math.max(0, Math.floor((sx - YAX_W) / CELL_W));
+  const c1 = Math.min(T, Math.ceil((sx + hmVisW - YAX_W) / CELL_W));
+  hmCol0 = c0; hmCol1 = c1;
+  hmCtx.clearRect(0, 0, hmVisW, hmVisH);
+  hmCtx.textBaseline = 'middle';
+  for (let t = c0; t < c1; t++) {
+    const x = YAX_W + t * CELL_W - sx;
+    for (let li = L - 1; li >= 0; li--) {
+      const y = (L - 1 - li) * CELL_H, tid = argmax[t][li];
+      const r = at(D.top_ranks, t, li, 0);
+      const pin = pinned.get(tid);
+      if (pin) { hmCtx.fillStyle = pin + '20'; hmCtx.fillRect(x, y, CELL_W, CELL_H); }
+      hmCtx.strokeStyle = '#eee'; hmCtx.strokeRect(x + .5, y + .5, CELL_W - 1, CELL_H - 1);
+      hmCtx.font = HM_FONT;
+      hmCtx.fillStyle = pin || (r > 0 ? '#888' : '#000');
+      const txt = clean(tid).text;
+      hmCtx.fillText(txt.length > 9 ? txt.slice(0, 8) + '…' : txt, x + 3, y + CELL_H / 2, CELL_W - 6);
+      if (r > 0) {
+        hmCtx.font = HM_RANK_FONT; hmCtx.fillStyle = '#b00';
+        hmCtx.fillText(String(r), x + CELL_W - 10, y + 4);
+      }
+    }
+  }
+  // x-axis: render visible cols only (token + idx)
+  hmXInner.style.left = (YAX_W + c0 * CELL_W) + 'px';
+  hmXInner.innerHTML = Array.from({length: c1 - c0}, (_, i) => {
+    const t = c0 + i, s = (D.ctx_strs[t] || '').replace(/\n/g, '⏎').trim() || '·';
+    return `<div class="hm-xaxis-col" style="width:${CELL_W}px"><span>${esc(s.slice(0,8))}</span><span>${OFF + t}</span></div>`;
+  }).join('');
+}
+function hmPlaceSel() {
+  hmSel.style.left = (YAX_W + selCtx * CELL_W) + 'px';
+  hmSel.style.top = ((L - 1 - selLI()) * CELL_H) + 'px';
+}
+function hmCellAt(clientX, clientY) {
+  const r = hmWrap.getBoundingClientRect();
+  const t = Math.floor((clientX - r.left + hmWrap.scrollLeft - YAX_W) / CELL_W);
+  const li = L - 1 - Math.floor((clientY - r.top + hmWrap.scrollTop) / CELL_H);
+  return (t >= 0 && t < T && li >= 0 && li < L) ? { t, li } : null;
+}
+function hmScrollTo(t) {
+  if (t >= hmCol0 && t < hmCol1 - 1) return;  // already fully visible
+  const x = YAX_W + t * CELL_W;
+  if (x < hmWrap.scrollLeft + YAX_W) hmWrap.scrollLeft = x - YAX_W;
+  else if (x + CELL_W > hmWrap.scrollLeft + hmVisW) hmWrap.scrollLeft = x + CELL_W - hmVisW;
+}
+hmWrap.addEventListener('scroll', () => hmRepaint(), { passive: true });
+hmWrap.addEventListener('mousemove', e => {
+  const c = hmCellAt(e.clientX, e.clientY);
+  if (!c) { hmHover.style.display = 'none'; tooltip.classList.remove('visible'); return; }
+  hmHover.style.display = 'block';
+  hmHover.style.left = (YAX_W + c.t * CELL_W) + 'px';
+  hmHover.style.top = ((L - 1 - c.li) * CELL_H) + 'px';
+  if (e.shiftKey) { selCtx = c.t; selLayer = layers[c.li]; schedule(); }
+  showTT(e, c.t, c.li);
+});
+hmWrap.addEventListener('mouseleave', () => { hmHover.style.display = 'none'; tooltip.classList.remove('visible'); });
+hmWrap.addEventListener('click', e => {
+  const c = hmCellAt(e.clientX, e.clientY);
+  if (!c) return;
+  selCtx = c.t; selLayer = layers[c.li]; pinToken(argmax[c.t][c.li]);
+});
+hmSizeCanvas();
+
+function showTT(e, t, li) {
+  const rows = [];
+  for (let k = 0; k < topN; k++) {
+    const tid = at(D.top_ids, t, li, k), r = at(D.top_ranks, t, li, k);
+    rows.push(`<tr><td class="tt-rank">${r}</td><td class="tt-token${pinned.has(tid) ? ' pinned' : ''}">${esc(clean(tid).text)}</td></tr>`);
+  }
+  tooltip.innerHTML = `<div class="tt-header">Pos=${OFF + t} Layer=${layers[li]}</div><table class="tt-table">${rows.join('')}</table>`;
+  tooltip.classList.add('visible'); moveTT(e);
+}
+function moveTT(e) { const bb = tooltip.getBoundingClientRect(); tooltip.style.left = Math.min(innerWidth - bb.width - 8, e.clientX + 12) + 'px'; tooltip.style.top = Math.max(4, e.clientY - bb.height - 8) + 'px'; }
+
+// ------- tokens area -------
+const toksDiv = document.getElementById('tokens');
+// Un-sliced prefix (last_n_tokens pages): shown for context, not interactive.
+D.prefix_strs.forEach(s => { const sp = document.createElement('span'); sp.className = 'token-prefix'; sp.textContent = s; toksDiv.appendChild(sp); });
+const tokSpans = D.ctx_strs.map((s, i) => { const sp = document.createElement('span'); sp.className = 'token'; sp.textContent = s; sp.onclick = () => { selCtx = i; render(); }; sp.onmouseenter = e => { if (e.shiftKey) { selCtx = i; render(); } }; toksDiv.appendChild(sp); return sp; });
+
+// ------- whitespace toggle -------
+const wsChk = document.getElementById('wsChk'); wsChk.checked = showWs;
+wsChk.onchange = () => { showWs = wsChk.checked; hmRepaint(true); refillPanels(); render(); };
+
+// ------- panels (built once, updated in place) -------
+// Row elements + K cell-span placeholders are created once. On data change
+// (selCtx for byLayer, selLayer for byCtx) we walk the existing spans and set
+// textContent / dataset.tid / style — no innerHTML rebuild, no handler reattach.
+const byLayerDiv = document.getElementById('byLayer'), byCtxDiv = document.getElementById('byCtx');
+const K = topN;
+function buildPanel(div, n, labelFn, ctxTok) {
+  const rows = new Array(n);
+  for (let i = 0; i < n; i++) {
+    const r = document.createElement('div'); r.className = 'token-row';
+    const lab = document.createElement('span'); lab.className = 'row-label'; lab.textContent = labelFn(i);
+    r.appendChild(lab);
+    if (ctxTok) {
+      const ct = document.createElement('span'); ct.className = 'row-ctx-token';
+      ct.textContent = (D.ctx_strs[i] || '').replace(/\n/g, '⏎');
+      r.appendChild(ct);
+    }
+    const cells = new Array(K);
+    for (let k = 0; k < K; k++) {
+      const c = document.createElement('span'); c.className = 'token-cell';
+      c.onclick = e => { e.stopPropagation(); pinToken(+c.dataset.tid); };
+      r.appendChild(c); cells[k] = c;
+    }
+    div.appendChild(r); rows[i] = { r, cells };
+  }
+  return rows;
+}
+const byLayerRows = buildPanel(byLayerDiv, L, i => layers[L - 1 - i], false);
+byLayerRows.forEach((row, i) => {
+  const li = L - 1 - i;
+  row.r.onclick = () => { selLayer = layers[li]; render(); };
+  row.r.onmouseenter = e => { if (e.shiftKey) { selLayer = layers[li]; schedule(); } };
+});
+// byCtx panel is row-virtualized: a spacer of height T*ROW_H gives a real
+// scrollbar; a fixed pool of row elements is absolutely positioned over the
+// visible window and re-filled on scroll / layer change. Work per layer
+// change is O(visibleRows × K), independent of T.
+const ROW_H = 15;
+byCtxDiv.style.position = 'relative';
+const byCtxSpacer = document.createElement('div');
+byCtxSpacer.style.height = (T * ROW_H) + 'px';
+byCtxDiv.appendChild(byCtxSpacer);
+const byCtxPool = document.createElement('div');
+byCtxPool.style.cssText = 'position:absolute;top:0;left:0;right:0';
+byCtxDiv.appendChild(byCtxPool);
+let byCtxRows = [], byCtxR0 = -1, byCtxR1 = -1;
+function byCtxEnsurePool(n) {
+  while (byCtxRows.length < n) {
+    const i = byCtxRows.length;
+    const r = document.createElement('div'); r.className = 'token-row'; r.style.height = ROW_H + 'px';
+    const lab = document.createElement('span'); lab.className = 'row-label'; r.appendChild(lab);
+    const ct = document.createElement('span'); ct.className = 'row-ctx-token'; r.appendChild(ct);
+    const cells = [];
+    for (let k = 0; k < K; k++) {
+      const c = document.createElement('span'); c.className = 'token-cell';
+      c.onclick = e => { e.stopPropagation(); pinToken(+c.dataset.tid); };
+      r.appendChild(c); cells.push(c);
+    }
+    r.onclick = () => { selCtx = +r.dataset.t; render(); };
+    r.onmouseenter = e => { if (e.shiftKey) { selCtx = +r.dataset.t; schedule(); } };
+    byCtxPool.appendChild(r); byCtxRows.push({ r, lab, ct, cells });
+  }
+}
+function byCtxRefill(li, force) {
+  const r0 = Math.max(0, Math.floor(byCtxDiv.scrollTop / ROW_H));
+  const r1 = Math.min(T, r0 + Math.ceil(byCtxDiv.clientHeight / ROW_H) + 1);
+  if (!force && r0 === byCtxR0 && r1 === byCtxR1) return;
+  byCtxR0 = r0; byCtxR1 = r1;
+  byCtxEnsurePool(r1 - r0);
+  byCtxPool.style.transform = `translateY(${r0 * ROW_H}px)`;
+  for (let i = 0; i < byCtxRows.length; i++) {
+    const row = byCtxRows[i], t = r0 + i;
+    if (t >= r1) { row.r.style.display = 'none'; continue; }
+    row.r.style.display = '';
+    row.r.dataset.t = t;
+    row.r.classList.toggle('active-row', t === selCtx);
+    row.lab.textContent = OFF + t;
+    row.ct.textContent = (D.ctx_strs[t] || '').replace(/\n/g, '⏎');
+    fillRow(row.cells, t, li);
+  }
+}
+byCtxDiv.addEventListener('scroll', () => byCtxRefill(selLI(), false), { passive: true });
+function byCtxScrollTo(t) {
+  if (t >= byCtxR0 && t < byCtxR1 - 1) return;  // already fully visible
+  const y = t * ROW_H;
+  if (y < byCtxDiv.scrollTop) byCtxDiv.scrollTop = y;
+  else if (y + ROW_H > byCtxDiv.scrollTop + byCtxDiv.clientHeight) byCtxDiv.scrollTop = y + ROW_H - byCtxDiv.clientHeight;
+  byCtxRefill(selLI(), false);
+}
+function byCtxMarkActive() {
+  for (const row of byCtxRows) row.r.classList.toggle('active-row', +row.r.dataset.t === selCtx);
+}
+function fillRow(cells, t, li) {
+  for (let k = 0; k < K; k++) {
+    const tid = at(D.top_ids, t, li, k), c = cells[k];
+    if (+c.dataset.tid !== tid || c.__ws !== showWs) {
+      c.dataset.tid = tid; c.__ws = showWs;
+      c.textContent = clean(tid).text;
+    }
+    const pin = pinned.get(tid);
+    c.style.cssText = pin ? pinnedStyle(pin) : '';
+  }
+}
+function refillPanels() { lastKey.byLayerP = lastKey.byCtxP = null; }
+
+// ------- rank line charts (d3) -------
+// Frame (axes, gg background, scrub line, interaction rect) built ONCE per
+// geometry version; only the data series (SVG paths or canvas dots) repaint
+// on data change. Click / shift+hover navigates; scrub line marks selection.
+function drawRankChart(div, xVals, xLabel, valueOf, onScrub) {
+  const W = div.clientWidth || 240, H = div.clientHeight || 160;
+  const m = { t: 12, r: 10, b: 26, l: 36 }, w = W - m.l - m.r, h = H - m.t - m.b;
+  if (w < 30 || h < 30) { div.__updateScrub = null; return; }
+  const useCanvas = xVals.length > 200;
+  let st = div.__chart;
+  if (!st || st.geomV !== geomV) {
+    d3.select(div).selectAll('*').remove();
+    const x = d3.scaleLinear().domain(d3.extent(xVals)).range([0, w]);
+    const y = d3.scaleLog().domain([0.9, VMAX]).range([0, h]);
+    const svg = d3.select(div).append('svg').attr('width', W).attr('height', H);
+    const g = svg.append('g').attr('transform', `translate(${m.l},${m.t})`);
+    ggFrame(g, x, y, w, h);
+    g.append('text').attr('x', w / 2).attr('y', h + 22).attr('text-anchor', 'middle').attr('fill', '#999').attr('font-size', 9).text(xLabel + ' →');
+    g.append('text').attr('transform', 'rotate(-90)').attr('x', -h / 2).attr('y', -28).attr('text-anchor', 'middle').attr('fill', '#999').attr('font-size', 9).text('rank');
+    const dataG = g.append('g');
+    let cv = null;
+    if (useCanvas) { cv = crispCanvas(d3.select(div), W, H, { overlay: true }); cv.translate(m.l, m.t); }
+    const scrub = g.append('line').attr('y1', 0).attr('y2', h).attr('stroke', '#999').attr('stroke-dasharray', '3,3').attr('pointer-events', 'none');
+    const dots = g.append('g').attr('pointer-events', 'none');
+    g.append('rect').attr('width', w).attr('height', h).attr('fill', 'transparent').style('cursor', 'pointer')
+      .on('mousemove click', e => {
+        if (e.type === 'mousemove' && !e.shiftKey) return;
+        const raw = x.invert(d3.pointer(e)[0]);
+        const nearest = xVals.reduce((a, b) => Math.abs(b - raw) < Math.abs(a - raw) ? b : a);
+        onScrub(nearest); schedule();
+      });
+    st = div.__chart = { x, y, w, h, dataG, cv, scrub, dots, geomV, series: [] };
+  }
+  const { x, y, dataG, cv, scrub, dots } = st;
+  if (pinned.size === 0) { dataG.selectAll('*').remove(); cv?.clearRect(0, 0, w, h); st.series = []; div.__updateScrub = null; return; }
+  // repaint series only
+  if (cv) cv.clearRect(0, 0, w, h);
+  dataG.selectAll('*').remove();
+  st.series = [];
+  for (const [tid, color] of pinned) {
+    const pts = xVals.map((xv, xi) => ({ x: xv, r: valueOf(xi, tid) })).filter(p => p.r >= 0);
+    st.series.push({ tid, color, pts });
+    if (!pts.length) continue;
+    if (cv) {
+      cv.fillStyle = color;
+      for (const p of pts) cv.fillRect(x(p.x) - 1, y(p.r + 1) - 1, 2, 2);
+    } else {
+      dataG.append('path').datum(pts).attr('fill', 'none').attr('stroke', color)
+        .attr('stroke-width', tid === activeTid ? 2.5 : 1.5)
+        .attr('opacity', activeTid != null && tid !== activeTid ? 0.3 : 1)
+        .attr('d', d3.line().x(p => x(p.x)).y(p => y(Math.max(1, p.r + 1))));
+    }
+  }
+  div.__updateScrub = xv => {
+    const px = x(xv); scrub.attr('x1', px).attr('x2', px);
+    dots.selectAll('*').remove();
+    for (const { color, pts } of st.series) {
+      const p = pts.find(d => d.x === xv);
+      if (p) dots.append('circle').attr('cx', px).attr('cy', y(p.r + 1)).attr('r', 4).attr('fill', color).attr('stroke', '#fff').attr('stroke-width', 1.5);
+    }
+  };
+}
+
+// ------- rank heatmap (canvas, viridis) -------
+function drawRankHm() {
+  const div = document.getElementById('rankHm');
+  d3.select(div).selectAll('*').remove();
+  div.__placeDot = null;
+  const active = activeTid ?? [...pinned.keys()][0];
+  if (active === undefined || !rankAvailable(active)) return;
+  const W = div.clientWidth || 400, H = div.clientHeight || 200;
+  const m = { t: 16, r: 10, b: 16, l: 36 }, w = W - m.l - m.r, h = H - m.t - m.b;
+  if (w < 30 || h < 30) return;
+  const colorScale = d3.scaleSequential(d3.interpolateViridis).domain([Math.log(VMAX), Math.log(1)]);
+  const ctx = crispCanvas(d3.select(div), W, H);
+  const cw = w / T, ch = h / L;
+  for (let t = 0; t < T; t++) for (let l = 0; l < L; l++) {
+    const r = rankAt(t, l, active);
+    ctx.fillStyle = r >= 0 ? colorScale(Math.log(r + 1)) : '#f5f5f5';
+    ctx.fillRect(m.l + t * cw, m.t + (L - 1 - l) * ch, cw + 0.5, ch + 0.5);
+  }
+  const svg = d3.select(div).append('svg').attr('width', W).attr('height', H).style('position', 'absolute').style('top', 0).style('left', 0);
+  const g = svg.append('g').attr('transform', `translate(${m.l},${m.t})`);
+  const x = d3.scaleLinear().domain([OFF, OFF + T - 1]).range([0, w]);
+  // Index-keyed like the painted rows; a value scale drifts when `layers` is non-uniform.
+  const y = d3.scalePoint().domain(layers).range([h - ch / 2, ch / 2]);
+  const yTicks = layers.filter((_, i) => i % Math.max(1, Math.round(L / 4)) === 0 || i === L - 1);
+  // tickSize(0): labels sit flush against the canvas, no dead band.
+  g.append('g').attr('class', 'axis').attr('transform', `translate(0,${h})`).call(d3.axisBottom(x).ticks(5).tickSize(0).tickPadding(3));
+  g.append('g').attr('class', 'axis').call(d3.axisLeft(y).tickValues(yTicks).tickSize(0).tickPadding(3));
+  // axis labels inside the plot corners (white halo) — keeps margins tight
+  g.append('text').attr('class', 'chart-table').attr('x', w - 4).attr('y', h - 5).attr('text-anchor', 'end').attr('fill', '#999').attr('font-size', 9).text('Pos →');
+  g.append('text').attr('class', 'chart-table').attr('transform', 'rotate(-90)').attr('x', -4).attr('y', 10).attr('text-anchor', 'end').attr('fill', '#999').attr('font-size', 9).text('Layer →');
+  // legend in the top margin: log-rank gradient bar
+  const lg = svg.append('g').attr('transform', `translate(${W - 110},2)`);
+  for (let i = 0; i < 40; i++) lg.append('rect').attr('x', 18 + i * 1.5).attr('width', 1.5).attr('height', 8)
+    .attr('fill', colorScale(Math.log(VMAX) * i / 39));
+  lg.append('text').attr('x', 16).attr('y', 7).attr('text-anchor', 'end').attr('font-size', 8).attr('fill', '#666').text('rank 1');
+  lg.append('text').attr('x', 80).attr('y', 7).attr('font-size', 8).attr('fill', '#666').text(d3.format('~s')(VMAX));
+  const sel = g.append('circle').attr('r', 3).attr('fill', 'none').attr('stroke', 'var(--hl)').attr('stroke-width', 1.5).attr('pointer-events', 'none');
+  const placeDot = () => sel.attr('cx', selCtx * cw + cw / 2).attr('cy', (L - 1 - selLI()) * ch + ch / 2);
+  placeDot(); div.__placeDot = placeDot;
+  g.append('rect').attr('width', w).attr('height', h).attr('fill', 'transparent').style('cursor', 'pointer')
+    .on('mousemove click', e => {
+      if (e.type === 'mousemove' && !e.shiftKey) return;
+      const [mx, my] = d3.pointer(e);
+      const ci = Math.max(0, Math.min(T - 1, Math.floor(mx / cw)));
+      const li = Math.max(0, Math.min(L - 1, L - 1 - Math.floor(my / ch)));
+      selCtx = ci; selLayer = layers[li]; render();
+    });
+}
+
+// ------- render -------
+// rAF-coalesced: schedule() queues a render() for the next animation frame and
+// drops intermediate requests, so rapid scrub/slider events collapse to ≤1
+// render per frame. render() itself is incremental (each part keyed on the
+// state it depends on) and now O(L+K) per call — no full T sweeps.
+let geomV = 0; // bumped on resize → forces chart/heatmap redraw
+const lastKey = { hm: null, pinRow: null, byLayerP: null, byCtxP: null, byLayerC: null, byCtxC: null, rankHm: null };
+let prevSelTok = -1, prevByLayerActive = -1, prevByCtxActive = -1, rafPending = false;
+
+function schedule() {
+  if (rafPending) return;
+  rafPending = true;
+  requestAnimationFrame(() => { rafPending = false; render(); });
+}
+
+function render() {
+  const li = selLI();
+  const sKey = [...pinned.entries()].map(([t, c]) => t + c).join(',') + '|' + showWs;
+
+  // argmax heatmap: pinned/ws changes → repaint visible columns only
+  if (sKey !== lastKey.hm) { hmRepaint(true); lastKey.hm = sKey; }
+  hmPlaceSel();
+  hmScrollTo(selCtx);
+
+  if (prevSelTok !== selCtx) {
+    if (prevSelTok >= 0) tokSpans[prevSelTok].classList.remove('selected');
+    tokSpans[selCtx].classList.add('selected');
+    tokSpans[selCtx].scrollIntoView({ block: 'nearest' });
+    prevSelTok = selCtx;
+  }
+
+  // pinned chips
+  const pinRowKey = sKey + '|' + (activeTid ?? '');
+  if (pinRowKey !== lastKey.pinRow) {
+    const activeHm = activeTid ?? [...pinned.keys()][0]; // mirrors drawRankHm
+    document.getElementById('pinned').innerHTML = pinned.size === 0 ? '' :
+      `<span class="pinned-label">pinned:</span>` + [...pinned].map(([tid, c]) =>
+        `<button class="pinned-chip${tid === activeHm ? ' chip-active' : ''}" style="border-color:${c}${tid === activeHm ? `;background:${c}26` : ''}" data-tid="${tid}">${esc(clean(tid).text)}<span class="chip-x" data-tid="${tid}" title="unpin">×</span></button>`).join('')
+      + `<button class="unpin-all" title="unpin all">× all</button>`;
+    document.querySelectorAll('.pinned-chip').forEach(b => { b.onclick = () => { activeTid = +b.dataset.tid; render(); }; });
+    document.querySelectorAll('.chip-x').forEach(x => { x.onclick = e => { e.stopPropagation(); pinToken(+x.dataset.tid); }; });
+    const unpinAll = document.querySelector('.unpin-all');
+    if (unpinAll) unpinAll.onclick = () => { pinned.clear(); activeTid = null; refillPanels(); render(); };
+    lastKey.pinRow = pinRowKey;
+  }
+
+  // readouts / headers (cheap, fixed-width — no layout shift while scrubbing)
+  document.getElementById('ctxLabel').textContent = OFF + selCtx;
+  document.getElementById('ctxTok').textContent = (D.ctx_strs[selCtx] || '').replace(/\n/g, '⏎');
+  document.getElementById('layerLabel').textContent = selLayer;
+  document.getElementById('byLayerH').textContent = `By Layer (Pos=${OFF + selCtx} ${(D.ctx_strs[selCtx] || '').replace(/\n/g, '⏎')})`;
+  document.getElementById('byCtxH').textContent = `By Pos (Layer=${selLayer})`;
+
+  // panels: refill cells in place when their data key changes; active-row
+  // highlight moves O(1) via cached prev index.
+  const byLayerPKey = selCtx + '|' + sKey;
+  if (byLayerPKey !== lastKey.byLayerP) {
+    for (let i = 0; i < L; i++) fillRow(byLayerRows[i].cells, selCtx, L - 1 - i);
+    lastKey.byLayerP = byLayerPKey;
+  }
+  const byCtxPKey = selLayer + '|' + sKey;
+  if (byCtxPKey !== lastKey.byCtxP) { byCtxRefill(li, true); lastKey.byCtxP = byCtxPKey; }
+  if (prevByLayerActive !== li) {
+    if (prevByLayerActive >= 0) byLayerRows[L - 1 - prevByLayerActive].r.classList.remove('active-row');
+    const row = byLayerRows[L - 1 - li].r;
+    row.classList.add('active-row');
+    // Manual scroll-into-view via offsetTop (cached layout) — scrollIntoView()
+    // forces a synchronous full layout per call.
+    const ot = row.offsetTop, st = byLayerDiv.scrollTop, ch = byLayerDiv.clientHeight;
+    if (ot < st) byLayerDiv.scrollTop = ot;
+    else if (ot + ROW_H > st + ch) byLayerDiv.scrollTop = ot + ROW_H - ch;
+    prevByLayerActive = li;
+  }
+  if (prevByCtxActive !== selCtx) {
+    byCtxScrollTo(selCtx);
+    byCtxMarkActive();
+    prevByCtxActive = selCtx;
+  }
+
+  // charts: byLayer data depends on selCtx, byCtx data on selLayer — only
+  // the affected one redraws during a scrub; the other just moves its line
+  const chartBase = sKey + '|' + (activeTid ?? '') + '|' + rankCache.size + '|' + geomV;
+  const byLayerCKey = selCtx + '|' + chartBase;
+  if (byLayerCKey !== lastKey.byLayerC) {
+    drawRankChart(document.getElementById('byLayerChart'), layers, 'Layer', (lidx, tid) => rankAt(selCtx, lidx, tid), v => { selLayer = v; });
+    lastKey.byLayerC = byLayerCKey;
+  }
+  const byCtxCKey = selLayer + '|' + chartBase;
+  if (byCtxCKey !== lastKey.byCtxC) {
+    drawRankChart(document.getElementById('byCtxChart'), Array.from({length: T}, (_, i) => OFF + i), 'Pos', (t, tid) => rankAt(t, li, tid), v => { selCtx = v - OFF; });
+    lastKey.byCtxC = byCtxCKey;
+  }
+  document.getElementById('byLayerChart').__updateScrub?.(selLayer);
+  document.getElementById('byCtxChart').__updateScrub?.(OFF + selCtx);
+
+  // rank heatmap: full repaint only when the active token / data changes;
+  // scrubbing just moves the selection dot
+  const rankHmKey = (activeTid ?? [...pinned.keys()][0] ?? '') + '|' + sKey + '|' + rankCache.size + '|' + geomV;
+  if (rankHmKey !== lastKey.rankHm) {
+    drawRankHm(); lastKey.rankHm = rankHmKey;
+    const act = activeTid ?? [...pinned.keys()][0];
+    document.getElementById('rankTitle').innerHTML = act === undefined || !pinned.size ? '' :
+      `rank of <b style="color:${pinned.get(act) || '#333'}">${esc(clean(act).text)}</b> at every (pos, layer) — click a pin to switch`;
+  }
+  document.getElementById('rankHm').__placeDot?.();
+
+  syncUrl();
+}
+
+// ------- keyboard -------
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') return;
+  if (e.key === 'ArrowLeft') { e.preventDefault(); selCtx = Math.max(0, selCtx - 1); render(); }
+  if (e.key === 'ArrowRight') { e.preventDefault(); selCtx = Math.min(T - 1, selCtx + 1); render(); }
+  if (e.key === 'ArrowUp') { e.preventDefault(); const i = selLI(); if (i < L - 1) { selLayer = layers[i + 1]; render(); } }
+  if (e.key === 'ArrowDown') { e.preventDefault(); const i = selLI(); if (i > 0) { selLayer = layers[i - 1]; render(); } }
+});
+
+// ------- resize handles -------
+function forceRedraw() { geomV++; hmSizeCanvas(); hmRepaint(true); render(); }
+// Vertical: drag to grow tokens-area over the heatmap.
+document.getElementById('tokResize').onmousedown = e => {
+  e.preventDefault();
+  const startY = e.clientY, startH = toksDiv.offsetHeight;
+  function onMove(e2) { toksDiv.style.height = Math.max(20, startH - (e2.clientY - startY)) + 'px'; }
+  function onUp() { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp); forceRedraw(); }
+  window.addEventListener('mousemove', onMove); window.addEventListener('mouseup', onUp);
+};
+document.querySelectorAll('.resize-handle').forEach(h => {
+  h.onmousedown = e => {
+    e.preventDefault();
+    const col = +h.dataset.col, leftEl = document.getElementById('col' + col);
+    const startX = e.clientX, leftW = leftEl.offsetWidth;
+    function onMove(e2) { leftEl.style.width = Math.max(150, leftW + e2.clientX - startX) + 'px'; leftEl.style.flex = 'none'; }
+    function onUp() { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp); forceRedraw(); }
+    window.addEventListener('mousemove', onMove); window.addEventListener('mouseup', onUp);
+  };
+});
+window.addEventListener('resize', forceRedraw);
+
+// ------- initial pinned set: URL > meta.pinned -------
+const initPinned = (params.get('pinned') || '').split('-').filter(Boolean).map(Number);
+for (const tid of (initPinned.length ? initPinned : (D.pinned || []))) {
+  if (rankAvailable(tid) && pinned.size < 8) { pinned.set(tid, nextColor()); ensureRank(tid); }
+}
+render();
+hmWrap.scrollLeft = totalW; // start at the end of the prompt
+})();
+</script>
+</body></html>

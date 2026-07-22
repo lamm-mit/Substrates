@@ -1,0 +1,285 @@
+{
+  "study_id": "semantic-steering-v3-confirmatory",
+  "status": "frozen before any v3 model forward pass or intervention output; implementation-only amendment recorded below",
+  "frozen_at": "2026-07-16T16:50:39-04:00",
+  "amendments": [
+    {
+      "time": "2026-07-16T17:01:30-04:00",
+      "reason": "The inherited one-token helper preferred leading-space tokens. Gemma generates these constrained answers immediately after a newline, so the first attempted run assigned essentially zero probability mass to those token ids; additionally, the lowercase answer 'grooves' is two tokens in this position. The run was stopped after 375 of 6000 rows and before effect inspection.",
+      "change": "Retain the aborted file as semantic-steering-v3_aborted-leading-space-token_raw.json. Restart from zero using the exact no-leading-space token sequence for each scientific answer. Score each complete answer string by teacher-forced sequence log probability, patching only the frozen final prompt position. Define output integrity using whether the next-token global top begins either registered answer. No prompt, layer, direction, dose, control, seed, endpoint sign, or statistical threshold changed."
+    },
+    {
+      "time": "2026-07-16T17:07:00-04:00",
+      "reason": "Before the corrected run completed, the recorded time of the tokenization amendment was noticed to be twelve minutes in the future because of a manual timestamp typo.",
+      "change": "Correct the amendment time from 17:18 to 17:01:30, preserve the incomplete corrected-scoring checkpoint as semantic-steering-v3_incomplete-before-timestamp-correction_raw.json (SHA-256 8acd666a507bbc75d0997e36fb983b7790ea1cc6450e7cdd7bd3d8362ccc5147), and restart from zero. No scientific field or analysis rule changed."
+    }
+  ],
+  "purpose": "Confirm whether mechanism-derived Jacobian directions causally and specifically change scientific answer-token odds on new materials-science cases, without A/B proxy tokens or additional layer/direction tuning.",
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "lens_paths": [
+    "lenses/hub/gemma4-e4b-it/paper/seed0.pt",
+    "lenses/hub/gemma4-e4b-it/paper/seed1.pt",
+    "lenses/hub/gemma4-e4b-it/paper/seed2.pt"
+  ],
+  "source_study": {
+    "protocol": "experiments/ensemble-steering-v2-preregistration.json",
+    "protocol_sha256": "dda786697e3b8b1858611350c7ef6ff75533b310e8ece03b1f1cb59c771101ed",
+    "raw_results": "experiments/ensemble-steering-v2_raw.json",
+    "raw_results_sha256": "8bb9aa0fd4b69dbdbe70526724aa9d37906a8cb864e4419b4efe83b2e236cba0",
+    "role": "The source study fixed the three layers used here. No v3 layer selection or direction tuning is permitted."
+  },
+  "design": {
+    "doses_percent_residual_norm": [-4.0, -2.0, 0.0, 2.0, 4.0],
+    "position": "final prompt token only",
+    "jacobian_lens_seeds": [0, 1, 2],
+    "random_seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "direction_construction": "For each source mechanism and lens seed, average unit gradients from the three frozen direction-fitting prompts. Differentiate the frozen four-word positive-versus-negative concept ensemble through the fitted Jacobian and Gemma final norm. Outcome answer words are excluded from direction construction.",
+    "semantic_answer_test": "The two scientific outcome words are presented in both orders. Primary scoring is the difference between their complete teacher-forced answer-string log probabilities using the no-leading-space continuation tokenization; no A/B tokens are used. The intervention remains localized to the final prompt position for every continuation token.",
+    "cross_mechanism_test": "At each target family's fixed layer, apply its own direction and the two other mechanism directions constructed at that same layer. This produces a layer-matched 3-by-3 specificity matrix.",
+    "controls": [
+      "matched direct-decoder gradient for the target mechanism",
+      "ten seeded random directions orthogonal to the seed-0 target Jacobian direction and its independent direct component",
+      "the two wrong-mechanism Jacobian directions at the identical layer and dose"
+    ],
+    "clean_inclusion": "All frozen prompt orders are retained. Clean correctness and whether either answer word is global top-1 are audited but never used for exclusion.",
+    "primary_endpoint": "positive-minus-negative complete scientific answer-string log probability at +4 percent minus the value at -4 percent",
+    "independent_unit": "physical condition after first averaging lens seeds and the two answer-word presentation orders",
+    "uncertainty": "95 percent cluster bootstrap interval over physical conditions within family; 30000 resamples with seed 20260716",
+    "family_success_criteria": {
+      "positive_condition_fraction_at_least": 0.8,
+      "presentation_orders_same_nonzero_sign_fraction_at_least": 0.8,
+      "own_minus_random_bootstrap_interval_above_zero": true,
+      "own_minus_mean_wrong_mechanisms_bootstrap_interval_above_zero": true,
+      "registered_answer_first_token_is_global_top_fraction_at_least": 0.9
+    },
+    "interpretation_guardrail": "A positive endpoint shows causal control of the specified scientific answer contrast. It does not establish a literal chain of thought or complete physical understanding."
+  },
+  "families": [
+    {
+      "family_id": "intergranular-corrosion",
+      "fixed_layer": 16,
+      "concept_positive": ["sensitization", "corrosion", "anodic", "depletion"],
+      "concept_negative": ["passivation", "protected", "resistant", "passive"],
+      "outcome_positive": "grooves",
+      "outcome_negative": "clean",
+      "direction_fit_prompts": [
+        "Consider the internal metallurgical state that governs localized attack at stainless-steel grain boundaries.",
+        "Analyze how thermal processing changes the chemical and electrochemical condition of stainless-steel grain edges.",
+        "Reason about the mechanism that determines whether stainless steel retains protection during an aggressive qualification test."
+      ],
+      "confirmation_prompts": [
+        {
+          "condition_id": "long-sensitizing-service",
+          "expected_outcome": "grooves",
+          "regime": "positive",
+          "stem": "A conventional Type 304 stainless-steel reactor insert spent 80 hours at 620 degrees Celsius. Electron microscopy now shows continuous chromium-rich carbides and adjacent chromium-depleted grain-boundary zones. After an intergranular-corrosion qualification test, which surface is more likely?"
+        },
+        {
+          "condition_id": "stress-relief-carbide-network",
+          "expected_outcome": "grooves",
+          "regime": "positive",
+          "stem": "An unstabilized 18Cr-8Ni stainless pressure component received a six-hour stress-relief treatment at 675 degrees Celsius and cooled in air. A continuous grain-boundary carbide network is present. After an intergranular-corrosion qualification test, which surface is more likely?"
+        },
+        {
+          "condition_id": "aged-high-carbon-sheet",
+          "expected_outcome": "grooves",
+          "regime": "positive",
+          "stem": "A relatively high-carbon austenitic stainless sheet was aged at 700 degrees Celsius until chromium depletion extended on both sides of most grain boundaries. After an intergranular-corrosion qualification test, which surface is more likely?"
+        },
+        {
+          "condition_id": "failed-stabilization-cycle",
+          "expected_outcome": "grooves",
+          "regime": "positive",
+          "stem": "A titanium-bearing austenitic stainless batch missed its required stabilization treatment. Subsequent exposure produced chromium carbides rather than titanium carbides at the boundaries, with measured chromium depletion. After an intergranular-corrosion qualification test, which surface is more likely?"
+        },
+        {
+          "condition_id": "proper-titanium-stabilization",
+          "expected_outcome": "clean",
+          "regime": "negative",
+          "stem": "A Type 321 stainless component received a verified stabilization treatment that tied up carbon as titanium carbide. Grain-boundary chromium remains uniform after service exposure. After an intergranular-corrosion qualification test, which surface is more likely?"
+        },
+        {
+          "condition_id": "ultralow-carbon-transient-cycle",
+          "expected_outcome": "clean",
+          "regime": "negative",
+          "stem": "An ultralow-carbon austenitic stainless foil containing 0.012 weight-percent carbon crossed 650 degrees Celsius for only a few seconds and was rapidly cooled. No boundary carbides or chromium depletion are detected. After an intergranular-corrosion qualification test, which surface is more likely?"
+        },
+        {
+          "condition_id": "desensitized-by-remelting",
+          "expected_outcome": "clean",
+          "regime": "negative",
+          "stem": "A previously sensitized stainless surface layer was fully remelted, dissolving its carbide network, and then solidified and cooled fast enough to prevent reprecipitation. Boundary chromium is uniform. After an intergranular-corrosion qualification test, which surface is more likely?"
+        },
+        {
+          "condition_id": "carbon-scavenged-niobium",
+          "expected_outcome": "clean",
+          "regime": "negative",
+          "stem": "A niobium-bearing stainless heat contains enough niobium to scavenge the available carbon as niobium carbide. Atom-probe measurements find no chromium-depleted boundary region. After an intergranular-corrosion qualification test, which surface is more likely?"
+        },
+        {
+          "condition_id": "brief-ambiguous-dwell",
+          "expected_outcome": null,
+          "regime": "near-threshold",
+          "stem": "A conventional austenitic stainless coupon remained at 640 degrees Celsius for 90 seconds. Carbon content, prior cold work, and the sensitivity of the corrosion test are not reported. After an intergranular-corrosion qualification test, which surface is more likely?"
+        },
+        {
+          "condition_id": "unknown-carbon-short-stress-relief",
+          "expected_outcome": null,
+          "regime": "near-threshold",
+          "stem": "An 18Cr-8Ni stainless part of unknown carbon content received a 20-minute treatment at 650 degrees Celsius, but its boundary chemistry was not measured. After an intergranular-corrosion qualification test, which surface is more likely?"
+        }
+      ]
+    },
+    {
+      "family_id": "martensitic-transformation",
+      "fixed_layer": 24,
+      "concept_positive": ["tetragonal", "quenched", "quench", "shear"],
+      "concept_negative": ["diffusion", "annealed", "equilibrium", "ferrite"],
+      "outcome_positive": "hard",
+      "outcome_negative": "soft",
+      "direction_fit_prompts": [
+        "Consider the transformation mechanism selected when carbon steel leaves its high-temperature phase during cooling.",
+        "Analyze how cooling history controls atomic rearrangement and crystal distortion in carbon steel.",
+        "Reason about the competing transformation pathways available to austenitized carbon steel."
+      ],
+      "confirmation_prompts": [
+        {
+          "condition_id": "laser-self-quenched-track",
+          "expected_outcome": "hard",
+          "regime": "positive",
+          "stem": "A high-carbon steel surface track is austenitized by a short laser pulse and self-quenches into the cold substrate fast enough to bypass diffusional transformation. Relative to the untreated core, which final state is more likely?"
+        },
+        {
+          "condition_id": "induction-hardened-gear-tooth",
+          "expected_outcome": "hard",
+          "regime": "positive",
+          "stem": "A medium-carbon gear tooth is induction austenitized and immediately spray quenched above its critical cooling rate. Carbon redistribution is suppressed through the transformation range. Relative to its normalized state, which final state is more likely?"
+        },
+        {
+          "condition_id": "high-hardenability-gas-quench",
+          "expected_outcome": "hard",
+          "regime": "positive",
+          "stem": "A thin section of high-hardenability alloy steel is austenitized and high-pressure-gas quenched fast enough to avoid its pearlite and bainite noses. Relative to a slowly cooled specimen, which final state is more likely?"
+        },
+        {
+          "condition_id": "cryogenic-retained-austenite",
+          "expected_outcome": "hard",
+          "regime": "positive",
+          "stem": "A quenched tool steel containing retained austenite receives a cryogenic treatment below its martensite-finish temperature, converting much of that retained phase without tempering. Relative to the pre-cryogenic state, which final state is more likely?"
+        },
+        {
+          "condition_id": "isothermal-pearlite-completion",
+          "expected_outcome": "soft",
+          "regime": "negative",
+          "stem": "An austenitized eutectoid steel is transferred to an isothermal bath at the pearlite nose and held until the diffusional transformation is complete. Relative to a directly hardened specimen, which final state is more likely?"
+        },
+        {
+          "condition_id": "austempered-bainitic-state",
+          "expected_outcome": "soft",
+          "regime": "negative",
+          "stem": "An austenitized steel is austempered until bainitic transformation is complete rather than being cooled directly through the martensite-start temperature. Relative to the untempered martensitic state, which final state is more likely?"
+        },
+        {
+          "condition_id": "normalized-thick-plain-carbon",
+          "expected_outcome": "soft",
+          "regime": "negative",
+          "stem": "A thick, low-hardenability plain-carbon steel section is normalized in still air, forming ferrite and pearlite throughout its center. Relative to a fully martensitic reference, which final state is more likely?"
+        },
+        {
+          "condition_id": "spheroidized-carbide-aggregate",
+          "expected_outcome": "soft",
+          "regime": "negative",
+          "stem": "A high-carbon steel is held just below the eutectoid temperature long enough to replace lamellar constituents with spheroidized carbides in ferrite. Relative to its untempered quenched state, which final state is more likely?"
+        },
+        {
+          "condition_id": "polymer-quenched-shaft-center",
+          "expected_outcome": null,
+          "regime": "near-threshold",
+          "stem": "The center of a large medium-carbon shaft is polymer quenched near the alloy's critical cooling rate. Bath concentration, agitation, and the actual centerline cooling curve are unavailable. Relative to an annealed reference, which final state is more likely?"
+        },
+        {
+          "condition_id": "compressed-air-thin-plate",
+          "expected_outcome": null,
+          "regime": "near-threshold",
+          "stem": "A thin low-alloy steel plate is austenitized and cooled by compressed air at a rate close to the boundary between diffusional and displacive products. Composition tolerances are not reported. Which final state is more likely?"
+        }
+      ]
+    },
+    {
+      "family_id": "grain-size-strengthening",
+      "fixed_layer": 16,
+      "concept_positive": ["boundaries", "blocking", "barriers", "strengthening"],
+      "concept_negative": ["coarse", "glide", "slip", "mobility"],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "direction_fit_prompts": [
+        "Consider how polycrystalline microstructural length scale changes dislocation motion during yielding.",
+        "Analyze how interfaces between grains alter the stress required for plastic flow.",
+        "Reason about the mechanism connecting grain refinement to the onset of yielding in a conventional polycrystal."
+      ],
+      "confirmation_prompts": [
+        {
+          "condition_id": "ecap-refined-aluminum",
+          "expected_outcome": "higher",
+          "regime": "positive",
+          "stem": "Equal-channel angular processing reduces the equiaxed grain size of an aluminum alloy from 35 to 3.5 micrometers while composition, texture, and precipitate state are held fixed. After refinement, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "recrystallized-fine-brass",
+          "expected_outcome": "higher",
+          "regime": "positive",
+          "stem": "Controlled recrystallization gives one brass sheet 9-micrometer grains instead of the 55-micrometer grains in an otherwise identical sheet. For the finer sheet, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "pinned-ferritic-steel-grains",
+          "expected_outcome": "higher",
+          "regime": "positive",
+          "stem": "Particle pinning limits ferritic-steel grain growth to 7 micrometers rather than 42 micrometers, with the particles, solute content, and texture matched between specimens. For the finer-grained steel, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "fine-grained-nickel-foil",
+          "expected_outcome": "higher",
+          "regime": "positive",
+          "stem": "Two fully dense nickel foils differ only in stable average grain size: 6 micrometers in the first and 48 micrometers in the second. For the 6-micrometer foil, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "annealed-copper-grain-growth",
+          "expected_outcome": "lower",
+          "regime": "negative",
+          "stem": "A fully recrystallized copper bar is annealed until its average grain size grows from 14 to 85 micrometers without changing porosity or composition. After grain growth, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "inhibitor-loss-electrical-steel",
+          "expected_outcome": "lower",
+          "regime": "negative",
+          "stem": "Dissolution of grain-growth inhibitors increases the equiaxed grain size of an electrical steel from 18 to 110 micrometers while phase fraction and texture are held fixed. After coarsening, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "overannealed-alpha-brass",
+          "expected_outcome": "lower",
+          "regime": "negative",
+          "stem": "Overannealing increases the average grain size of alpha brass from 11 to 68 micrometers, with composition, dislocation density, and texture matched to the starting material. After overannealing, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "coarsened-ferritic-plate",
+          "expected_outcome": "lower",
+          "regime": "negative",
+          "stem": "A ferritic alloy plate undergoes controlled grain coarsening from 16 to 72 micrometers while precipitate size and volume fraction remain constant. After coarsening, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "nearly-equal-grain-sizes",
+          "expected_outcome": null,
+          "regime": "near-threshold",
+          "stem": "Two conventional polycrystalline samples are reported to have mean grain sizes of 29 and 30 micrometers, comparable to the measurement uncertainty and specimen-to-specimen scatter. For the 29-micrometer sample, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "nanocrystalline-crossover",
+          "expected_outcome": null,
+          "regime": "near-threshold",
+          "stem": "Two nanocrystalline metal specimens have grain sizes of 8 and 12 nanometers, near a possible crossover where boundary-mediated deformation competes with conventional dislocation pileups. For the 8-nanometer specimen, which yield strength is more likely?"
+        }
+      ]
+    }
+  ]
+}

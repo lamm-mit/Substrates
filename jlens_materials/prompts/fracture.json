@@ -1,0 +1,146 @@
+{
+  "prompts": [
+    {
+      "slug": "fracture-griffith",
+      "shape": "MULTIHOP",
+      "domain": "fracture",
+      "title": "Griffith criterion (multi-hop)",
+      "description": "Two-hop: the failure law for a brittle solid with a sharp flaw. Watch 'energy' / 'surface' / 'Griffith' surface before 'crack'.",
+      "text": "In linear elastic fracture mechanics, the critical stress for a brittle solid to fail is set by balancing the released strain energy against the energy needed to create new surface. The critical stress therefore scales inversely with the square root of the",
+      "readout_at": -1,
+      "tracked": [
+        "energy",
+        "surface",
+        "Griffith",
+        "crack",
+        "length"
+      ],
+      "note": "Griffith's result sigma_c ~ sqrt(2 E gamma / (pi a)). The answer token is 'crack (length)'; 'energy', 'surface' and the eponym 'Griffith' are unspoken intermediates the derivation passes through -- the fracture analogue of Mars->color->red."
+    },
+    {
+      "slug": "fracture-fatigue",
+      "shape": "MULTIHOP",
+      "domain": "fracture",
+      "title": "Cyclic loading -> failure mode (multi-hop)",
+      "description": "Cyclic sub-yield loading. 'fatigue' should lead 'crack', with 'Paris'/'striations' as deeper-layer associates.",
+      "text": "A steel component is loaded repeatedly far below its yield stress for millions of cycles. Tiny cracks nucleate at the surface and grow a little on every cycle until the part suddenly breaks. This progressive mode of failure is called",
+      "readout_at": -1,
+      "tracked": [
+        "fatigue",
+        "crack",
+        "cyclic",
+        "Paris",
+        "striations"
+      ],
+      "note": "The answer is 'fatigue'. Whether 'Paris' (the Paris crack-growth law) or 'striations' (the fractographic fingerprint) appear in deeper layers probes how much associated fracture knowledge the workspace pulls in beyond the one-word answer."
+    },
+    {
+      "slug": "fracture-toughness-chain",
+      "shape": "MULTIHOP",
+      "domain": "fracture",
+      "title": "Stress-intensity factor chain (multi-hop)",
+      "description": "Chain: geometry+load -> stress intensity K -> compare to K_Ic -> propagate. Track K / toughness / propagate in order.",
+      "text": "An engineer has a plate with an edge crack under tension. She first computes the stress intensity factor at the crack tip, then compares it against the material's fracture toughness. If the first exceeds the second, the crack will",
+      "readout_at": -1,
+      "tracked": [
+        "stress",
+        "intensity",
+        "toughness",
+        "propagate",
+        "grow",
+        "unstable"
+      ],
+      "note": "Multi-step like (4+17)*2+7: compute K, then compare to K_Ic, then conclude 'propagate'. The paper's claim is that these steps surface in the lens in computed order and at successively later layers."
+    },
+    {
+      "slug": "fracture-brittle-assoc",
+      "shape": "ASSOCIATION",
+      "domain": "fracture",
+      "title": "Brittle fracture (association, unnamed)",
+      "description": "A vignette of glass shattering. Does 'brittle' / 'fracture' rise in the lens at the final token though never named?",
+      "text": "The technician tapped the cold pane once with the hammer. Without bending or warning it flew apart into a hundred glittering shards that skated across the floor, each edge sharp as the moment before.",
+      "readout_at": -1,
+      "tracked": [
+        "brittle",
+        "fracture",
+        "glass",
+        "shatter",
+        "crack"
+      ],
+      "note": "Association eval (paper: grief/Einstein/noir). The passage evokes brittle fracture without the words 'brittle' or 'fracture'; a workspace representation of the concept should be readable at the closing token."
+    },
+    {
+      "slug": "fracture-ductile-assoc",
+      "shape": "ASSOCIATION",
+      "domain": "fracture",
+      "title": "Ductile failure (association, unnamed)",
+      "description": "A copper rod necking and drawing out. Contrast partner to the brittle vignette: expect 'ductile'/'plastic'/'neck'.",
+      "text": "As the load climbed the copper rod stopped springing back. It grew visibly thinner at one waist, stretching and drawing out like warm taffy, holding on far past the point anyone expected before it finally parted.",
+      "readout_at": -1,
+      "tracked": [
+        "ductile",
+        "plastic",
+        "necking",
+        "yield",
+        "deformation"
+      ],
+      "note": "The matched control for fracture-brittle-assoc. Comparing the two tests whether the lens cleanly separates the two canonical failure regimes from prose alone."
+    },
+    {
+      "slug": "fracture-stress-recognition",
+      "shape": "RECOGNITION",
+      "domain": "fracture",
+      "title": "Stress state from a tensor (recognition)",
+      "description": "A raw Cauchy stress tensor with one large tensile eigenvalue. Does the lens read out 'tension'/'crack'/'mode'?",
+      "text": "Consider the Cauchy stress tensor (MPa):\n[[420,   0,   0],\n [  0,  15,   0],\n [  0,   0,  10]]\nThe dominant loading state this represents is",
+      "readout_at": -1,
+      "tracked": [
+        "tension",
+        "tensile",
+        "uniaxial",
+        "crack",
+        "opening",
+        "mode"
+      ],
+      "note": "Analogue of the paper reading 'protein' out of a raw sequence: here the model must parse a numeric tensor, recognise near-uniaxial tension, and (in fracture terms) associate it with Mode I opening."
+    },
+    {
+      "slug": "fracture-modulation",
+      "shape": "MODULATION",
+      "domain": "fracture",
+      "title": "Hold 'crack-tip plasticity' while copying (modulation)",
+      "description": "Copy an unrelated sentence while concentrating on crack-tip plasticity. Does the concept surface over the carrier response?",
+      "user": "Write \"The lab notebook lay open on the bench.\" Concentrate on crack-tip plasticity while you write the sentence. Don't write anything else.",
+      "assistant_prefill": "The lab notebook lay open on the bench.",
+      "readout_at": -1,
+      "tracked": [
+        "crack",
+        "plastic",
+        "plasticity",
+        "tip",
+        "yield",
+        "zone"
+      ],
+      "note": "Directed-modulation protocol. Success = 'crack'/'plastic'/'zone' appear in the lens across the carrier sentence, whose surface text is about a notebook -- evidence the workspace holds an instructed concept independent of output."
+    },
+    {
+      "slug": "fracture-report-swap",
+      "shape": "REPORT_SWAP",
+      "domain": "fracture",
+      "title": "Think of a failure mode -> swap (verbal report)",
+      "description": "'Think of a failure mode. Answer in one word.' Swap the chosen mode's lens vector for a sibling and check the report changes.",
+      "user": "Think of a metal failure mode. Answer in one word.",
+      "readout_at": -1,
+      "tracked": [
+        "fatigue",
+        "creep",
+        "corrosion",
+        "fracture",
+        "buckling"
+      ],
+      "swap_from": "fatigue",
+      "swap_to": "creep",
+      "note": "Verbal-report swap (paper: Soccer->Rugby). The siblings are all single-word failure modes; swapping the chosen word's J-lens coordinate for a sibling's should flip the one-word answer."
+    }
+  ]
+}

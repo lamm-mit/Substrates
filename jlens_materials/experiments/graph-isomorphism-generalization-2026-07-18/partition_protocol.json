@@ -1,0 +1,27 @@
+{
+  "study_id": "exact-balanced-partition-2026-07-18",
+  "frozen_at": "2026-07-17T21:55:00-04:00",
+  "status": "post_spectral_exploratory_with_frozen_endpoints",
+  "manuscript_in_scope": false,
+  "parent_spectral_protocol_sha256": "b6c758dd06473a5302aa816f6156ea88f77d2f31c21c1d4768d307b6e7ca119e",
+  "complete_partition": {
+    "nodes": 12,
+    "balance": [6, 6],
+    "unique_partitions": 462,
+    "score": "eligible_mean_within_minus_between"
+  },
+  "heldout_surface": {
+    "fit_variants": ["anchor", "physics_paraphrase"],
+    "heldout_variant": "lexical_counterfactual",
+    "fit_nodes": 8,
+    "balance": [4, 4]
+  },
+  "null_sets": 10000,
+  "bootstrap_sets": 1000,
+  "strong_gate": {
+    "positive_ari_families": 6,
+    "gauge_above_half_families": 6,
+    "complete_p_max": 0.05,
+    "heldout_p_max": 0.05
+  }
+}

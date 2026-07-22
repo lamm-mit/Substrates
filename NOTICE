@@ -1,0 +1,11 @@
+Substrates
+Copyright 2026 Markus J. Buehler
+
+This product includes portions of the Jacobian Lens software, Copyright 2026
+Anthropic PBC, licensed under the Apache License, Version 2.0. The vendored
+runtime is derived from:
+
+    https://github.com/lamm-mit/jacobian-lens
+
+The upstream copyright and SPDX notices are retained in the vendored source
+files under jlens_materials/_vendor_jlens/.

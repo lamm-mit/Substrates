@@ -1,0 +1,17 @@
+{
+  "study_id": "multitoken-sequence-robustness-2026-07-18",
+  "amendment_id": "v1-offline-local-snapshot",
+  "frozen_at": "2026-07-18T02:35:00-04:00",
+  "base_protocol_sha256": "7c8005ea378e581f548b1a0fa2644d05f0d2b778425819ac0de907ef8745f7fd",
+  "reason": "Two execution attempts aborted during Hugging Face configuration resolution before model construction, prompt encoding, model.forward, or any registered score. The immutable model snapshot is already present locally, but this Transformers/Hugging Face version requests optional remote metadata before using the revision cache.",
+  "scientific_changes": "none",
+  "implementation_change": "add an optional --local-model-snapshot path and load that exact on-disk snapshot with revision=None while retaining the frozen model id and immutable revision as scientific provenance",
+  "original_runner_sha256": "276374b814a347a40c53738ea71db90164e32ce33e1bb95aa2dacfe11f694ce1",
+  "amended_runner_sha256": "8b67157760530dcbd92a5a1360873895834109d119e425e23848a820594a8975",
+  "required_snapshot_revision_directory": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "guardrails": [
+    "no prompt, contrast, tokenization, layer, endpoint, success rule, model weight, or lens changed",
+    "aborted attempts produced no model or lens output",
+    "execution record retains both aborted attempts"
+  ]
+}

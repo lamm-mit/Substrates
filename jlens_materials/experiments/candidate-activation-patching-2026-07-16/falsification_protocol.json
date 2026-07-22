@@ -1,0 +1,22 @@
+{
+  "study_id": "candidate-counterfactual-activation-patching-distance-falsification",
+  "status": "post-hoc falsification protocol frozen before distance-matched control output",
+  "frozen_at": "2026-07-16T22:47:13-04:00",
+  "primary_protocol": "experiments/candidate-activation-patching-2026-07-16/protocol.json",
+  "primary_protocol_sha256": "447327e8f277ca5cfc60944a5514e526aca89d168bf5435575390f512fe54258",
+  "primary_raw": "experiments/candidate-activation-patching-2026-07-16/raw.json",
+  "primary_raw_sha256": "84d795ac3d8e136821a31aaf2025243a133833b99ef864ef7073476f5a9ff731",
+  "controls": [
+    "distance_matched_cross_material_same",
+    "distance_matched_order_only"
+  ],
+  "construction": "receiver plus the normalized control-donor difference scaled to the exact matched-reverse donor-difference norm at that receiver and layer",
+  "layers": [0, 2, 3, 5, 6, 8, 10, 11, 13, 15, 16, 18, 20, 21, 23, 24, 26, 28, 29, 31, 32, 34, 36, 37, 39],
+  "workspace_band_percent": [38.0, 92.0],
+  "bootstrap": {
+    "independent_unit": "matched material pair after averaging relations and answer orders",
+    "resamples": 30000,
+    "seed": 20260716
+  },
+  "decision_rule": "the primary matched-reverse band mean minus each distance-matched control must have a 95 percent pair-bootstrap interval above zero"
+}

@@ -1,0 +1,21 @@
+{
+  "study_id": "graph-topology-rigorous-2026-07-17-amendment-v1",
+  "status": "Post-hoc falsification amendment frozen after inspecting the first rigorous graph outputs and before computing the diagnostics below",
+  "frozen_utc": "2026-07-17T19:12:00Z",
+  "parent_protocol_sha256": "ee5a358bbcfc74aecade979856dd0802b3338ac3b477af360e2b7d21fdcaf561",
+  "reason": "The disjoint signed-relation graph was strong, but outcome direction is partially associated with answer presentation order within surface variants. The following diagnostics test whether the result is only an answer-order or variant-matching artifact.",
+  "diagnostics": [
+    "Report selected-edge precision separately for every ordered source-variant to target-variant pair.",
+    "Report selected-edge precision and edge counts separately for same versus opposite answer presentation order.",
+    "Report the fraction of correct and incorrect graph edges that preserve answer presentation order.",
+    "Report outcome precision for a deterministic answer-order-only similarity baseline.",
+    "Report outcome precision for a numeric-direction-only oracle similarity; this is an interpretive ceiling showing what can be solved by parsing increase versus decrease after mechanism family is supplied by graph stratification.",
+    "Report paired family-level contrasts of Jacobian against direct, raw, word TF-IDF, and character TF-IDF.",
+    "Retain all six families and all ordered edge types."
+  ],
+  "additional_heldout_robustness": [
+    "Report union and mutual undirected cross-phrasing graph homophily.",
+    "Report pairwise directed edge-set Jaccard overlap among the three lens fits."
+  ],
+  "interpretation_rule": "The signed-relation graph is strong only if both counterfactual-crossing edge types and same-surface edge types exceed chance. Equality with direct or raw states must be reported as lack of Jacobian specificity."
+}

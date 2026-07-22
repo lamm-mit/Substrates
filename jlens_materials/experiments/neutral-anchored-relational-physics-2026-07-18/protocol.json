@@ -1,0 +1,70 @@
+{
+  "frozen_at": "2026-07-18T21:00:31.802980+00:00",
+  "frozen_lens": {
+    "direction": "old-law positive-minus-negative physical-outcome centroids",
+    "large_cohort_refit": "none",
+    "layer": 34,
+    "position": "final_prompt",
+    "state_normalization": "unit L2"
+  },
+  "guardrails": [
+    "The cohort has 20 direct, 20 inverse, and 20 neutral laws.",
+    "The 60 laws span mechanics, fracture, fatigue, transport, thermal, electrical, magnetic, optical, interfacial, microstructural, corrosion, fluid, and kinetic domains.",
+    "Only calibration-neutral laws define center and scale.",
+    "Direct, inverse, and validation-neutral labels never alter the normalization.",
+    "Every law crosses two equation surfaces, two cases, two numerical directions, and two answer orders.",
+    "The layer and hidden direction remain frozen from old laws.",
+    "All outputs, including failures, are retained."
+  ],
+  "inference": {
+    "bootstrap_resamples": 50000,
+    "bootstrap_seed": 20260723,
+    "permutation_seed": 20260724,
+    "permutations": 100000
+  },
+  "inputs": {
+    "development_manifest": {
+      "path": "experiments/elicited-physics-abstraction-2026-07-18/prompt_manifest.json",
+      "sha256": "4b2a691badae5519410d60250cae7fcb3f60922d00feae063ce5cc999f341894"
+    },
+    "development_states": {
+      "path": "experiments/elicited-physics-abstraction-2026-07-18/representations.npz",
+      "sha256": "59208905855998049e3dc338dbfcb8c9fac48b935b2f946c3b33b9239d56680e"
+    },
+    "prompt_manifest": {
+      "path": "experiments/neutral-anchored-relational-physics-2026-07-18/prompt_manifest.json",
+      "sha256": "68557163950e44d9dc8e5e38156d03ac589b30caca6615ffdce93eb3f153a946"
+    },
+    "runner": {
+      "path": "scripts/run_neutral_anchored_relational_benchmark.py",
+      "sha256": "37a634177604686ab2a3367506649075a16c601643f4f4c62aa8aa54ce9f9274"
+    }
+  },
+  "matched_contrast": "Within each law/surface/case/answer-order cell, frozen physical score for numerical-up minus score for numerical-down.",
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "neutral_normalization": {
+    "center": "median law contrast over the 10 calibration-neutral laws",
+    "reason": "defines an empirical physical null instead of assuming raw zero",
+    "scale": "1.4826 times MAD over the 10 calibration-neutral laws",
+    "validation_neutrals": "the other 10 neutral laws are excluded from normalization"
+  },
+  "primary_endpoints": {
+    "calibrated_sign_accuracy": "direct above and inverse below calibration-neutral median",
+    "direct_vs_inverse_auc": "threshold-free, 20 versus 20 laws",
+    "direct_vs_validation_neutral_auc": "20 versus 10 laws",
+    "ordinal_spearman": "law sign -1/0/+1 versus neutral-normalized contrast, validation neutral only",
+    "validation_neutral_vs_inverse_auc": "10 versus 20 laws"
+  },
+  "status": "frozen-before-large-cohort-output",
+  "study_id": "neutral-anchored-relational-physics-2026-07-18",
+  "success_rule": {
+    "both_surface_direct_inverse_auc_minimum": 0.85,
+    "calibrated_direct_inverse_accuracy_minimum": 0.8,
+    "direct_inverse_auc_minimum": 0.9,
+    "direct_neutral_auc_minimum": 0.8,
+    "neutral_inverse_auc_minimum": 0.8,
+    "ordinal_permutation_p_maximum": 0.01,
+    "ordinal_spearman_minimum": 0.6
+  }
+}

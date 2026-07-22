@@ -1,0 +1,148 @@
+{
+  "prompts": [
+    {
+      "slug": "protein-helix-multihop",
+      "shape": "MULTIHOP",
+      "domain": "protein",
+      "title": "Backbone H-bonds -> secondary structure (multi-hop)",
+      "description": "i to i+4 backbone hydrogen bonding. Track 'hydrogen'/'backbone' before 'helix'.",
+      "text": "In a folded protein, when the backbone carbonyl oxygen of one residue accepts a hydrogen bond from the amide of the residue four positions later, and this repeats down the chain, the local fold that results is the alpha",
+      "readout_at": -1,
+      "tracked": [
+        "hydrogen",
+        "bond",
+        "backbone",
+        "helix",
+        "spiral"
+      ],
+      "note": "Two-hop: i,i+4 H-bond pattern -> alpha helix. 'hydrogen'/'bond'/'backbone' are the unspoken intermediates before the answer 'helix'."
+    },
+    {
+      "slug": "protein-gfp-recognition",
+      "shape": "RECOGNITION",
+      "domain": "protein",
+      "title": "GFP sequence -> function (recognition)",
+      "description": "The paper's own example, ported: a GFP N-terminal fragment. Watch 'protein'/'fluor'/'green' appear a few residues in.",
+      "text": "What is this? MSKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTLKFICTTGKLPVPWPTL",
+      "readout_at": -1,
+      "tracked": [
+        "protein",
+        "fluor",
+        "green",
+        "GFP",
+        "sequence",
+        "amino"
+      ],
+      "note": "Direct port of the paper's Figure 3 protein example (GFP). Their lens reads 'protein' ~5 residues in, then 'fluor' and 'green'. Reproducing this on Gemma is the cleanest cross-model check that the fitted lens is behaving."
+    },
+    {
+      "slug": "protein-collagen-recognition",
+      "shape": "RECOGNITION",
+      "domain": "protein",
+      "title": "Gly-X-Y repeat -> collagen (recognition)",
+      "description": "A (Gly-Pro-Hyp)_n-like repeat. Does the lens surface 'collagen'/'triple'/'helix' from the motif alone?",
+      "text": "What is this? GPPGPKGDPGPQGPRGPAGPPGPAGPQGPKGDPGPQGPRGPAGPP",
+      "readout_at": -1,
+      "tracked": [
+        "collagen",
+        "triple",
+        "helix",
+        "glycine",
+        "proline",
+        "fibril"
+      ],
+      "note": "Gly-X-Y (often Gly-Pro-Hyp) is the collagen signature. Whether the lens jumps from generic 'protein' to specific 'collagen' probes how much structured biochemical knowledge sits in the workspace."
+    },
+    {
+      "slug": "protein-transmembrane-recognition",
+      "shape": "RECOGNITION",
+      "domain": "protein",
+      "title": "Hydrophobic stretch -> transmembrane (recognition)",
+      "description": "A ~20-residue hydrophobic run. Expect 'membrane'/'hydrophobic'/'transmembrane'/'helix'.",
+      "text": "What is this? KKPNGFILVGGVLLLGAAIIGGVMLFAYVVKKPN",
+      "readout_at": -1,
+      "tracked": [
+        "membrane",
+        "hydrophobic",
+        "transmembrane",
+        "helix",
+        "lipid"
+      ],
+      "note": "A flanked poly-(L/I/V/A/G/F) stretch is the transmembrane-helix signature. Recognising it requires reading residue *chemistry*, not just 'this is a sequence'."
+    },
+    {
+      "slug": "protein-amyloid-assoc",
+      "shape": "ASSOCIATION",
+      "domain": "protein",
+      "title": "Amyloid aggregation (association, unnamed)",
+      "description": "A vignette of misfolding and fibril formation. Does 'amyloid'/'aggregate'/'fibril' rise without being named?",
+      "text": "Under the microscope the soluble molecules had abandoned their folds. They had stacked edge to edge into long stiff ribbons that clumped into tangled plaques, each strand locked into its neighbour in a rigid pleated sheet.",
+      "readout_at": -1,
+      "tracked": [
+        "amyloid",
+        "fibril",
+        "aggregate",
+        "misfold",
+        "beta",
+        "plaque"
+      ],
+      "note": "Association eval. The passage describes cross-beta amyloid formation (misfolding -> stacked beta strands -> fibrils/plaques) without the diagnostic words; a workspace concept of 'amyloid' should be readable at the close."
+    },
+    {
+      "slug": "protein-fold-multihop",
+      "shape": "MULTIHOP",
+      "domain": "protein",
+      "title": "Hydrophobic collapse -> tertiary fold (multi-hop)",
+      "description": "Chain: sequence -> hydrophobic core -> native fold. Track 'hydrophobic'/'core'/'fold' in order.",
+      "text": "A denatured protein is returned to water. Its nonpolar side chains are driven out of contact with solvent and pack together in the interior, and this burial of hydrophobic residues is the main force that drives the chain back to its native",
+      "readout_at": -1,
+      "tracked": [
+        "hydrophobic",
+        "core",
+        "collapse",
+        "fold",
+        "structure",
+        "native"
+      ],
+      "note": "Anfinsen-style hydrophobic-collapse chain: the intermediates 'hydrophobic' and 'core' should precede the answer 'fold'/'structure' across layers."
+    },
+    {
+      "slug": "protein-modulation",
+      "shape": "MODULATION",
+      "domain": "protein",
+      "title": "Hold 'disulfide bond' while copying (modulation)",
+      "description": "Copy an unrelated sentence while concentrating on disulfide bonds. Does 'disulfide'/'cysteine'/'bridge' surface?",
+      "user": "Write \"The rain tapped against the window all afternoon.\" Concentrate on disulfide bonds while you write the sentence. Don't write anything else.",
+      "assistant_prefill": "The rain tapped against the window all afternoon.",
+      "readout_at": -1,
+      "tracked": [
+        "disulfide",
+        "cysteine",
+        "bridge",
+        "bond",
+        "sulfur",
+        "cross"
+      ],
+      "note": "Directed modulation. The carrier is about rain; success is 'disulfide'/'cysteine' appearing in the lens across it, showing the workspace holds an instructed biochemical concept off-output."
+    },
+    {
+      "slug": "protein-report-swap",
+      "shape": "REPORT_SWAP",
+      "domain": "protein",
+      "title": "Think of an amino acid -> swap (verbal report)",
+      "description": "'Think of an amino acid. Answer in one word.' Swap the chosen residue's lens vector for a sibling; check the report changes.",
+      "user": "Think of an amino acid. Answer in one word.",
+      "readout_at": -1,
+      "tracked": [
+        "glycine",
+        "alanine",
+        "leucine",
+        "serine",
+        "proline"
+      ],
+      "swap_from": "glycine",
+      "swap_to": "proline",
+      "note": "Verbal-report swap. Amino-acid names are the 'sport' category analogue; the swap tests whether the reported residue is set by the workspace coordinate at the report position."
+    }
+  ]
+}

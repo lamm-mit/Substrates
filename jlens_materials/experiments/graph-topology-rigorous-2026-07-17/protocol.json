@@ -1,0 +1,67 @@
+{
+  "study_id": "graph-topology-rigorous-2026-07-17",
+  "status": "Frozen before computing outputs in this directory; prospectively specified analysis of archived and previously inspected representations",
+  "frozen_utc": "2026-07-17T18:44:02Z",
+  "inputs": {
+    "heldout_vectors": {
+      "path": "experiments/materials-heldout-v1_latent_vectors.npz",
+      "sha256": "687bf12ce7beed5f78b55f45245d348474cca0a528e25e2b058256f1735791b0"
+    },
+    "heldout_statistics": {
+      "path": "experiments/materials-heldout-v1_statistics.json",
+      "sha256": "5f3904ced113e7ad965632043d3cb4216d750341ca021db1f600ad5ca7b6a54d"
+    },
+    "heldout_prompts": {
+      "path": "prompts/materials-heldout-v1-preregistered.json",
+      "sha256": "8c034cf33d287d379fddf842971914ec035a22b9e31d29f457258bf85c52e203"
+    },
+    "replication_vectors": {
+      "path": "experiments/late-physics-representation-replication-2026-07-17/representations.npz",
+      "sha256": "640b8a57f563ee8bfe693f0be812796e50b3942515db72a907580bc0b1245530"
+    },
+    "replication_manifest": {
+      "path": "experiments/late-physics-representation-replication-2026-07-17/prompt_manifest.json",
+      "sha256": "da49f9d57b870404beabb7401f40a677d90d0b93d49d58170a0ab9750268d634"
+    },
+    "replication_protocol": {
+      "path": "experiments/late-physics-representation-replication-2026-07-17/protocol.json",
+      "sha256": "115ed08045abdb2a515026739dd35b701a11274ae83fc84481f58fd3da3b40c7"
+    }
+  },
+  "heldout_design": {
+    "prompts": 50,
+    "families": 10,
+    "phrasing_folds": 5,
+    "layers": 25,
+    "lens_fits": 3,
+    "workspace_band_percent": [38.0, 92.0],
+    "directed_edges_per_graph": 200
+  },
+  "replication_design": {
+    "prompts": 72,
+    "families": 6,
+    "material_cases_per_family": 4,
+    "variants": ["anchor", "physics_paraphrase", "lexical_counterfactual"],
+    "workspace_band_percent": [38.0, 92.0],
+    "frozen_late_band_percent": [80.0, 96.0],
+    "exclude_same_triplet": true
+  },
+  "permutations": 50000,
+  "bootstrap_resamples": 50000,
+  "seed": 20260717,
+  "primary_graph": "one nearest neighbor in each other phrasing fold using frozen-band mean cosine similarity",
+  "primary_metric": "directed same-family edge fraction",
+  "residualization_covariates": [
+    "word_tfidf_cosine",
+    "character_3_5gram_tfidf_cosine",
+    "token_set_jaccard",
+    "absolute_token_count_difference",
+    "same_phrasing_fold"
+  ],
+  "hard_negative_selector": "highest mean word-and-character-TFIDF cosine among different-family prompts in the target phrasing fold",
+  "multiple_testing": {
+    "layer_scan": "max statistic across all 25 layers inside each blocked label permutation",
+    "concept_words": "Benjamini-Hochberg FDR 0.05"
+  },
+  "guardrail": "Graph topology measures organization and retrieval. It does not by itself establish causal use, a literal chain of thought, consciousness, or unrestricted scientific understanding."
+}

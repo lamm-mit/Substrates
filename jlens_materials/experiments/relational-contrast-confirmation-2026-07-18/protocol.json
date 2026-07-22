@@ -1,0 +1,58 @@
+{
+  "frozen_at": "2026-07-18T20:08:08.080797+00:00",
+  "frozen_lens": {
+    "direction": "positive-minus-negative physical-outcome centroids over all 16 old development laws",
+    "fresh_refit": "none",
+    "layer": 34,
+    "position": "final_prompt",
+    "state_normalization": "unit L2"
+  },
+  "guardrails": [
+    "All 12 relations are disjoint from both earlier abstraction cohorts.",
+    "No second-fresh label selects a layer, position, direction, or threshold.",
+    "Matched subtraction cancels law wording, formula wording, material case, and answer order within each pair.",
+    "Numerical direction is identical across direct and inverse laws; only its physical interpretation changes.",
+    "Two algebraic surfaces, two cases, and two answer orders are retained per law.",
+    "All outputs, including failures, are retained."
+  ],
+  "inference": {
+    "bootstrap_resamples": 50000,
+    "bootstrap_seed": 20260722,
+    "exact_label_permutations": 924
+  },
+  "inputs": {
+    "development_manifest": {
+      "path": "experiments/elicited-physics-abstraction-2026-07-18/prompt_manifest.json",
+      "sha256": "4b2a691badae5519410d60250cae7fcb3f60922d00feae063ce5cc999f341894"
+    },
+    "development_states": {
+      "path": "experiments/elicited-physics-abstraction-2026-07-18/representations.npz",
+      "sha256": "59208905855998049e3dc338dbfcb8c9fac48b935b2f946c3b33b9239d56680e"
+    },
+    "prompt_manifest": {
+      "path": "experiments/relational-contrast-confirmation-2026-07-18/prompt_manifest.json",
+      "sha256": "53bbb2d6ff4535caa6b5cb77cd948657409ab0892fd794348190cedbf221a34f"
+    },
+    "runner": {
+      "path": "scripts/run_elicited_physics_abstraction.py",
+      "sha256": "29d257f7d1c81ba1c6e7727dc24bb3b2b4b91b924fb83c83fe94ee99cb231dbe"
+    }
+  },
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "positions": [
+    "law",
+    "comparison",
+    "decision",
+    "final_prompt"
+  ],
+  "primary_relational_endpoint": "For every matched surface/case/answer-order cell, subtract the frozen physical score for numerical-down from numerical-up. Average contrasts within law. Positive predicts a direct law and negative predicts an inverse law.",
+  "status": "frozen-before-second-fresh-output",
+  "study_id": "relational-contrast-confirmation-2026-07-18",
+  "success_rule": {
+    "both_surface_auc_minimum": 0.8,
+    "law_orientation_auc_minimum": 0.9,
+    "laws_total": 12,
+    "sign_accuracy_minimum": 0.8
+  }
+}

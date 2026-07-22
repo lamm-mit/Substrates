@@ -1,0 +1,57 @@
+{
+  "study_id": "graph-gauge-followup-2026-07-18",
+  "frozen_at": "2026-07-17T21:20:50-04:00",
+  "status": "post_failure_exploratory_with_frozen_endpoints",
+  "manuscript_in_scope": false,
+  "parent_protocol_sha256": "206ba0ab1045d3aa193a1cd79eece869911539985018e2ce71db5e7880eb70ea",
+  "inputs": {
+    "representations_sha256": "2451d643f94934c2ea5ef73acd06dbaf1ea58f43065a724c9190423a5be9b9dc",
+    "prompt_manifest_sha256": "da49f9d57b870404beabb7401f40a677d90d0b93d49d58170a0ab9750268d634",
+    "pair_mappings_source": "pair_mappings.csv",
+    "all_mapping_candidates_source": "all_mapping_candidates.csv"
+  },
+  "study_4a": {
+    "structured_assignments": 46656,
+    "strong_gate": {
+      "exact_p_max": 0.05,
+      "perfect_pairs_min": 10,
+      "must_beat_numeric_and_prompt_controls": true
+    }
+  },
+  "study_4b": {
+    "uniform_cycle_null_sets": 100000,
+    "score_resampling_temperature": 0.05,
+    "score_resampling_null_sets": 100000,
+    "atlas_score_null_sets": 10000,
+    "strong_gate": {
+      "cycle_p_max": 0.05,
+      "heldout_positive_pairs_min": 10,
+      "atlas_score_p_max": 0.05
+    }
+  },
+  "study_4c": {
+    "candidate_universe": "cross_variant_different_case_ordered_pairs",
+    "relation_gin_seeds": 20,
+    "relation_gin_excluded_inputs": [
+      "numeric_direction",
+      "surface_variant",
+      "prompt_text",
+      "case_id",
+      "mechanism_id",
+      "answer_words",
+      "physical_labels"
+    ],
+    "strong_nonparametric_gate": {
+      "family_auc_above_half": 6,
+      "family_signflip_p_max": 0.05,
+      "beats_prompt_and_raw_families_min": 5
+    },
+    "strong_relation_gin_gate": {
+      "family_auc_above_half": 6,
+      "positive_gin_minus_mlp_families": 6,
+      "positive_gin_minus_shuffle_families": 6,
+      "contrast_signflip_p_max": 0.05,
+      "max_permutation_audit_loss": 0.02
+    }
+  }
+}

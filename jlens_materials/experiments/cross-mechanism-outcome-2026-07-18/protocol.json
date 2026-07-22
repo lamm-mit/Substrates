@@ -1,0 +1,96 @@
+{
+  "study_id": "cross-mechanism-outcome-2026-07-18",
+  "frozen_at": "2026-07-18T01:20:00-04:00",
+  "status": "newly frozen post-hoc analysis of the inspected natural question-end cohort; no cross-mechanism outcome statistic computed before freeze",
+  "scientific_question": "Do option-free Gemma states align physical outcomes across mechanisms even when matching outcomes require opposite numerical directions?",
+  "inputs": {
+    "representations": {
+      "path": "experiments/option-free-question-end-2026-07-18/representations.npz",
+      "sha256": "2451d643f94934c2ea5ef73acd06dbaf1ea58f43065a724c9190423a5be9b9dc"
+    },
+    "raw": {
+      "path": "experiments/option-free-question-end-2026-07-18/raw.json",
+      "sha256": "f05ccdb9be78bcb452d99edc6955e10d5c6804e9fca5a5d67ad4713fff1497e8"
+    },
+    "source_protocol": {
+      "path": "experiments/option-free-question-end-2026-07-18/protocol.json",
+      "sha256": "7875f33077694e5fd774ff1b82957a33051950912dd714e4b50c9cdd47a85243"
+    },
+    "source_analysis": {
+      "path": "scripts/analyze_option_free_question_end.py",
+      "sha256": "be84b4a62580c0cf669c70a16c189e00fc3196472880f2466d2e8fda68f902b8"
+    },
+    "prompt_manifest": {
+      "path": "experiments/answer-code-binding-2026-07-17/prompt_manifest.json",
+      "sha256": "9ec1bdc3d12960cdcb2538bd214a1771d9f45ce5d1243fa4a2ab2ff3f83d8de5"
+    }
+  },
+  "cohort": {
+    "n_prompts": 72,
+    "n_families": 6,
+    "direct_response_families": [
+      "crosslink-density-modulus",
+      "dislocation-density-strength",
+      "particle-fraction-modulus"
+    ],
+    "inverse_response_families": [
+      "obstacle-spacing-orowan",
+      "pearlite-spacing-strength",
+      "porosity-modulus"
+    ],
+    "position": "question_end",
+    "n_layers": 25,
+    "n_jacobian_fits": 3
+  },
+  "primary_band_percent": [
+    38.0,
+    92.0
+  ],
+  "query": {
+    "source_prompts": 72,
+    "other_target_families": 5,
+    "target_variants": 3,
+    "candidates_per_query": 4,
+    "positive_candidates": 2,
+    "negative_candidates": 2,
+    "n_rankings": 1080
+  },
+  "primary_endpoints": [
+    "mean pairwise AUC across all 1080 cross-mechanism rankings",
+    "mean pairwise AUC across the 648 opposite-response-orientation rankings"
+  ],
+  "secondary_endpoints": [
+    "top-1 same-outcome accuracy",
+    "432 same-response-orientation rankings",
+    "15 unordered mechanism-pair results",
+    "nine surface-variant combinations per mechanism pair",
+    "all 25 layers with max-over-layer correction",
+    "three individual Jacobian fits",
+    "direct decoder-basis and raw states",
+    "word and character TF-IDF",
+    "future answer-order and numerical-direction controls"
+  ],
+  "null": {
+    "type": "exact balanced mechanism-response-orientation assignment",
+    "n_assignments": 20,
+    "construction": "choose three of six mechanisms as direct response; derive every prompt outcome from numeric direction XOR mechanism orientation",
+    "minimum_attainable_p": 0.05
+  },
+  "success_rule": {
+    "strong": "overall and counter-numeric Jacobian AUC > 0.5 with exact p <= 0.05, and at least 6/9 opposite-orientation mechanism-pair AUCs > 0.5",
+    "numeric_compatible": "overall passes but counter-numeric fails",
+    "partial": "counter-numeric passes but overall fails, or breadth fails",
+    "none": "neither endpoint passes",
+    "jacobian_specific": "paired mechanism-pair-bootstrap 95% interval for Jacobian minus direct excludes zero positively"
+  },
+  "bootstrap": {
+    "n_resamples": 30000,
+    "seed": 20260720,
+    "unit": "15 unordered mechanism pairs"
+  },
+  "guardrails": [
+    "post-hoc analysis of previously inspected cohort",
+    "all prompts, pairs, variants, layers, fits, and negative results retained",
+    "positive observational geometry is not causal use or literal chain of thought"
+  ]
+}

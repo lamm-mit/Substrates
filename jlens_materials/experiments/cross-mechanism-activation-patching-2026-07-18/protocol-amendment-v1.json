@@ -1,0 +1,46 @@
+{
+  "study_id": "cross-mechanism-activation-patching-2026-07-18",
+  "amendment_id": "structured-donor-label-null-v1",
+  "frozen_at": "2026-07-17T18:16:50-04:00",
+  "timing": "Frozen while the protocol-bound model run was still executing, before raw.json was complete and before any patching endpoint, subset mean, p-value, confidence interval, or figure was calculated or inspected.",
+  "base_protocol": {
+    "path": "experiments/cross-mechanism-activation-patching-2026-07-18/protocol.json",
+    "sha256": "a3d41ff944b9c602ce87fa55d6efcfb238353fa7cd4a2837c56d1344091c0f57"
+  },
+  "analysis_implementation": {
+    "path": "scripts/analyze_cross_mechanism_activation_patching.py",
+    "sha256": "cfa4bb5fd1a38b5a1cce36ad6f9fbccc331c92a89aa764e8526d3a78d081b29d"
+  },
+  "reason": "The 15 unordered mechanism-pair effects reuse the same six mechanism families. Pair-level sign flips alone may treat dependent graph edges too optimistically. A balanced donor-case randomization respects the shared-family structure.",
+  "added_exact_null": {
+    "unit_reassigned": "the four anchor donor cases within each mechanism family",
+    "assignment": "choose any two of four donor cases as positive outcome and the other two as negative outcome",
+    "preserved": [
+      "all receiver prompts",
+      "all donor states and patched outputs",
+      "all donor and receiver mechanism identities",
+      "all answer vocabularies",
+      "all response-orientation labels",
+      "all layers",
+    "all state distances"
+    ],
+    "n_assignments_per_family": 6,
+    "n_families": 6,
+    "n_exact_assignments": 46656,
+    "test": "two-sided absolute mean at least as large as observed",
+    "subsets": [
+      "all mechanism pairs",
+      "cross-answer-vocabulary pairs",
+      "opposite-response-orientation pairs",
+      "pairs satisfying both controls"
+    ],
+    "self_check": "The analysis must locate the observed donor-label assignment inside the 46,656-assignment null and reproduce every observed subset endpoint exactly."
+  },
+  "revised_success_rule": "Every inferential gate in the base protocol must pass both its original pair-sign exact test and the new structured donor-label exact test at p <= 0.05. Donor-family breadth is unchanged. This amendment can only make the strong-evidence rule more conservative.",
+  "retained_outputs": [
+    "the original pair-sign exact tests",
+    "pair bootstrap intervals",
+    "all pair, donor-family, layer, and negative results"
+  ],
+  "scientific_intervention_change": "none"
+}

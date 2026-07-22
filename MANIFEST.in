@@ -1,0 +1,10 @@
+include README.md LICENSE NOTICE CITATION.cff environment.yml
+include jlens_materials/README.md
+recursive-include jlens_materials/prompts *.json *.md
+recursive-include jlens_materials/experiments *.md *protocol*.json
+recursive-include jlens_materials/experiments prompt_manifest.json *preregistration*.json *preregistered*.json *preflight.json *prompt_inventory.*
+recursive-include jlens_materials/scripts *.py *.sh
+recursive-include jlens_materials/_vendor_jlens/jlens/data slice_vis.html
+recursive-include tests *.py
+global-exclude .DS_Store *.py[cod]
+prune __pycache__

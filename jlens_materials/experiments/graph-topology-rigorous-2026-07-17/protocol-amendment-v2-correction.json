@@ -1,0 +1,14 @@
+{
+  "study_id": "graph-topology-rigorous-2026-07-17-amendment-v2-correction",
+  "status": "Correction frozen after the first v2 execution halted on a design invariant and before any v2 endpoint was computed",
+  "frozen_utc": "2026-07-17T19:29:19Z",
+  "v2_protocol_sha256": "0ab5647292ecfd41ba7691ea270b828cd4e1aab4fac412d63bc6b7b2ea1df01a",
+  "failed_v2_script_sha256": "a5d70e2a4d555ac175f8dcfc8b5ace39e40259506bcdacd4b57c3d1517cde640",
+  "reason": "The v2 amendment incorrectly described the lexical counterfactual as carrying the same outcome label as the anchor and paraphrase. The archived manifest shows that it intentionally reverses both numeric direction and physical outcome. The first execution stopped on this mismatch before producing v2 statistics.",
+  "corrected_endpoints": [
+    "Enumerate 6^6 = 46,656 balanced base-case assignments. Within each material case, assign the same base label to anchor and physics paraphrase and the opposite label to the lexical counterfactual. This preserves the registered sign transformation.",
+    "For every source and target surface variant, rank all three eligible different-case candidates. Because the counterfactual transformation produces either one or two same-outcome candidates, report top-ranked outcome accuracy, reciprocal rank of the first same-outcome candidate, and pairwise AUC across every same-outcome versus different-outcome candidate pair.",
+    "Use pairwise AUC=0.5 as the threshold-free chance reference and report leave-one-mechanism-out AUC ranges."
+  ],
+  "interpretation_rule": "The correction supersedes only the invalid same-label and unique-positive assumptions in v2. All v2 motivation, method comparisons, and disclosure as post-hoc robustness analysis remain unchanged."
+}

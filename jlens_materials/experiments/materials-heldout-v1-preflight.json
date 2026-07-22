@@ -1,0 +1,128 @@
+{
+  "status": "pass",
+  "executed_before_heldout_lens_outputs": true,
+  "manifest": "prompts/materials-heldout-v1-preregistered.json",
+  "manifest_sha256": "8c034cf33d287d379fddf842971914ec035a22b9e31d29f457258bf85c52e203",
+  "generator_sha256": "22c2e8dcf0f8788db74e4458e9c1be48c2349af24a5f376f6aaad5736286d9f9",
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "tokenizer_class": "GemmaTokenizer",
+  "prompt_count": 50,
+  "unique_slug_count": 50,
+  "family_counts": {
+    "boundary-attack": 5,
+    "cleavage": 5,
+    "cyclic": 5,
+    "ductile": 5,
+    "high-temperature-deformation": 5,
+    "hot-air-surface-layer": 5,
+    "line-defect-motion": 5,
+    "notch-resistance": 5,
+    "particle-strengthening": 5,
+    "rapid-transformation": 5
+  },
+  "same_family_set_as_development": true,
+  "structural_errors": [],
+  "invalid_fields": [],
+  "tokenizer_resolved_input_leaks": [],
+  "unresolved_single_token_terms": [
+    {
+      "slug": "heldout-v1-assoc-cleavage-01",
+      "term": "transgranular"
+    },
+    {
+      "slug": "heldout-v1-assoc-cleavage-02",
+      "term": "transgranular"
+    },
+    {
+      "slug": "heldout-v1-assoc-cleavage-03",
+      "term": "transgranular"
+    },
+    {
+      "slug": "heldout-v1-assoc-cleavage-04",
+      "term": "transgranular"
+    },
+    {
+      "slug": "heldout-v1-assoc-cleavage-05",
+      "term": "transgranular"
+    },
+    {
+      "slug": "heldout-v1-assoc-rapid-transformation-01",
+      "term": "martensite"
+    },
+    {
+      "slug": "heldout-v1-assoc-rapid-transformation-02",
+      "term": "martensite"
+    },
+    {
+      "slug": "heldout-v1-assoc-rapid-transformation-03",
+      "term": "martensite"
+    },
+    {
+      "slug": "heldout-v1-assoc-rapid-transformation-04",
+      "term": "martensite"
+    },
+    {
+      "slug": "heldout-v1-assoc-rapid-transformation-05",
+      "term": "martensite"
+    }
+  ],
+  "exact_development_prompt_duplicates": [],
+  "development_overlap": {
+    "metric": "maximum pairwise Jaccard similarity of lowercase word 5-gram sets",
+    "mean": 0.0061005888889373635,
+    "maximum": 0.09523809523809523,
+    "per_prompt": {
+      "heldout-v1-assoc-ductile-01": 0.0,
+      "heldout-v1-assoc-ductile-02": 0.0,
+      "heldout-v1-assoc-ductile-03": 0.0,
+      "heldout-v1-assoc-ductile-04": 0.0,
+      "heldout-v1-assoc-ductile-05": 0.0,
+      "heldout-v1-assoc-boundary-attack-01": 0.0,
+      "heldout-v1-assoc-boundary-attack-02": 0.0,
+      "heldout-v1-assoc-boundary-attack-03": 0.024390243902439025,
+      "heldout-v1-assoc-boundary-attack-04": 0.0,
+      "heldout-v1-assoc-boundary-attack-05": 0.0,
+      "heldout-v1-assoc-cyclic-01": 0.0,
+      "heldout-v1-assoc-cyclic-02": 0.0,
+      "heldout-v1-assoc-cyclic-03": 0.0,
+      "heldout-v1-assoc-cyclic-04": 0.0,
+      "heldout-v1-assoc-cyclic-05": 0.0,
+      "heldout-v1-assoc-cleavage-01": 0.0,
+      "heldout-v1-assoc-cleavage-02": 0.0,
+      "heldout-v1-assoc-cleavage-03": 0.0,
+      "heldout-v1-assoc-cleavage-04": 0.0,
+      "heldout-v1-assoc-cleavage-05": 0.0,
+      "heldout-v1-assoc-high-temperature-deformation-01": 0.0,
+      "heldout-v1-assoc-high-temperature-deformation-02": 0.0,
+      "heldout-v1-assoc-high-temperature-deformation-03": 0.018867924528301886,
+      "heldout-v1-assoc-high-temperature-deformation-04": 0.0,
+      "heldout-v1-assoc-high-temperature-deformation-05": 0.0,
+      "heldout-v1-assoc-particle-strengthening-01": 0.0,
+      "heldout-v1-assoc-particle-strengthening-02": 0.0,
+      "heldout-v1-assoc-particle-strengthening-03": 0.0,
+      "heldout-v1-assoc-particle-strengthening-04": 0.0,
+      "heldout-v1-assoc-particle-strengthening-05": 0.0,
+      "heldout-v1-assoc-rapid-transformation-01": 0.0,
+      "heldout-v1-assoc-rapid-transformation-02": 0.09523809523809523,
+      "heldout-v1-assoc-rapid-transformation-03": 0.0,
+      "heldout-v1-assoc-rapid-transformation-04": 0.06521739130434782,
+      "heldout-v1-assoc-rapid-transformation-05": 0.0,
+      "heldout-v1-assoc-line-defect-motion-01": 0.02631578947368421,
+      "heldout-v1-assoc-line-defect-motion-02": 0.0,
+      "heldout-v1-assoc-line-defect-motion-03": 0.075,
+      "heldout-v1-assoc-line-defect-motion-04": 0.0,
+      "heldout-v1-assoc-line-defect-motion-05": 0.0,
+      "heldout-v1-assoc-notch-resistance-01": 0.0,
+      "heldout-v1-assoc-notch-resistance-02": 0.0,
+      "heldout-v1-assoc-notch-resistance-03": 0.0,
+      "heldout-v1-assoc-notch-resistance-04": 0.0,
+      "heldout-v1-assoc-notch-resistance-05": 0.0,
+      "heldout-v1-assoc-hot-air-surface-layer-01": 0.0,
+      "heldout-v1-assoc-hot-air-surface-layer-02": 0.0,
+      "heldout-v1-assoc-hot-air-surface-layer-03": 0.0,
+      "heldout-v1-assoc-hot-air-surface-layer-04": 0.0,
+      "heldout-v1-assoc-hot-air-surface-layer-05": 0.0
+    }
+  }
+}

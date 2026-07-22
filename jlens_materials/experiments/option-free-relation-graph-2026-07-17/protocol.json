@@ -1,0 +1,98 @@
+{
+  "study_id": "option-free-relation-graph-2026-07-17",
+  "frozen_at": "2026-07-17T23:55:00-04:00",
+  "status": "newly frozen post-hoc analysis of archived and previously inspected representations; no option-free graph output inspected before freeze",
+  "scientific_question": "Before an answer vocabulary is supplied, do Gemma states place different material cases with the same signed physical consequence nearer to one another than cases with the opposite consequence?",
+  "inputs": {
+    "representations": {
+      "path": "experiments/answer-code-binding-2026-07-17/representations.npz",
+      "sha256": "aa226a72f47c4758290627e00908f8e2a85a0de4c5d16ec41551e3da89092a63"
+    },
+    "prompt_manifest": {
+      "path": "experiments/answer-code-binding-2026-07-17/prompt_manifest.json",
+      "sha256": "9ec1bdc3d12960cdcb2538bd214a1771d9f45ce5d1243fa4a2ab2ff3f83d8de5"
+    },
+    "source_protocol": {
+      "path": "experiments/answer-code-binding-2026-07-17/protocol.json",
+      "sha256": "41b19f84e31cc123cc90e98ca6058cd269addf83f433c0c7a519cf1724df08c3"
+    },
+    "reused_graph_implementation": {
+      "path": "scripts/analyze_graph_topology_rigorous.py",
+      "sha256": "4737adf18db3c2eba6fd4cf01da8f43c660abb910d49b757c890c0c2be65540e"
+    }
+  },
+  "cohort": {
+    "n_prompts": 72,
+    "n_families": 6,
+    "n_cases_per_family": 4,
+    "variants": [
+      "anchor",
+      "physics_paraphrase",
+      "lexical_counterfactual"
+    ],
+    "positions": [
+      "checkpoint",
+      "final_prompt"
+    ],
+    "primary_position": "checkpoint",
+    "n_layers": 25,
+    "n_jacobian_fits": 3
+  },
+  "bands_percent": {
+    "primary": [
+      38.0,
+      92.0
+    ],
+    "late_secondary": [
+      80.0,
+      96.0
+    ]
+  },
+  "graph": {
+    "candidate_block": "same mechanism family",
+    "exclude_same_variant": true,
+    "exclude_same_material_case": true,
+    "neighbors_per_other_variant": 1,
+    "n_directed_edges": 144,
+    "correct_edge": "same registered physical outcome"
+  },
+  "primary_endpoints": [
+    "checkpoint Jacobian-ensemble 38--92% band directed-edge precision",
+    "checkpoint Jacobian-ensemble 38--92% band full-candidate pairwise ROC-AUC"
+  ],
+  "secondary_endpoints": [
+    "family breadth",
+    "80--96% late band",
+    "all 25 layers with max-over-layer correction",
+    "three individual Jacobian fits",
+    "direct decoder-basis and raw states",
+    "checkpoint versus final-prompt descriptive comparison",
+    "word and character TF-IDF of option-free stems",
+    "future answer-order negative control",
+    "numerical-direction oracle"
+  ],
+  "null": {
+    "type": "exact balanced case-preserving structured null",
+    "n_assignments": 46656,
+    "construction": "within each family choose two of four cases as positive; anchor and paraphrase agree; counterfactual flips",
+    "tail": "upper",
+    "threshold": 0.05
+  },
+  "interpretation_rule": {
+    "strong": "both graph precision and full-candidate AUC have exact p <= 0.05, AUC > 0.5, and at least 4/6 family AUCs exceed 0.5",
+    "partial": "exactly one primary endpoint passes, or both pass but fewer than 4/6 family AUCs exceed 0.5",
+    "none": "neither primary endpoint passes",
+    "jacobian_specific": "paired two-stage 95% interval for Jacobian-minus-direct family contrast excludes zero positively"
+  },
+  "bootstrap": {
+    "n_resamples": 30000,
+    "seed": 20260718,
+    "unit": "resample six families, then source queries within selected family"
+  },
+  "guardrails": [
+    "post-hoc archived-data analysis",
+    "checkpoint has seen the full scientific question and common marker but no answer word, mapping, or response instruction",
+    "all prompts, layers, families, fits, edges, and negative results retained",
+    "no literal chain-of-thought, consciousness, complete ontology, or causal-use claim"
+  ]
+}

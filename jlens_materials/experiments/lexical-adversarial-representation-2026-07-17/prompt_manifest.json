@@ -1,0 +1,1949 @@
+{
+  "study_id": "lexical-adversarial-representation-2026-07-17",
+  "created_at": "2026-07-17T11:46:23.387509+00:00",
+  "design": "Each frozen triplet contains an anchor, a physically equivalent paraphrase with different wording and converted units, and a near-verbatim numerical reversal with the opposite physical answer.",
+  "families": [
+    {
+      "family_id": "grain-size-strength",
+      "family_name": "Grain size and yield strength",
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "positive_numeric_direction": "decrease"
+    },
+    {
+      "family_id": "crack-size-fracture",
+      "family_name": "Crack size and critical fracture stress",
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "positive_numeric_direction": "decrease"
+    },
+    {
+      "family_id": "temperature-diffusion",
+      "family_name": "Temperature and diffusivity",
+      "outcome_positive": "increase",
+      "outcome_negative": "decrease",
+      "positive_numeric_direction": "increase"
+    },
+    {
+      "family_id": "fiber-angle-stiffness",
+      "family_name": "Fiber angle and axial stiffness",
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "positive_numeric_direction": "decrease"
+    },
+    {
+      "family_id": "fiber-fraction-stiffness",
+      "family_name": "Fiber fraction and longitudinal stiffness",
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "positive_numeric_direction": "increase"
+    },
+    {
+      "family_id": "martensite-hardness",
+      "family_name": "Martensite fraction and hardness",
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "positive_numeric_direction": "increase"
+    }
+  ],
+  "triplets": [
+    {
+      "triplet_id": "grain-size-strength--nickel-superalloy-80-20",
+      "family_id": "grain-size-strength",
+      "case_id": "nickel-superalloy-80-20",
+      "anchor_expected_outcome": "higher",
+      "counterfactual_expected_outcome": "lower",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "grain-size-strength--nickel-superalloy-80-20--anchor",
+        "physics_paraphrase": "grain-size-strength--nickel-superalloy-80-20--physics_paraphrase",
+        "lexical_counterfactual": "grain-size-strength--nickel-superalloy-80-20--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "grain-size-strength--ferritic-stainless-60-15",
+      "family_id": "grain-size-strength",
+      "case_id": "ferritic-stainless-60-15",
+      "anchor_expected_outcome": "lower",
+      "counterfactual_expected_outcome": "higher",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "grain-size-strength--ferritic-stainless-60-15--anchor",
+        "physics_paraphrase": "grain-size-strength--ferritic-stainless-60-15--physics_paraphrase",
+        "lexical_counterfactual": "grain-size-strength--ferritic-stainless-60-15--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "grain-size-strength--aluminum-alloy-48-12",
+      "family_id": "grain-size-strength",
+      "case_id": "aluminum-alloy-48-12",
+      "anchor_expected_outcome": "higher",
+      "counterfactual_expected_outcome": "lower",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "grain-size-strength--aluminum-alloy-48-12--anchor",
+        "physics_paraphrase": "grain-size-strength--aluminum-alloy-48-12--physics_paraphrase",
+        "lexical_counterfactual": "grain-size-strength--aluminum-alloy-48-12--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "grain-size-strength--alpha-brass-36-9",
+      "family_id": "grain-size-strength",
+      "case_id": "alpha-brass-36-9",
+      "anchor_expected_outcome": "lower",
+      "counterfactual_expected_outcome": "higher",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "grain-size-strength--alpha-brass-36-9--anchor",
+        "physics_paraphrase": "grain-size-strength--alpha-brass-36-9--physics_paraphrase",
+        "lexical_counterfactual": "grain-size-strength--alpha-brass-36-9--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "crack-size-fracture--fused-silica-800-200",
+      "family_id": "crack-size-fracture",
+      "case_id": "fused-silica-800-200",
+      "anchor_expected_outcome": "higher",
+      "counterfactual_expected_outcome": "lower",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "crack-size-fracture--fused-silica-800-200--anchor",
+        "physics_paraphrase": "crack-size-fracture--fused-silica-800-200--physics_paraphrase",
+        "lexical_counterfactual": "crack-size-fracture--fused-silica-800-200--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "crack-size-fracture--alumina-600-150",
+      "family_id": "crack-size-fracture",
+      "case_id": "alumina-600-150",
+      "anchor_expected_outcome": "lower",
+      "counterfactual_expected_outcome": "higher",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "crack-size-fracture--alumina-600-150--anchor",
+        "physics_paraphrase": "crack-size-fracture--alumina-600-150--physics_paraphrase",
+        "lexical_counterfactual": "crack-size-fracture--alumina-600-150--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "crack-size-fracture--silicon-carbide-400-100",
+      "family_id": "crack-size-fracture",
+      "case_id": "silicon-carbide-400-100",
+      "anchor_expected_outcome": "higher",
+      "counterfactual_expected_outcome": "lower",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "crack-size-fracture--silicon-carbide-400-100--anchor",
+        "physics_paraphrase": "crack-size-fracture--silicon-carbide-400-100--physics_paraphrase",
+        "lexical_counterfactual": "crack-size-fracture--silicon-carbide-400-100--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "crack-size-fracture--soda-lime-glass-1000-250",
+      "family_id": "crack-size-fracture",
+      "case_id": "soda-lime-glass-1000-250",
+      "anchor_expected_outcome": "lower",
+      "counterfactual_expected_outcome": "higher",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "crack-size-fracture--soda-lime-glass-1000-250--anchor",
+        "physics_paraphrase": "crack-size-fracture--soda-lime-glass-1000-250--physics_paraphrase",
+        "lexical_counterfactual": "crack-size-fracture--soda-lime-glass-1000-250--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "temperature-diffusion--nickel-self-1300-1100",
+      "family_id": "temperature-diffusion",
+      "case_id": "nickel-self-1300-1100",
+      "anchor_expected_outcome": "increase",
+      "counterfactual_expected_outcome": "decrease",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "temperature-diffusion--nickel-self-1300-1100--anchor",
+        "physics_paraphrase": "temperature-diffusion--nickel-self-1300-1100--physics_paraphrase",
+        "lexical_counterfactual": "temperature-diffusion--nickel-self-1300-1100--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "temperature-diffusion--carbon-austenite-1250-1050",
+      "family_id": "temperature-diffusion",
+      "case_id": "carbon-austenite-1250-1050",
+      "anchor_expected_outcome": "decrease",
+      "counterfactual_expected_outcome": "increase",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "temperature-diffusion--carbon-austenite-1250-1050--anchor",
+        "physics_paraphrase": "temperature-diffusion--carbon-austenite-1250-1050--physics_paraphrase",
+        "lexical_counterfactual": "temperature-diffusion--carbon-austenite-1250-1050--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "temperature-diffusion--oxygen-ysz-1000-800",
+      "family_id": "temperature-diffusion",
+      "case_id": "oxygen-ysz-1000-800",
+      "anchor_expected_outcome": "increase",
+      "counterfactual_expected_outcome": "decrease",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "temperature-diffusion--oxygen-ysz-1000-800--anchor",
+        "physics_paraphrase": "temperature-diffusion--oxygen-ysz-1000-800--physics_paraphrase",
+        "lexical_counterfactual": "temperature-diffusion--oxygen-ysz-1000-800--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "temperature-diffusion--lithium-lco-420-300",
+      "family_id": "temperature-diffusion",
+      "case_id": "lithium-lco-420-300",
+      "anchor_expected_outcome": "decrease",
+      "counterfactual_expected_outcome": "increase",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "temperature-diffusion--lithium-lco-420-300--anchor",
+        "physics_paraphrase": "temperature-diffusion--lithium-lco-420-300--physics_paraphrase",
+        "lexical_counterfactual": "temperature-diffusion--lithium-lco-420-300--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "fiber-angle-stiffness--carbon-epoxy-80-10",
+      "family_id": "fiber-angle-stiffness",
+      "case_id": "carbon-epoxy-80-10",
+      "anchor_expected_outcome": "greater",
+      "counterfactual_expected_outcome": "smaller",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "fiber-angle-stiffness--carbon-epoxy-80-10--anchor",
+        "physics_paraphrase": "fiber-angle-stiffness--carbon-epoxy-80-10--physics_paraphrase",
+        "lexical_counterfactual": "fiber-angle-stiffness--carbon-epoxy-80-10--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "fiber-angle-stiffness--glass-epoxy-75-15",
+      "family_id": "fiber-angle-stiffness",
+      "case_id": "glass-epoxy-75-15",
+      "anchor_expected_outcome": "smaller",
+      "counterfactual_expected_outcome": "greater",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "fiber-angle-stiffness--glass-epoxy-75-15--anchor",
+        "physics_paraphrase": "fiber-angle-stiffness--glass-epoxy-75-15--physics_paraphrase",
+        "lexical_counterfactual": "fiber-angle-stiffness--glass-epoxy-75-15--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "fiber-angle-stiffness--aramid-epoxy-70-20",
+      "family_id": "fiber-angle-stiffness",
+      "case_id": "aramid-epoxy-70-20",
+      "anchor_expected_outcome": "greater",
+      "counterfactual_expected_outcome": "smaller",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "fiber-angle-stiffness--aramid-epoxy-70-20--anchor",
+        "physics_paraphrase": "fiber-angle-stiffness--aramid-epoxy-70-20--physics_paraphrase",
+        "lexical_counterfactual": "fiber-angle-stiffness--aramid-epoxy-70-20--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "fiber-angle-stiffness--sic-titanium-65-5",
+      "family_id": "fiber-angle-stiffness",
+      "case_id": "sic-titanium-65-5",
+      "anchor_expected_outcome": "smaller",
+      "counterfactual_expected_outcome": "greater",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "fiber-angle-stiffness--sic-titanium-65-5--anchor",
+        "physics_paraphrase": "fiber-angle-stiffness--sic-titanium-65-5--physics_paraphrase",
+        "lexical_counterfactual": "fiber-angle-stiffness--sic-titanium-65-5--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "fiber-fraction-stiffness--carbon-peek-55-25",
+      "family_id": "fiber-fraction-stiffness",
+      "case_id": "carbon-peek-55-25",
+      "anchor_expected_outcome": "greater",
+      "counterfactual_expected_outcome": "smaller",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "fiber-fraction-stiffness--carbon-peek-55-25--anchor",
+        "physics_paraphrase": "fiber-fraction-stiffness--carbon-peek-55-25--physics_paraphrase",
+        "lexical_counterfactual": "fiber-fraction-stiffness--carbon-peek-55-25--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "fiber-fraction-stiffness--glass-polyester-50-20",
+      "family_id": "fiber-fraction-stiffness",
+      "case_id": "glass-polyester-50-20",
+      "anchor_expected_outcome": "smaller",
+      "counterfactual_expected_outcome": "greater",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "fiber-fraction-stiffness--glass-polyester-50-20--anchor",
+        "physics_paraphrase": "fiber-fraction-stiffness--glass-polyester-50-20--physics_paraphrase",
+        "lexical_counterfactual": "fiber-fraction-stiffness--glass-polyester-50-20--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "fiber-fraction-stiffness--aramid-epoxy-45-15",
+      "family_id": "fiber-fraction-stiffness",
+      "case_id": "aramid-epoxy-45-15",
+      "anchor_expected_outcome": "greater",
+      "counterfactual_expected_outcome": "smaller",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "fiber-fraction-stiffness--aramid-epoxy-45-15--anchor",
+        "physics_paraphrase": "fiber-fraction-stiffness--aramid-epoxy-45-15--physics_paraphrase",
+        "lexical_counterfactual": "fiber-fraction-stiffness--aramid-epoxy-45-15--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "fiber-fraction-stiffness--sic-titanium-40-10",
+      "family_id": "fiber-fraction-stiffness",
+      "case_id": "sic-titanium-40-10",
+      "anchor_expected_outcome": "smaller",
+      "counterfactual_expected_outcome": "greater",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "fiber-fraction-stiffness--sic-titanium-40-10--anchor",
+        "physics_paraphrase": "fiber-fraction-stiffness--sic-titanium-40-10--physics_paraphrase",
+        "lexical_counterfactual": "fiber-fraction-stiffness--sic-titanium-40-10--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "martensite-hardness--medium-carbon-steel-80-20",
+      "family_id": "martensite-hardness",
+      "case_id": "medium-carbon-steel-80-20",
+      "anchor_expected_outcome": "higher",
+      "counterfactual_expected_outcome": "lower",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "martensite-hardness--medium-carbon-steel-80-20--anchor",
+        "physics_paraphrase": "martensite-hardness--medium-carbon-steel-80-20--physics_paraphrase",
+        "lexical_counterfactual": "martensite-hardness--medium-carbon-steel-80-20--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "martensite-hardness--dual-phase-steel-60-15",
+      "family_id": "martensite-hardness",
+      "case_id": "dual-phase-steel-60-15",
+      "anchor_expected_outcome": "lower",
+      "counterfactual_expected_outcome": "higher",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "martensite-hardness--dual-phase-steel-60-15--anchor",
+        "physics_paraphrase": "martensite-hardness--dual-phase-steel-60-15--physics_paraphrase",
+        "lexical_counterfactual": "martensite-hardness--dual-phase-steel-60-15--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "martensite-hardness--low-alloy-steel-70-10",
+      "family_id": "martensite-hardness",
+      "case_id": "low-alloy-steel-70-10",
+      "anchor_expected_outcome": "higher",
+      "counterfactual_expected_outcome": "lower",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "martensite-hardness--low-alloy-steel-70-10--anchor",
+        "physics_paraphrase": "martensite-hardness--low-alloy-steel-70-10--physics_paraphrase",
+        "lexical_counterfactual": "martensite-hardness--low-alloy-steel-70-10--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "martensite-hardness--martensitic-stainless-75-25",
+      "family_id": "martensite-hardness",
+      "case_id": "martensitic-stainless-75-25",
+      "anchor_expected_outcome": "lower",
+      "counterfactual_expected_outcome": "higher",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "martensite-hardness--martensitic-stainless-75-25--anchor",
+        "physics_paraphrase": "martensite-hardness--martensitic-stainless-75-25--physics_paraphrase",
+        "lexical_counterfactual": "martensite-hardness--martensitic-stainless-75-25--lexical_counterfactual"
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "prompt_id": "grain-size-strength--nickel-superalloy-80-20--anchor",
+      "triplet_id": "grain-size-strength--nickel-superalloy-80-20",
+      "family_id": "grain-size-strength",
+      "family_name": "Grain size and yield strength",
+      "case_id": "nickel-superalloy-80-20",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 80,
+      "numeric_end": 20,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A conventional polycrystalline wrought nickel-based superalloy changes from 80-micrometer to 20-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength?",
+      "user": "A conventional polycrystalline wrought nickel-based superalloy changes from 80-micrometer to 20-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "grain-size-strength--nickel-superalloy-80-20--physics_paraphrase",
+      "triplet_id": "grain-size-strength--nickel-superalloy-80-20",
+      "family_id": "grain-size-strength",
+      "family_name": "Grain size and yield strength",
+      "case_id": "nickel-superalloy-80-20",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 80,
+      "numeric_end": 20,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "In the same wrought nickel-based superalloy, no microstructural variable changes except mean crystallite diameter. It contracts from 0.08 millimeters to 0.02 millimeters. The alloy remains in the conventional Hall-Petch regime. Select the resulting trend in flow strength.",
+      "user": "In the same wrought nickel-based superalloy, no microstructural variable changes except mean crystallite diameter. It contracts from 0.08 millimeters to 0.02 millimeters. The alloy remains in the conventional Hall-Petch regime. Select the resulting trend in flow strength. Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "grain-size-strength--nickel-superalloy-80-20--lexical_counterfactual",
+      "triplet_id": "grain-size-strength--nickel-superalloy-80-20",
+      "family_id": "grain-size-strength",
+      "family_name": "Grain size and yield strength",
+      "case_id": "nickel-superalloy-80-20",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 20,
+      "numeric_end": 80,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A conventional polycrystalline wrought nickel-based superalloy changes from 20-micrometer to 80-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength?",
+      "user": "A conventional polycrystalline wrought nickel-based superalloy changes from 20-micrometer to 80-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "grain-size-strength--ferritic-stainless-60-15--anchor",
+      "triplet_id": "grain-size-strength--ferritic-stainless-60-15",
+      "family_id": "grain-size-strength",
+      "family_name": "Grain size and yield strength",
+      "case_id": "ferritic-stainless-60-15",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 15,
+      "numeric_end": 60,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A conventional polycrystalline ferritic stainless steel changes from 15-micrometer to 60-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength?",
+      "user": "A conventional polycrystalline ferritic stainless steel changes from 15-micrometer to 60-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "grain-size-strength--ferritic-stainless-60-15--physics_paraphrase",
+      "triplet_id": "grain-size-strength--ferritic-stainless-60-15",
+      "family_id": "grain-size-strength",
+      "family_name": "Grain size and yield strength",
+      "case_id": "ferritic-stainless-60-15",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 15,
+      "numeric_end": 60,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "In the same ferritic stainless steel, no microstructural variable changes except mean crystallite diameter. It expands from 0.015 millimeters to 0.06 millimeters. The alloy remains in the conventional Hall-Petch regime. Select the resulting trend in flow strength.",
+      "user": "In the same ferritic stainless steel, no microstructural variable changes except mean crystallite diameter. It expands from 0.015 millimeters to 0.06 millimeters. The alloy remains in the conventional Hall-Petch regime. Select the resulting trend in flow strength. Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "grain-size-strength--ferritic-stainless-60-15--lexical_counterfactual",
+      "triplet_id": "grain-size-strength--ferritic-stainless-60-15",
+      "family_id": "grain-size-strength",
+      "family_name": "Grain size and yield strength",
+      "case_id": "ferritic-stainless-60-15",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 60,
+      "numeric_end": 15,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A conventional polycrystalline ferritic stainless steel changes from 60-micrometer to 15-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength?",
+      "user": "A conventional polycrystalline ferritic stainless steel changes from 60-micrometer to 15-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "grain-size-strength--aluminum-alloy-48-12--anchor",
+      "triplet_id": "grain-size-strength--aluminum-alloy-48-12",
+      "family_id": "grain-size-strength",
+      "family_name": "Grain size and yield strength",
+      "case_id": "aluminum-alloy-48-12",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 48,
+      "numeric_end": 12,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A conventional polycrystalline precipitation-hardened aluminum alloy changes from 48-micrometer to 12-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength?",
+      "user": "A conventional polycrystalline precipitation-hardened aluminum alloy changes from 48-micrometer to 12-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "grain-size-strength--aluminum-alloy-48-12--physics_paraphrase",
+      "triplet_id": "grain-size-strength--aluminum-alloy-48-12",
+      "family_id": "grain-size-strength",
+      "family_name": "Grain size and yield strength",
+      "case_id": "aluminum-alloy-48-12",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 48,
+      "numeric_end": 12,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "In the same precipitation-hardened aluminum alloy, no microstructural variable changes except mean crystallite diameter. It contracts from 0.048 millimeters to 0.012 millimeters. The alloy remains in the conventional Hall-Petch regime. Select the resulting trend in flow strength.",
+      "user": "In the same precipitation-hardened aluminum alloy, no microstructural variable changes except mean crystallite diameter. It contracts from 0.048 millimeters to 0.012 millimeters. The alloy remains in the conventional Hall-Petch regime. Select the resulting trend in flow strength. Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "grain-size-strength--aluminum-alloy-48-12--lexical_counterfactual",
+      "triplet_id": "grain-size-strength--aluminum-alloy-48-12",
+      "family_id": "grain-size-strength",
+      "family_name": "Grain size and yield strength",
+      "case_id": "aluminum-alloy-48-12",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 12,
+      "numeric_end": 48,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A conventional polycrystalline precipitation-hardened aluminum alloy changes from 12-micrometer to 48-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength?",
+      "user": "A conventional polycrystalline precipitation-hardened aluminum alloy changes from 12-micrometer to 48-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "grain-size-strength--alpha-brass-36-9--anchor",
+      "triplet_id": "grain-size-strength--alpha-brass-36-9",
+      "family_id": "grain-size-strength",
+      "family_name": "Grain size and yield strength",
+      "case_id": "alpha-brass-36-9",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 9,
+      "numeric_end": 36,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A conventional polycrystalline alpha brass changes from 9-micrometer to 36-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength?",
+      "user": "A conventional polycrystalline alpha brass changes from 9-micrometer to 36-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "grain-size-strength--alpha-brass-36-9--physics_paraphrase",
+      "triplet_id": "grain-size-strength--alpha-brass-36-9",
+      "family_id": "grain-size-strength",
+      "family_name": "Grain size and yield strength",
+      "case_id": "alpha-brass-36-9",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 9,
+      "numeric_end": 36,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "In the same alpha brass, no microstructural variable changes except mean crystallite diameter. It expands from 0.009 millimeters to 0.036 millimeters. The alloy remains in the conventional Hall-Petch regime. Select the resulting trend in flow strength.",
+      "user": "In the same alpha brass, no microstructural variable changes except mean crystallite diameter. It expands from 0.009 millimeters to 0.036 millimeters. The alloy remains in the conventional Hall-Petch regime. Select the resulting trend in flow strength. Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "grain-size-strength--alpha-brass-36-9--lexical_counterfactual",
+      "triplet_id": "grain-size-strength--alpha-brass-36-9",
+      "family_id": "grain-size-strength",
+      "family_name": "Grain size and yield strength",
+      "case_id": "alpha-brass-36-9",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 36,
+      "numeric_end": 9,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A conventional polycrystalline alpha brass changes from 36-micrometer to 9-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength?",
+      "user": "A conventional polycrystalline alpha brass changes from 36-micrometer to 9-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. Relative to the initial microstructure, what happens to yield strength? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "crack-size-fracture--fused-silica-800-200--anchor",
+      "triplet_id": "crack-size-fracture--fused-silica-800-200",
+      "family_id": "crack-size-fracture",
+      "family_name": "Crack size and critical fracture stress",
+      "case_id": "fused-silica-800-200",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 0.8,
+      "numeric_end": 0.2,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A fused-silica plate contains a through crack whose half-length changes from 0.8 millimeters to 0.2 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture?",
+      "user": "A fused-silica plate contains a through crack whose half-length changes from 0.8 millimeters to 0.2 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "crack-size-fracture--fused-silica-800-200--physics_paraphrase",
+      "triplet_id": "crack-size-fracture--fused-silica-800-200",
+      "family_id": "crack-size-fracture",
+      "family_name": "Crack size and critical fracture stress",
+      "case_id": "fused-silica-800-200",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 0.8,
+      "numeric_end": 0.2,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "Keeping toughness and specimen geometry unchanged in the same fused-silica, the flaw shortens from 800 micrometers to 200 micrometers in half-length. Under Griffith scaling, select the trend in critical far-field stress.",
+      "user": "Keeping toughness and specimen geometry unchanged in the same fused-silica, the flaw shortens from 800 micrometers to 200 micrometers in half-length. Under Griffith scaling, select the trend in critical far-field stress. Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "crack-size-fracture--fused-silica-800-200--lexical_counterfactual",
+      "triplet_id": "crack-size-fracture--fused-silica-800-200",
+      "family_id": "crack-size-fracture",
+      "family_name": "Crack size and critical fracture stress",
+      "case_id": "fused-silica-800-200",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 0.2,
+      "numeric_end": 0.8,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A fused-silica plate contains a through crack whose half-length changes from 0.2 millimeters to 0.8 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture?",
+      "user": "A fused-silica plate contains a through crack whose half-length changes from 0.2 millimeters to 0.8 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "crack-size-fracture--alumina-600-150--anchor",
+      "triplet_id": "crack-size-fracture--alumina-600-150",
+      "family_id": "crack-size-fracture",
+      "family_name": "Crack size and critical fracture stress",
+      "case_id": "alumina-600-150",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 0.15,
+      "numeric_end": 0.6,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A dense alumina plate contains a through crack whose half-length changes from 0.15 millimeters to 0.6 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture?",
+      "user": "A dense alumina plate contains a through crack whose half-length changes from 0.15 millimeters to 0.6 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "crack-size-fracture--alumina-600-150--physics_paraphrase",
+      "triplet_id": "crack-size-fracture--alumina-600-150",
+      "family_id": "crack-size-fracture",
+      "family_name": "Crack size and critical fracture stress",
+      "case_id": "alumina-600-150",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 0.15,
+      "numeric_end": 0.6,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "Keeping toughness and specimen geometry unchanged in the same dense alumina, the flaw lengthens from 150 micrometers to 600 micrometers in half-length. Under Griffith scaling, select the trend in critical far-field stress.",
+      "user": "Keeping toughness and specimen geometry unchanged in the same dense alumina, the flaw lengthens from 150 micrometers to 600 micrometers in half-length. Under Griffith scaling, select the trend in critical far-field stress. Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "crack-size-fracture--alumina-600-150--lexical_counterfactual",
+      "triplet_id": "crack-size-fracture--alumina-600-150",
+      "family_id": "crack-size-fracture",
+      "family_name": "Crack size and critical fracture stress",
+      "case_id": "alumina-600-150",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 0.6,
+      "numeric_end": 0.15,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A dense alumina plate contains a through crack whose half-length changes from 0.6 millimeters to 0.15 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture?",
+      "user": "A dense alumina plate contains a through crack whose half-length changes from 0.6 millimeters to 0.15 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "crack-size-fracture--silicon-carbide-400-100--anchor",
+      "triplet_id": "crack-size-fracture--silicon-carbide-400-100",
+      "family_id": "crack-size-fracture",
+      "family_name": "Crack size and critical fracture stress",
+      "case_id": "silicon-carbide-400-100",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 0.4,
+      "numeric_end": 0.1,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A silicon-carbide plate contains a through crack whose half-length changes from 0.4 millimeters to 0.1 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture?",
+      "user": "A silicon-carbide plate contains a through crack whose half-length changes from 0.4 millimeters to 0.1 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "crack-size-fracture--silicon-carbide-400-100--physics_paraphrase",
+      "triplet_id": "crack-size-fracture--silicon-carbide-400-100",
+      "family_id": "crack-size-fracture",
+      "family_name": "Crack size and critical fracture stress",
+      "case_id": "silicon-carbide-400-100",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 0.4,
+      "numeric_end": 0.1,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "Keeping toughness and specimen geometry unchanged in the same silicon-carbide, the flaw shortens from 400 micrometers to 100 micrometers in half-length. Under Griffith scaling, select the trend in critical far-field stress.",
+      "user": "Keeping toughness and specimen geometry unchanged in the same silicon-carbide, the flaw shortens from 400 micrometers to 100 micrometers in half-length. Under Griffith scaling, select the trend in critical far-field stress. Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "crack-size-fracture--silicon-carbide-400-100--lexical_counterfactual",
+      "triplet_id": "crack-size-fracture--silicon-carbide-400-100",
+      "family_id": "crack-size-fracture",
+      "family_name": "Crack size and critical fracture stress",
+      "case_id": "silicon-carbide-400-100",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 0.1,
+      "numeric_end": 0.4,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A silicon-carbide plate contains a through crack whose half-length changes from 0.1 millimeters to 0.4 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture?",
+      "user": "A silicon-carbide plate contains a through crack whose half-length changes from 0.1 millimeters to 0.4 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "crack-size-fracture--soda-lime-glass-1000-250--anchor",
+      "triplet_id": "crack-size-fracture--soda-lime-glass-1000-250",
+      "family_id": "crack-size-fracture",
+      "family_name": "Crack size and critical fracture stress",
+      "case_id": "soda-lime-glass-1000-250",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 0.25,
+      "numeric_end": 1.0,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A soda-lime-glass plate contains a through crack whose half-length changes from 0.25 millimeters to 1 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture?",
+      "user": "A soda-lime-glass plate contains a through crack whose half-length changes from 0.25 millimeters to 1 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "crack-size-fracture--soda-lime-glass-1000-250--physics_paraphrase",
+      "triplet_id": "crack-size-fracture--soda-lime-glass-1000-250",
+      "family_id": "crack-size-fracture",
+      "family_name": "Crack size and critical fracture stress",
+      "case_id": "soda-lime-glass-1000-250",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 0.25,
+      "numeric_end": 1.0,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "Keeping toughness and specimen geometry unchanged in the same soda-lime-glass, the flaw lengthens from 250 micrometers to 1000 micrometers in half-length. Under Griffith scaling, select the trend in critical far-field stress.",
+      "user": "Keeping toughness and specimen geometry unchanged in the same soda-lime-glass, the flaw lengthens from 250 micrometers to 1000 micrometers in half-length. Under Griffith scaling, select the trend in critical far-field stress. Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "crack-size-fracture--soda-lime-glass-1000-250--lexical_counterfactual",
+      "triplet_id": "crack-size-fracture--soda-lime-glass-1000-250",
+      "family_id": "crack-size-fracture",
+      "family_name": "Crack size and critical fracture stress",
+      "case_id": "soda-lime-glass-1000-250",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 1.0,
+      "numeric_end": 0.25,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A soda-lime-glass plate contains a through crack whose half-length changes from 1 millimeters to 0.25 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture?",
+      "user": "A soda-lime-glass plate contains a through crack whose half-length changes from 1 millimeters to 0.25 millimeters while elastic modulus, fracture energy, geometry factor, thickness, and loading mode remain fixed. What happens to the remote tensile stress required for unstable fracture? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "temperature-diffusion--nickel-self-1300-1100--anchor",
+      "triplet_id": "temperature-diffusion--nickel-self-1300-1100",
+      "family_id": "temperature-diffusion",
+      "family_name": "Temperature and diffusivity",
+      "case_id": "nickel-self-1300-1100",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "increase",
+        "decrease"
+      ],
+      "outcome_positive": "increase",
+      "outcome_negative": "decrease",
+      "expected_outcome": "increase",
+      "numeric_start": 1100,
+      "numeric_end": 1300,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In single-phase nickel, temperature changes from 1100 kelvin to 1300 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of nickel atoms?",
+      "user": "In single-phase nickel, temperature changes from 1100 kelvin to 1300 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of nickel atoms? Answer exactly one lowercase word from this ordered pair: increase, decrease."
+    },
+    {
+      "prompt_id": "temperature-diffusion--nickel-self-1300-1100--physics_paraphrase",
+      "triplet_id": "temperature-diffusion--nickel-self-1300-1100",
+      "family_id": "temperature-diffusion",
+      "family_name": "Temperature and diffusivity",
+      "case_id": "nickel-self-1300-1100",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "increase",
+        "decrease"
+      ],
+      "outcome_positive": "increase",
+      "outcome_negative": "decrease",
+      "expected_outcome": "increase",
+      "numeric_start": 1100,
+      "numeric_end": 1300,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "Keeping the activation barrier and prefactor unchanged for nickel atoms in the same nickel, the specimen is heated from 826.85 degrees Celsius to 1026.85 degrees Celsius. Under Arrhenius behavior, select the trend in diffusivity.",
+      "user": "Keeping the activation barrier and prefactor unchanged for nickel atoms in the same nickel, the specimen is heated from 826.85 degrees Celsius to 1026.85 degrees Celsius. Under Arrhenius behavior, select the trend in diffusivity. Answer exactly one lowercase word from this ordered pair: increase, decrease."
+    },
+    {
+      "prompt_id": "temperature-diffusion--nickel-self-1300-1100--lexical_counterfactual",
+      "triplet_id": "temperature-diffusion--nickel-self-1300-1100",
+      "family_id": "temperature-diffusion",
+      "family_name": "Temperature and diffusivity",
+      "case_id": "nickel-self-1300-1100",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "increase",
+        "decrease"
+      ],
+      "outcome_positive": "increase",
+      "outcome_negative": "decrease",
+      "expected_outcome": "decrease",
+      "numeric_start": 1300,
+      "numeric_end": 1100,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "In single-phase nickel, temperature changes from 1300 kelvin to 1100 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of nickel atoms?",
+      "user": "In single-phase nickel, temperature changes from 1300 kelvin to 1100 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of nickel atoms? Answer exactly one lowercase word from this ordered pair: increase, decrease."
+    },
+    {
+      "prompt_id": "temperature-diffusion--carbon-austenite-1250-1050--anchor",
+      "triplet_id": "temperature-diffusion--carbon-austenite-1250-1050",
+      "family_id": "temperature-diffusion",
+      "family_name": "Temperature and diffusivity",
+      "case_id": "carbon-austenite-1250-1050",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "decrease",
+        "increase"
+      ],
+      "outcome_positive": "increase",
+      "outcome_negative": "decrease",
+      "expected_outcome": "decrease",
+      "numeric_start": 1250,
+      "numeric_end": 1050,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In single-phase austenitic iron, temperature changes from 1250 kelvin to 1050 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of interstitial carbon?",
+      "user": "In single-phase austenitic iron, temperature changes from 1250 kelvin to 1050 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of interstitial carbon? Answer exactly one lowercase word from this ordered pair: decrease, increase."
+    },
+    {
+      "prompt_id": "temperature-diffusion--carbon-austenite-1250-1050--physics_paraphrase",
+      "triplet_id": "temperature-diffusion--carbon-austenite-1250-1050",
+      "family_id": "temperature-diffusion",
+      "family_name": "Temperature and diffusivity",
+      "case_id": "carbon-austenite-1250-1050",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "decrease",
+        "increase"
+      ],
+      "outcome_positive": "increase",
+      "outcome_negative": "decrease",
+      "expected_outcome": "decrease",
+      "numeric_start": 1250,
+      "numeric_end": 1050,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "Keeping the activation barrier and prefactor unchanged for interstitial carbon in the same austenitic iron, the specimen is cooled from 976.85 degrees Celsius to 776.85 degrees Celsius. Under Arrhenius behavior, select the trend in diffusivity.",
+      "user": "Keeping the activation barrier and prefactor unchanged for interstitial carbon in the same austenitic iron, the specimen is cooled from 976.85 degrees Celsius to 776.85 degrees Celsius. Under Arrhenius behavior, select the trend in diffusivity. Answer exactly one lowercase word from this ordered pair: decrease, increase."
+    },
+    {
+      "prompt_id": "temperature-diffusion--carbon-austenite-1250-1050--lexical_counterfactual",
+      "triplet_id": "temperature-diffusion--carbon-austenite-1250-1050",
+      "family_id": "temperature-diffusion",
+      "family_name": "Temperature and diffusivity",
+      "case_id": "carbon-austenite-1250-1050",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "decrease",
+        "increase"
+      ],
+      "outcome_positive": "increase",
+      "outcome_negative": "decrease",
+      "expected_outcome": "increase",
+      "numeric_start": 1050,
+      "numeric_end": 1250,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "In single-phase austenitic iron, temperature changes from 1050 kelvin to 1250 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of interstitial carbon?",
+      "user": "In single-phase austenitic iron, temperature changes from 1050 kelvin to 1250 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of interstitial carbon? Answer exactly one lowercase word from this ordered pair: decrease, increase."
+    },
+    {
+      "prompt_id": "temperature-diffusion--oxygen-ysz-1000-800--anchor",
+      "triplet_id": "temperature-diffusion--oxygen-ysz-1000-800",
+      "family_id": "temperature-diffusion",
+      "family_name": "Temperature and diffusivity",
+      "case_id": "oxygen-ysz-1000-800",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "increase",
+        "decrease"
+      ],
+      "outcome_positive": "increase",
+      "outcome_negative": "decrease",
+      "expected_outcome": "increase",
+      "numeric_start": 800,
+      "numeric_end": 1000,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In single-phase yttria-stabilized zirconia, temperature changes from 800 kelvin to 1000 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of oxygen ions?",
+      "user": "In single-phase yttria-stabilized zirconia, temperature changes from 800 kelvin to 1000 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of oxygen ions? Answer exactly one lowercase word from this ordered pair: increase, decrease."
+    },
+    {
+      "prompt_id": "temperature-diffusion--oxygen-ysz-1000-800--physics_paraphrase",
+      "triplet_id": "temperature-diffusion--oxygen-ysz-1000-800",
+      "family_id": "temperature-diffusion",
+      "family_name": "Temperature and diffusivity",
+      "case_id": "oxygen-ysz-1000-800",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "increase",
+        "decrease"
+      ],
+      "outcome_positive": "increase",
+      "outcome_negative": "decrease",
+      "expected_outcome": "increase",
+      "numeric_start": 800,
+      "numeric_end": 1000,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "Keeping the activation barrier and prefactor unchanged for oxygen ions in the same yttria-stabilized zirconia, the specimen is heated from 526.85 degrees Celsius to 726.85 degrees Celsius. Under Arrhenius behavior, select the trend in diffusivity.",
+      "user": "Keeping the activation barrier and prefactor unchanged for oxygen ions in the same yttria-stabilized zirconia, the specimen is heated from 526.85 degrees Celsius to 726.85 degrees Celsius. Under Arrhenius behavior, select the trend in diffusivity. Answer exactly one lowercase word from this ordered pair: increase, decrease."
+    },
+    {
+      "prompt_id": "temperature-diffusion--oxygen-ysz-1000-800--lexical_counterfactual",
+      "triplet_id": "temperature-diffusion--oxygen-ysz-1000-800",
+      "family_id": "temperature-diffusion",
+      "family_name": "Temperature and diffusivity",
+      "case_id": "oxygen-ysz-1000-800",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "increase",
+        "decrease"
+      ],
+      "outcome_positive": "increase",
+      "outcome_negative": "decrease",
+      "expected_outcome": "decrease",
+      "numeric_start": 1000,
+      "numeric_end": 800,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "In single-phase yttria-stabilized zirconia, temperature changes from 1000 kelvin to 800 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of oxygen ions?",
+      "user": "In single-phase yttria-stabilized zirconia, temperature changes from 1000 kelvin to 800 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of oxygen ions? Answer exactly one lowercase word from this ordered pair: increase, decrease."
+    },
+    {
+      "prompt_id": "temperature-diffusion--lithium-lco-420-300--anchor",
+      "triplet_id": "temperature-diffusion--lithium-lco-420-300",
+      "family_id": "temperature-diffusion",
+      "family_name": "Temperature and diffusivity",
+      "case_id": "lithium-lco-420-300",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "decrease",
+        "increase"
+      ],
+      "outcome_positive": "increase",
+      "outcome_negative": "decrease",
+      "expected_outcome": "decrease",
+      "numeric_start": 420,
+      "numeric_end": 300,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In single-phase lithium cobalt oxide, temperature changes from 420 kelvin to 300 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of lithium ions?",
+      "user": "In single-phase lithium cobalt oxide, temperature changes from 420 kelvin to 300 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of lithium ions? Answer exactly one lowercase word from this ordered pair: decrease, increase."
+    },
+    {
+      "prompt_id": "temperature-diffusion--lithium-lco-420-300--physics_paraphrase",
+      "triplet_id": "temperature-diffusion--lithium-lco-420-300",
+      "family_id": "temperature-diffusion",
+      "family_name": "Temperature and diffusivity",
+      "case_id": "lithium-lco-420-300",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "decrease",
+        "increase"
+      ],
+      "outcome_positive": "increase",
+      "outcome_negative": "decrease",
+      "expected_outcome": "decrease",
+      "numeric_start": 420,
+      "numeric_end": 300,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "Keeping the activation barrier and prefactor unchanged for lithium ions in the same lithium cobalt oxide, the specimen is cooled from 146.85 degrees Celsius to 26.85 degrees Celsius. Under Arrhenius behavior, select the trend in diffusivity.",
+      "user": "Keeping the activation barrier and prefactor unchanged for lithium ions in the same lithium cobalt oxide, the specimen is cooled from 146.85 degrees Celsius to 26.85 degrees Celsius. Under Arrhenius behavior, select the trend in diffusivity. Answer exactly one lowercase word from this ordered pair: decrease, increase."
+    },
+    {
+      "prompt_id": "temperature-diffusion--lithium-lco-420-300--lexical_counterfactual",
+      "triplet_id": "temperature-diffusion--lithium-lco-420-300",
+      "family_id": "temperature-diffusion",
+      "family_name": "Temperature and diffusivity",
+      "case_id": "lithium-lco-420-300",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "decrease",
+        "increase"
+      ],
+      "outcome_positive": "increase",
+      "outcome_negative": "decrease",
+      "expected_outcome": "increase",
+      "numeric_start": 300,
+      "numeric_end": 420,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "In single-phase lithium cobalt oxide, temperature changes from 300 kelvin to 420 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of lithium ions?",
+      "user": "In single-phase lithium cobalt oxide, temperature changes from 300 kelvin to 420 kelvin while composition, phase, pressure, and point-defect chemistry are held fixed. What happens to the diffusion coefficient of lithium ions? Answer exactly one lowercase word from this ordered pair: decrease, increase."
+    },
+    {
+      "prompt_id": "fiber-angle-stiffness--carbon-epoxy-80-10--anchor",
+      "triplet_id": "fiber-angle-stiffness--carbon-epoxy-80-10",
+      "family_id": "fiber-angle-stiffness",
+      "family_name": "Fiber angle and axial stiffness",
+      "case_id": "carbon-epoxy-80-10",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 80,
+      "numeric_end": 10,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "In unidirectional carbon-fiber epoxy, fiber angle relative to the tensile axis changes from 80 degrees to 10 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus?",
+      "user": "In unidirectional carbon-fiber epoxy, fiber angle relative to the tensile axis changes from 80 degrees to 10 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "fiber-angle-stiffness--carbon-epoxy-80-10--physics_paraphrase",
+      "triplet_id": "fiber-angle-stiffness--carbon-epoxy-80-10",
+      "family_id": "fiber-angle-stiffness",
+      "family_name": "Fiber angle and axial stiffness",
+      "case_id": "carbon-epoxy-80-10",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 80,
+      "numeric_end": 10,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "The same carbon-fiber epoxy lamina is rotated so its reinforcement becomes more aligned with the loading direction: orientation changes from 1.396 radians to 0.175 radians. All constituent and interface properties are unchanged. Select the trend in longitudinal stiffness.",
+      "user": "The same carbon-fiber epoxy lamina is rotated so its reinforcement becomes more aligned with the loading direction: orientation changes from 1.396 radians to 0.175 radians. All constituent and interface properties are unchanged. Select the trend in longitudinal stiffness. Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "fiber-angle-stiffness--carbon-epoxy-80-10--lexical_counterfactual",
+      "triplet_id": "fiber-angle-stiffness--carbon-epoxy-80-10",
+      "family_id": "fiber-angle-stiffness",
+      "family_name": "Fiber angle and axial stiffness",
+      "case_id": "carbon-epoxy-80-10",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 10,
+      "numeric_end": 80,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In unidirectional carbon-fiber epoxy, fiber angle relative to the tensile axis changes from 10 degrees to 80 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus?",
+      "user": "In unidirectional carbon-fiber epoxy, fiber angle relative to the tensile axis changes from 10 degrees to 80 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "fiber-angle-stiffness--glass-epoxy-75-15--anchor",
+      "triplet_id": "fiber-angle-stiffness--glass-epoxy-75-15",
+      "family_id": "fiber-angle-stiffness",
+      "family_name": "Fiber angle and axial stiffness",
+      "case_id": "glass-epoxy-75-15",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 15,
+      "numeric_end": 75,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "In unidirectional glass-fiber epoxy, fiber angle relative to the tensile axis changes from 15 degrees to 75 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus?",
+      "user": "In unidirectional glass-fiber epoxy, fiber angle relative to the tensile axis changes from 15 degrees to 75 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "fiber-angle-stiffness--glass-epoxy-75-15--physics_paraphrase",
+      "triplet_id": "fiber-angle-stiffness--glass-epoxy-75-15",
+      "family_id": "fiber-angle-stiffness",
+      "family_name": "Fiber angle and axial stiffness",
+      "case_id": "glass-epoxy-75-15",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 15,
+      "numeric_end": 75,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "The same glass-fiber epoxy lamina is rotated so its reinforcement becomes farther from the loading direction: orientation changes from 0.262 radians to 1.309 radians. All constituent and interface properties are unchanged. Select the trend in longitudinal stiffness.",
+      "user": "The same glass-fiber epoxy lamina is rotated so its reinforcement becomes farther from the loading direction: orientation changes from 0.262 radians to 1.309 radians. All constituent and interface properties are unchanged. Select the trend in longitudinal stiffness. Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "fiber-angle-stiffness--glass-epoxy-75-15--lexical_counterfactual",
+      "triplet_id": "fiber-angle-stiffness--glass-epoxy-75-15",
+      "family_id": "fiber-angle-stiffness",
+      "family_name": "Fiber angle and axial stiffness",
+      "case_id": "glass-epoxy-75-15",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 75,
+      "numeric_end": 15,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In unidirectional glass-fiber epoxy, fiber angle relative to the tensile axis changes from 75 degrees to 15 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus?",
+      "user": "In unidirectional glass-fiber epoxy, fiber angle relative to the tensile axis changes from 75 degrees to 15 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "fiber-angle-stiffness--aramid-epoxy-70-20--anchor",
+      "triplet_id": "fiber-angle-stiffness--aramid-epoxy-70-20",
+      "family_id": "fiber-angle-stiffness",
+      "family_name": "Fiber angle and axial stiffness",
+      "case_id": "aramid-epoxy-70-20",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 70,
+      "numeric_end": 20,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "In unidirectional aramid-fiber epoxy, fiber angle relative to the tensile axis changes from 70 degrees to 20 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus?",
+      "user": "In unidirectional aramid-fiber epoxy, fiber angle relative to the tensile axis changes from 70 degrees to 20 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "fiber-angle-stiffness--aramid-epoxy-70-20--physics_paraphrase",
+      "triplet_id": "fiber-angle-stiffness--aramid-epoxy-70-20",
+      "family_id": "fiber-angle-stiffness",
+      "family_name": "Fiber angle and axial stiffness",
+      "case_id": "aramid-epoxy-70-20",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 70,
+      "numeric_end": 20,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "The same aramid-fiber epoxy lamina is rotated so its reinforcement becomes more aligned with the loading direction: orientation changes from 1.222 radians to 0.349 radians. All constituent and interface properties are unchanged. Select the trend in longitudinal stiffness.",
+      "user": "The same aramid-fiber epoxy lamina is rotated so its reinforcement becomes more aligned with the loading direction: orientation changes from 1.222 radians to 0.349 radians. All constituent and interface properties are unchanged. Select the trend in longitudinal stiffness. Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "fiber-angle-stiffness--aramid-epoxy-70-20--lexical_counterfactual",
+      "triplet_id": "fiber-angle-stiffness--aramid-epoxy-70-20",
+      "family_id": "fiber-angle-stiffness",
+      "family_name": "Fiber angle and axial stiffness",
+      "case_id": "aramid-epoxy-70-20",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 20,
+      "numeric_end": 70,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In unidirectional aramid-fiber epoxy, fiber angle relative to the tensile axis changes from 20 degrees to 70 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus?",
+      "user": "In unidirectional aramid-fiber epoxy, fiber angle relative to the tensile axis changes from 20 degrees to 70 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "fiber-angle-stiffness--sic-titanium-65-5--anchor",
+      "triplet_id": "fiber-angle-stiffness--sic-titanium-65-5",
+      "family_id": "fiber-angle-stiffness",
+      "family_name": "Fiber angle and axial stiffness",
+      "case_id": "sic-titanium-65-5",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 5,
+      "numeric_end": 65,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "In unidirectional silicon-carbide-fiber titanium, fiber angle relative to the tensile axis changes from 5 degrees to 65 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus?",
+      "user": "In unidirectional silicon-carbide-fiber titanium, fiber angle relative to the tensile axis changes from 5 degrees to 65 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "fiber-angle-stiffness--sic-titanium-65-5--physics_paraphrase",
+      "triplet_id": "fiber-angle-stiffness--sic-titanium-65-5",
+      "family_id": "fiber-angle-stiffness",
+      "family_name": "Fiber angle and axial stiffness",
+      "case_id": "sic-titanium-65-5",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 5,
+      "numeric_end": 65,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "The same silicon-carbide-fiber titanium lamina is rotated so its reinforcement becomes farther from the loading direction: orientation changes from 0.087 radians to 1.134 radians. All constituent and interface properties are unchanged. Select the trend in longitudinal stiffness.",
+      "user": "The same silicon-carbide-fiber titanium lamina is rotated so its reinforcement becomes farther from the loading direction: orientation changes from 0.087 radians to 1.134 radians. All constituent and interface properties are unchanged. Select the trend in longitudinal stiffness. Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "fiber-angle-stiffness--sic-titanium-65-5--lexical_counterfactual",
+      "triplet_id": "fiber-angle-stiffness--sic-titanium-65-5",
+      "family_id": "fiber-angle-stiffness",
+      "family_name": "Fiber angle and axial stiffness",
+      "case_id": "sic-titanium-65-5",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 65,
+      "numeric_end": 5,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In unidirectional silicon-carbide-fiber titanium, fiber angle relative to the tensile axis changes from 65 degrees to 5 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus?",
+      "user": "In unidirectional silicon-carbide-fiber titanium, fiber angle relative to the tensile axis changes from 65 degrees to 5 degrees while constituent moduli, fiber fraction, porosity, and interface quality remain fixed. What happens to the effective axial modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "fiber-fraction-stiffness--carbon-peek-55-25--anchor",
+      "triplet_id": "fiber-fraction-stiffness--carbon-peek-55-25",
+      "family_id": "fiber-fraction-stiffness",
+      "family_name": "Fiber fraction and longitudinal stiffness",
+      "case_id": "carbon-peek-55-25",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 25,
+      "numeric_end": 55,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A unidirectional carbon-fiber PEEK composite changes from 25 percent to 55 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus?",
+      "user": "A unidirectional carbon-fiber PEEK composite changes from 25 percent to 55 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "fiber-fraction-stiffness--carbon-peek-55-25--physics_paraphrase",
+      "triplet_id": "fiber-fraction-stiffness--carbon-peek-55-25",
+      "family_id": "fiber-fraction-stiffness",
+      "family_name": "Fiber fraction and longitudinal stiffness",
+      "case_id": "carbon-peek-55-25",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 25,
+      "numeric_end": 55,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In the same carbon-fiber PEEK system, the fraction of load-parallel reinforcement rises from 0.25 to 0.55 of the total volume. Matrix, reinforcement, alignment, and bonding are unchanged. Select the trend in axial stiffness.",
+      "user": "In the same carbon-fiber PEEK system, the fraction of load-parallel reinforcement rises from 0.25 to 0.55 of the total volume. Matrix, reinforcement, alignment, and bonding are unchanged. Select the trend in axial stiffness. Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "fiber-fraction-stiffness--carbon-peek-55-25--lexical_counterfactual",
+      "triplet_id": "fiber-fraction-stiffness--carbon-peek-55-25",
+      "family_id": "fiber-fraction-stiffness",
+      "family_name": "Fiber fraction and longitudinal stiffness",
+      "case_id": "carbon-peek-55-25",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 55,
+      "numeric_end": 25,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A unidirectional carbon-fiber PEEK composite changes from 55 percent to 25 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus?",
+      "user": "A unidirectional carbon-fiber PEEK composite changes from 55 percent to 25 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "fiber-fraction-stiffness--glass-polyester-50-20--anchor",
+      "triplet_id": "fiber-fraction-stiffness--glass-polyester-50-20",
+      "family_id": "fiber-fraction-stiffness",
+      "family_name": "Fiber fraction and longitudinal stiffness",
+      "case_id": "glass-polyester-50-20",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 50,
+      "numeric_end": 20,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A unidirectional glass-fiber polyester composite changes from 50 percent to 20 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus?",
+      "user": "A unidirectional glass-fiber polyester composite changes from 50 percent to 20 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "fiber-fraction-stiffness--glass-polyester-50-20--physics_paraphrase",
+      "triplet_id": "fiber-fraction-stiffness--glass-polyester-50-20",
+      "family_id": "fiber-fraction-stiffness",
+      "family_name": "Fiber fraction and longitudinal stiffness",
+      "case_id": "glass-polyester-50-20",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 50,
+      "numeric_end": 20,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In the same glass-fiber polyester system, the fraction of load-parallel reinforcement falls from 0.5 to 0.2 of the total volume. Matrix, reinforcement, alignment, and bonding are unchanged. Select the trend in axial stiffness.",
+      "user": "In the same glass-fiber polyester system, the fraction of load-parallel reinforcement falls from 0.5 to 0.2 of the total volume. Matrix, reinforcement, alignment, and bonding are unchanged. Select the trend in axial stiffness. Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "fiber-fraction-stiffness--glass-polyester-50-20--lexical_counterfactual",
+      "triplet_id": "fiber-fraction-stiffness--glass-polyester-50-20",
+      "family_id": "fiber-fraction-stiffness",
+      "family_name": "Fiber fraction and longitudinal stiffness",
+      "case_id": "glass-polyester-50-20",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 20,
+      "numeric_end": 50,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A unidirectional glass-fiber polyester composite changes from 20 percent to 50 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus?",
+      "user": "A unidirectional glass-fiber polyester composite changes from 20 percent to 50 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "fiber-fraction-stiffness--aramid-epoxy-45-15--anchor",
+      "triplet_id": "fiber-fraction-stiffness--aramid-epoxy-45-15",
+      "family_id": "fiber-fraction-stiffness",
+      "family_name": "Fiber fraction and longitudinal stiffness",
+      "case_id": "aramid-epoxy-45-15",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 15,
+      "numeric_end": 45,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A unidirectional aramid-fiber epoxy composite changes from 15 percent to 45 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus?",
+      "user": "A unidirectional aramid-fiber epoxy composite changes from 15 percent to 45 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "fiber-fraction-stiffness--aramid-epoxy-45-15--physics_paraphrase",
+      "triplet_id": "fiber-fraction-stiffness--aramid-epoxy-45-15",
+      "family_id": "fiber-fraction-stiffness",
+      "family_name": "Fiber fraction and longitudinal stiffness",
+      "case_id": "aramid-epoxy-45-15",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 15,
+      "numeric_end": 45,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In the same aramid-fiber epoxy system, the fraction of load-parallel reinforcement rises from 0.15 to 0.45 of the total volume. Matrix, reinforcement, alignment, and bonding are unchanged. Select the trend in axial stiffness.",
+      "user": "In the same aramid-fiber epoxy system, the fraction of load-parallel reinforcement rises from 0.15 to 0.45 of the total volume. Matrix, reinforcement, alignment, and bonding are unchanged. Select the trend in axial stiffness. Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "fiber-fraction-stiffness--aramid-epoxy-45-15--lexical_counterfactual",
+      "triplet_id": "fiber-fraction-stiffness--aramid-epoxy-45-15",
+      "family_id": "fiber-fraction-stiffness",
+      "family_name": "Fiber fraction and longitudinal stiffness",
+      "case_id": "aramid-epoxy-45-15",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 45,
+      "numeric_end": 15,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A unidirectional aramid-fiber epoxy composite changes from 45 percent to 15 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus?",
+      "user": "A unidirectional aramid-fiber epoxy composite changes from 45 percent to 15 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "fiber-fraction-stiffness--sic-titanium-40-10--anchor",
+      "triplet_id": "fiber-fraction-stiffness--sic-titanium-40-10",
+      "family_id": "fiber-fraction-stiffness",
+      "family_name": "Fiber fraction and longitudinal stiffness",
+      "case_id": "sic-titanium-40-10",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 40,
+      "numeric_end": 10,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A unidirectional silicon-carbide-fiber titanium composite changes from 40 percent to 10 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus?",
+      "user": "A unidirectional silicon-carbide-fiber titanium composite changes from 40 percent to 10 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "fiber-fraction-stiffness--sic-titanium-40-10--physics_paraphrase",
+      "triplet_id": "fiber-fraction-stiffness--sic-titanium-40-10",
+      "family_id": "fiber-fraction-stiffness",
+      "family_name": "Fiber fraction and longitudinal stiffness",
+      "case_id": "sic-titanium-40-10",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 40,
+      "numeric_end": 10,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In the same silicon-carbide-fiber titanium system, the fraction of load-parallel reinforcement falls from 0.4 to 0.1 of the total volume. Matrix, reinforcement, alignment, and bonding are unchanged. Select the trend in axial stiffness.",
+      "user": "In the same silicon-carbide-fiber titanium system, the fraction of load-parallel reinforcement falls from 0.4 to 0.1 of the total volume. Matrix, reinforcement, alignment, and bonding are unchanged. Select the trend in axial stiffness. Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "fiber-fraction-stiffness--sic-titanium-40-10--lexical_counterfactual",
+      "triplet_id": "fiber-fraction-stiffness--sic-titanium-40-10",
+      "family_id": "fiber-fraction-stiffness",
+      "family_name": "Fiber fraction and longitudinal stiffness",
+      "case_id": "sic-titanium-40-10",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 10,
+      "numeric_end": 40,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A unidirectional silicon-carbide-fiber titanium composite changes from 10 percent to 40 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus?",
+      "user": "A unidirectional silicon-carbide-fiber titanium composite changes from 10 percent to 40 percent aligned fiber volume fraction while fiber orientation, constituent moduli, porosity, and interface quality remain fixed. What happens to the longitudinal elastic modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "martensite-hardness--medium-carbon-steel-80-20--anchor",
+      "triplet_id": "martensite-hardness--medium-carbon-steel-80-20",
+      "family_id": "martensite-hardness",
+      "family_name": "Martensite fraction and hardness",
+      "case_id": "medium-carbon-steel-80-20",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 20,
+      "numeric_end": 80,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A medium-carbon steel microstructure changes from 20 percent to 80 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness?",
+      "user": "A medium-carbon steel microstructure changes from 20 percent to 80 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "martensite-hardness--medium-carbon-steel-80-20--physics_paraphrase",
+      "triplet_id": "martensite-hardness--medium-carbon-steel-80-20",
+      "family_id": "martensite-hardness",
+      "family_name": "Martensite fraction and hardness",
+      "case_id": "medium-carbon-steel-80-20",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 20,
+      "numeric_end": 80,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In the same medium-carbon steel, the hard transformed-phase fraction grows from 0.2 to 0.8 of the microstructure and ferrite supplies the remainder. Chemistry, parent grain scale, temper, and residual stress do not change. Select the trend in indentation hardness.",
+      "user": "In the same medium-carbon steel, the hard transformed-phase fraction grows from 0.2 to 0.8 of the microstructure and ferrite supplies the remainder. Chemistry, parent grain scale, temper, and residual stress do not change. Select the trend in indentation hardness. Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "martensite-hardness--medium-carbon-steel-80-20--lexical_counterfactual",
+      "triplet_id": "martensite-hardness--medium-carbon-steel-80-20",
+      "family_id": "martensite-hardness",
+      "family_name": "Martensite fraction and hardness",
+      "case_id": "medium-carbon-steel-80-20",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 80,
+      "numeric_end": 20,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A medium-carbon steel microstructure changes from 80 percent to 20 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness?",
+      "user": "A medium-carbon steel microstructure changes from 80 percent to 20 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "martensite-hardness--dual-phase-steel-60-15--anchor",
+      "triplet_id": "martensite-hardness--dual-phase-steel-60-15",
+      "family_id": "martensite-hardness",
+      "family_name": "Martensite fraction and hardness",
+      "case_id": "dual-phase-steel-60-15",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 60,
+      "numeric_end": 15,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A dual-phase steel microstructure changes from 60 percent to 15 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness?",
+      "user": "A dual-phase steel microstructure changes from 60 percent to 15 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "martensite-hardness--dual-phase-steel-60-15--physics_paraphrase",
+      "triplet_id": "martensite-hardness--dual-phase-steel-60-15",
+      "family_id": "martensite-hardness",
+      "family_name": "Martensite fraction and hardness",
+      "case_id": "dual-phase-steel-60-15",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 60,
+      "numeric_end": 15,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In the same dual-phase steel, the hard transformed-phase fraction shrinks from 0.6 to 0.15 of the microstructure and ferrite supplies the remainder. Chemistry, parent grain scale, temper, and residual stress do not change. Select the trend in indentation hardness.",
+      "user": "In the same dual-phase steel, the hard transformed-phase fraction shrinks from 0.6 to 0.15 of the microstructure and ferrite supplies the remainder. Chemistry, parent grain scale, temper, and residual stress do not change. Select the trend in indentation hardness. Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "martensite-hardness--dual-phase-steel-60-15--lexical_counterfactual",
+      "triplet_id": "martensite-hardness--dual-phase-steel-60-15",
+      "family_id": "martensite-hardness",
+      "family_name": "Martensite fraction and hardness",
+      "case_id": "dual-phase-steel-60-15",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 15,
+      "numeric_end": 60,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A dual-phase steel microstructure changes from 15 percent to 60 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness?",
+      "user": "A dual-phase steel microstructure changes from 15 percent to 60 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "martensite-hardness--low-alloy-steel-70-10--anchor",
+      "triplet_id": "martensite-hardness--low-alloy-steel-70-10",
+      "family_id": "martensite-hardness",
+      "family_name": "Martensite fraction and hardness",
+      "case_id": "low-alloy-steel-70-10",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 10,
+      "numeric_end": 70,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A low-alloy steel microstructure changes from 10 percent to 70 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness?",
+      "user": "A low-alloy steel microstructure changes from 10 percent to 70 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "martensite-hardness--low-alloy-steel-70-10--physics_paraphrase",
+      "triplet_id": "martensite-hardness--low-alloy-steel-70-10",
+      "family_id": "martensite-hardness",
+      "family_name": "Martensite fraction and hardness",
+      "case_id": "low-alloy-steel-70-10",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 10,
+      "numeric_end": 70,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In the same low-alloy steel, the hard transformed-phase fraction grows from 0.1 to 0.7 of the microstructure and ferrite supplies the remainder. Chemistry, parent grain scale, temper, and residual stress do not change. Select the trend in indentation hardness.",
+      "user": "In the same low-alloy steel, the hard transformed-phase fraction grows from 0.1 to 0.7 of the microstructure and ferrite supplies the remainder. Chemistry, parent grain scale, temper, and residual stress do not change. Select the trend in indentation hardness. Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "martensite-hardness--low-alloy-steel-70-10--lexical_counterfactual",
+      "triplet_id": "martensite-hardness--low-alloy-steel-70-10",
+      "family_id": "martensite-hardness",
+      "family_name": "Martensite fraction and hardness",
+      "case_id": "low-alloy-steel-70-10",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 70,
+      "numeric_end": 10,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A low-alloy steel microstructure changes from 70 percent to 10 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness?",
+      "user": "A low-alloy steel microstructure changes from 70 percent to 10 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "martensite-hardness--martensitic-stainless-75-25--anchor",
+      "triplet_id": "martensite-hardness--martensitic-stainless-75-25",
+      "family_id": "martensite-hardness",
+      "family_name": "Martensite fraction and hardness",
+      "case_id": "martensitic-stainless-75-25",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 75,
+      "numeric_end": 25,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A martensitic stainless steel microstructure changes from 75 percent to 25 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness?",
+      "user": "A martensitic stainless steel microstructure changes from 75 percent to 25 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "martensite-hardness--martensitic-stainless-75-25--physics_paraphrase",
+      "triplet_id": "martensite-hardness--martensitic-stainless-75-25",
+      "family_id": "martensite-hardness",
+      "family_name": "Martensite fraction and hardness",
+      "case_id": "martensitic-stainless-75-25",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 75,
+      "numeric_end": 25,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In the same martensitic stainless steel, the hard transformed-phase fraction shrinks from 0.75 to 0.25 of the microstructure and ferrite supplies the remainder. Chemistry, parent grain scale, temper, and residual stress do not change. Select the trend in indentation hardness.",
+      "user": "In the same martensitic stainless steel, the hard transformed-phase fraction shrinks from 0.75 to 0.25 of the microstructure and ferrite supplies the remainder. Chemistry, parent grain scale, temper, and residual stress do not change. Select the trend in indentation hardness. Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "martensite-hardness--martensitic-stainless-75-25--lexical_counterfactual",
+      "triplet_id": "martensite-hardness--martensitic-stainless-75-25",
+      "family_id": "martensite-hardness",
+      "family_name": "Martensite fraction and hardness",
+      "case_id": "martensitic-stainless-75-25",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 25,
+      "numeric_end": 75,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A martensitic stainless steel microstructure changes from 25 percent to 75 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness?",
+      "user": "A martensitic stainless steel microstructure changes from 25 percent to 75 percent martensite, with the balance ferrite, while carbon content, prior-austenite grain size, tempering state, and residual stress remain fixed. What happens to bulk hardness? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    }
+  ]
+}

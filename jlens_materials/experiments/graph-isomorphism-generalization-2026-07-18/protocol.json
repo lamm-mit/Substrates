@@ -1,0 +1,70 @@
+{
+  "study_id": "graph-isomorphism-generalization-2026-07-18",
+  "frozen_at": "2026-07-17T20:48:17-04:00",
+  "status": "post_hoc_analysis_with_frozen_endpoints",
+  "manuscript_in_scope": false,
+  "inputs": {
+    "representations": {
+      "path": "experiments/option-free-question-end-2026-07-18/representations.npz",
+      "sha256": "2451d643f94934c2ea5ef73acd06dbaf1ea58f43065a724c9190423a5be9b9dc"
+    },
+    "prompt_manifest": {
+      "path": "experiments/late-physics-representation-replication-2026-07-17/prompt_manifest.json",
+      "sha256": "da49f9d57b870404beabb7401f40a677d90d0b93d49d58170a0ab9750268d634"
+    },
+    "primary_depth_band_percent": [38, 92],
+    "layers": 25,
+    "families": 6,
+    "cases_per_family": 4,
+    "variants_per_case": 3
+  },
+  "study_1": {
+    "fit_variants": ["anchor", "physics_paraphrase"],
+    "heldout_variant": "lexical_counterfactual",
+    "case_permutations_per_pair": 24,
+    "mapping_objective": "pearson_anchor_to_paraphrase_different_case",
+    "structured_label_null_assignments": 46656,
+    "strong_topology_gate": {
+      "median_positive": true,
+      "pair_signflip_p_max": 0.05,
+      "positive_pairs_min": 10,
+      "positive_leave_one_mechanism_out_min": 5
+    },
+    "strong_physical_gate": {
+      "agreement_min_exclusive": 0.5,
+      "structured_p_max": 0.05,
+      "pairs_above_half_min": 10,
+      "counter_response_physical_over_numeric_min": 6,
+      "physical_minus_numeric_signflip_p_max": 0.05
+    }
+  },
+  "study_2": {
+    "wl_heights": [0, 1, 2, 3],
+    "constrained_null_sets": 10000,
+    "seed": 20260718
+  },
+  "study_3": {
+    "task": "node_physical_outcome",
+    "split": "leave_one_entire_mechanism_out",
+    "gin_layers": 3,
+    "hidden_width": 32,
+    "dropout": 0.1,
+    "learning_rate": 0.01,
+    "weight_decay": 0.0001,
+    "max_epochs": 400,
+    "seeds": 20,
+    "pca_components": 32,
+    "strong_gate": {
+      "heldout_family_auc_above_half": 6,
+      "positive_gin_minus_mlp": 6,
+      "positive_gin_minus_edge_shuffle": 6,
+      "plus_one_signflip_p_max": 0.05,
+      "max_permutation_audit_loss": 0.02,
+      "physical_over_numeric_families_min": 4
+    }
+  },
+  "multiplicity": {
+    "secondary_bh_fdr": 0.05,
+    "omnibus_min_strong_gates": 2
+  }
+}

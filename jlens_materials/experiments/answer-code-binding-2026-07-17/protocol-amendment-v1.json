@@ -1,0 +1,129 @@
+{
+  "study_id": "answer-code-binding-2026-07-17",
+  "status": "prospectively frozen scientific design; protocol amendment v1 was made after execution attempt 1 aborted before any model forward pass",
+  "frozen_at": "2026-07-17T12:06:00.884636+00:00",
+  "scientific_question": "Does the late transition represent the scientific relation before the arbitrary answer mapping is visible, and then bind that relation to the requested A/B code after the mapping?",
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "lenses": [
+    {
+      "seed": 0,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed0.pt",
+      "sha256": "d15ff55233c458f4289a7aac1b3f5c8e6441d0334a44a7b6fce03e447889aa99"
+    },
+    {
+      "seed": 1,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed1.pt",
+      "sha256": "98bf7c7491c525df5ae9c9ac8040f450cce630dc8257a2ae062e6bdbf76980dd"
+    },
+    {
+      "seed": 2,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed2.pt",
+      "sha256": "51930e2b8d751de78e66ed92fcf6c1724783a4f81f94d0b7021d2278aabe00e5"
+    }
+  ],
+  "source_layers": [
+    0,
+    2,
+    3,
+    5,
+    6,
+    8,
+    10,
+    11,
+    13,
+    15,
+    16,
+    18,
+    20,
+    21,
+    23,
+    24,
+    26,
+    28,
+    29,
+    31,
+    32,
+    34,
+    36,
+    37,
+    39
+  ],
+  "checkpoint_word": "checkpoint",
+  "registered_band_percent": [
+    80.0,
+    96.0
+  ],
+  "inputs": {
+    "prompt_manifest": "experiments/answer-code-binding-2026-07-17/prompt_manifest.json",
+    "prompt_manifest_sha256": "9ec1bdc3d12960cdcb2538bd214a1771d9f45ce5d1243fa4a2ab2ff3f83d8de5",
+    "runner": "scripts/run_answer_code_binding.py",
+    "runner_sha256": "25178173e64f77510b8e995f4a671cc42cafd6439d4813fce70e8bdce6936558",
+    "source_prompt_manifest": "experiments/late-physics-representation-replication-2026-07-17/prompt_manifest.json",
+    "source_prompt_manifest_sha256": "da49f9d57b870404beabb7401f40a677d90d0b93d49d58170a0ab9750268d634",
+    "source_statistics": "experiments/late-physics-representation-replication-2026-07-17/statistics.json",
+    "source_statistics_sha256": "332e3e1c2761759f70fa22e6ad196298c63234f3b461f31d07887bfaa1761d32",
+    "runner_sha256_before_amendment": "a6d903061716c3d0b10deb2f04d574e191b7e404b14b1fd461556e2615d371c0"
+  },
+  "tokenization_preflight": {
+    "A": [
+      236776
+    ],
+    "B": [
+      236799
+    ],
+    "checkpoint": [
+      73093
+    ],
+    "greater": [
+      89785
+    ],
+    "higher": [
+      87596
+    ],
+    "lower": [
+      11462
+    ],
+    "smaller": [
+      146772
+    ],
+    " checkpoint": [
+      61077
+    ]
+  },
+  "registered_endpoints": {
+    "checkpoint_physics_separation": "For each triplet, sign the positive-minus-negative physical readout so that the anchor answer is positive, then compute mean(anchor, physics paraphrase) minus counterfactual. Average over the frozen 80--96% window.",
+    "final_code_separation": "At the final prompt position compute mean(A-minus-B for anchor and counterfactual) minus A-minus-B for the paraphrase. Average over the frozen 80--96% window.",
+    "code_binding_transition": "Final-position code separation minus checkpoint-position code separation over the frozen 80--96% window.",
+    "inference": "30,000 two-stage bootstrap resamples over six families and four triplets per family; fixed analysis seeds."
+  },
+  "success_rule": {
+    "confidence": "All three Jacobian-ensemble endpoint 95% intervals are above zero.",
+    "breadth": "For both checkpoint physics separation and final code separation, at least 18/24 triplets and 5/6 family means are positive.",
+    "all_outputs_retained": true
+  },
+  "secondary_endpoints": [
+    "direct-decoding versions and paired Jacobian-minus-direct contrasts",
+    "clean A/B answer accuracy and consistency",
+    "layer-resolved endpoint trajectories",
+    "centered full-state anchor-paraphrase minus anchor-counterfactual geometry at both positions"
+  ],
+  "guardrails": [
+    "The prompt explicitly names scientific answer words; readout is a registered relational contrast, not open-vocabulary discovery.",
+    "The checkpoint state cannot attend to the future mapping, but it includes the complete scientific question and the words 'Internal checkpoint'.",
+    "A positive result would support staged relation formation and answer-code binding, not a literal chain of thought or human-like understanding.",
+    "Every prompt, family, layer, lens seed, behavior error, and state is retained."
+  ],
+  "amendment": {
+    "amended_at": "2026-07-17T12:07:44.055734+00:00",
+    "original_protocol": "experiments/answer-code-binding-2026-07-17/protocol.json",
+    "original_protocol_sha256": "41b19f84e31cc123cc90e98ca6058cd269addf83f433c0c7a519cf1724df08c3",
+    "reason": "The isolated token `checkpoint` has id 73093, whereas the exact in-prompt substring ` checkpoint` has id 61077. Attempt 1 searched for 73093, found zero matches, and raised before model.forward.",
+    "scientific_design_changed": false,
+    "prompts_changed": false,
+    "endpoints_changed": false,
+    "only_change": "Match the already-frozen marker in its exact contextual tokenization, ` checkpoint`.",
+    "attempt_record": "experiments/answer-code-binding-2026-07-17/execution-attempt-1-pre-forward.json"
+  },
+  "checkpoint_token_text": " checkpoint"
+}

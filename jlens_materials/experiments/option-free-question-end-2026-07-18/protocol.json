@@ -1,0 +1,101 @@
+{
+  "study_id": "option-free-question-end-2026-07-18",
+  "frozen_at": "2026-07-18T00:35:00-04:00",
+  "status": "prospectively frozen positional robustness run after inspecting the failed archived checkpoint graph; same cohort and endpoint, not an independent replication",
+  "scientific_question": "Does signed-relation topology appear at the natural end of a complete scientific question with no answer scaffold or checkpoint marker?",
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "source_layers": [
+    0,
+    2,
+    3,
+    5,
+    6,
+    8,
+    10,
+    11,
+    13,
+    15,
+    16,
+    18,
+    20,
+    21,
+    23,
+    24,
+    26,
+    28,
+    29,
+    31,
+    32,
+    34,
+    36,
+    37,
+    39
+  ],
+  "lenses": [
+    {
+      "seed": 0,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed0.pt",
+      "sha256": "d15ff55233c458f4289a7aac1b3f5c8e6441d0334a44a7b6fce03e447889aa99"
+    },
+    {
+      "seed": 1,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed1.pt",
+      "sha256": "98bf7c7491c525df5ae9c9ac8040f450cce630dc8257a2ae062e6bdbf76980dd"
+    },
+    {
+      "seed": 2,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed2.pt",
+      "sha256": "51930e2b8d751de78e66ed92fcf6c1724783a4f81f94d0b7021d2278aabe00e5"
+    }
+  ],
+  "inputs": {
+    "runner": {
+      "path": "scripts/run_option_free_question_end_states.py",
+      "sha256": "157ef2d9697c97f275beede0413ec7dc2b4162a11be324d506a3106d6665bfdd"
+    },
+    "prompt_manifest": {
+      "path": "experiments/answer-code-binding-2026-07-17/prompt_manifest.json",
+      "sha256": "9ec1bdc3d12960cdcb2538bd214a1771d9f45ce5d1243fa4a2ab2ff3f83d8de5",
+      "field_used": "stem"
+    }
+  },
+  "position": {
+    "name": "question_end",
+    "definition": "final chat-template prompt token after the complete scientific stem",
+    "forbidden_suffixes": [
+      "answer choices",
+      "answer words",
+      "arbitrary A/B code",
+      "response-format instruction",
+      "checkpoint marker"
+    ]
+  },
+  "bands_percent": {
+    "primary": [
+      38.0,
+      92.0
+    ],
+    "late_secondary": [
+      80.0,
+      96.0
+    ]
+  },
+  "analysis": {
+    "source_protocol": "experiments/option-free-relation-graph-2026-07-17/PROTOCOL.md",
+    "n_edges": 144,
+    "null_assignments": 46656,
+    "primary_endpoints": [
+      "selected-edge same-outcome precision",
+      "full-candidate pairwise AUC"
+    ],
+    "strong_rule": "both exact p <= 0.05, AUC > 0.5, and at least 4/6 family AUCs > 0.5",
+    "jacobian_specific_rule": "positive paired family-level 95% interval for Jacobian minus direct"
+  },
+  "guardrails": [
+    "same inspected cohort and endpoint; not independent replication",
+    "all prompts, layers, families, fits, behaviors, and negative results retained",
+    "positive topology is observational and within supplied mechanism families",
+    "no literal chain-of-thought, consciousness, complete ontology, or causal-use claim"
+  ]
+}

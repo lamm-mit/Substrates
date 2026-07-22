@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "study_id": "jacobian-steering-pilot-v1",
+  "status": "frozen after clean-answer preflight and before any intervention output",
+  "frozen_at": "2026-07-16T00:00:00-04:00",
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "lens_paths": [
+    "lenses/hub/gemma4-e4b-it/paper/seed0.pt",
+    "lenses/hub/gemma4-e4b-it/paper/seed1.pt",
+    "lenses/hub/gemma4-e4b-it/paper/seed2.pt"
+  ],
+  "intervention": {
+    "position": "final prompt token only",
+    "doses_percent_residual_norm": [-2.0, -1.0, 0.0, 1.0, 2.0],
+    "direction": "gradient of the positive-minus-negative concept score through the fitted Jacobian map and Gemma final normalization",
+    "primary_method": "jacobian_exact",
+    "clean_acceptance": "global top-1 must be A or B; inferential prompts must match expected_outcome",
+    "primary_endpoint": "positive-answer log-odds relative to the negative answer",
+    "secondary_endpoints": [
+      "global top-1 semantic outcome",
+      "valid A-or-B probability mass",
+      "KL divergence from the clean next-token distribution"
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "fracture-morphology",
+      "concept_positive": "brittle",
+      "concept_negative": "ductile",
+      "outcome_positive": "faceted",
+      "outcome_negative": "fibrous",
+      "primary_layer": 16,
+      "prompts": [
+        {
+          "prompt_id": "fracture-ductile-ab",
+          "condition": "ductile-evidence",
+          "inferential": true,
+          "option_a": "fibrous",
+          "option_b": "faceted",
+          "expected_outcome": "fibrous",
+          "user": "An annealed low-carbon steel specimen is pulled slowly at room temperature. It undergoes pronounced necking and large plastic strain before separation. Which fracture-surface appearance is more likely? A: fibrous. B: faceted. Answer exactly A or B."
+        },
+        {
+          "prompt_id": "fracture-ductile-ba",
+          "condition": "ductile-evidence",
+          "inferential": true,
+          "option_a": "faceted",
+          "option_b": "fibrous",
+          "expected_outcome": "fibrous",
+          "user": "An annealed low-carbon steel specimen is pulled slowly at room temperature. It undergoes pronounced necking and large plastic strain before separation. Which fracture-surface appearance is more likely? A: faceted. B: fibrous. Answer exactly A or B."
+        },
+        {
+          "prompt_id": "fracture-brittle-ab",
+          "condition": "brittle-evidence",
+          "inferential": true,
+          "option_a": "fibrous",
+          "option_b": "faceted",
+          "expected_outcome": "faceted",
+          "user": "A ferritic steel specimen containing a sharp notch is struck at very low temperature. It separates suddenly with almost no plastic deformation. Which fracture-surface appearance is more likely? A: fibrous. B: faceted. Answer exactly A or B."
+        },
+        {
+          "prompt_id": "fracture-brittle-ba",
+          "condition": "brittle-evidence",
+          "inferential": true,
+          "option_a": "faceted",
+          "option_b": "fibrous",
+          "expected_outcome": "faceted",
+          "user": "A ferritic steel specimen containing a sharp notch is struck at very low temperature. It separates suddenly with almost no plastic deformation. Which fracture-surface appearance is more likely? A: faceted. B: fibrous. Answer exactly A or B."
+        },
+        {
+          "prompt_id": "fracture-neutral-ab",
+          "condition": "neutral",
+          "inferential": false,
+          "option_a": "fibrous",
+          "option_b": "faceted",
+          "expected_outcome": null,
+          "user": "A ferritic steel specimen is tested within its transition-temperature range, but the available observations do not establish how much plastic deformation occurred. Which fracture-surface appearance is more likely? A: fibrous. B: faceted. Answer exactly A or B."
+        }
+      ]
+    },
+    {
+      "case_id": "corrosion-qualification",
+      "concept_positive": "corrosion",
+      "concept_negative": "passivation",
+      "outcome_positive": "grooves along grain edges",
+      "outcome_negative": "no preferential attack",
+      "primary_layer": 18,
+      "prompts": [
+        {
+          "prompt_id": "corrosion-sensitized-ab",
+          "condition": "sensitized-evidence",
+          "inferential": true,
+          "option_a": "no preferential attack",
+          "option_b": "grooves along grain edges",
+          "expected_outcome": "grooves along grain edges",
+          "user": "An austenitic stainless-steel specimen was held near 650 degrees Celsius until continuous chromium-rich carbide films formed along grain edges. It is then subjected to a standardized intergranular-corrosion qualification test. Which observation is more likely? A: no preferential attack. B: grooves along grain edges. Answer exactly A or B."
+        },
+        {
+          "prompt_id": "corrosion-sensitized-ba",
+          "condition": "sensitized-evidence",
+          "inferential": true,
+          "option_a": "grooves along grain edges",
+          "option_b": "no preferential attack",
+          "expected_outcome": "grooves along grain edges",
+          "user": "An austenitic stainless-steel specimen was held near 650 degrees Celsius until continuous chromium-rich carbide films formed along grain edges. It is then subjected to a standardized intergranular-corrosion qualification test. Which observation is more likely? A: grooves along grain edges. B: no preferential attack. Answer exactly A or B."
+        },
+        {
+          "prompt_id": "corrosion-resistant-ab",
+          "condition": "resistant-evidence",
+          "inferential": true,
+          "option_a": "no preferential attack",
+          "option_b": "grooves along grain edges",
+          "expected_outcome": "no preferential attack",
+          "user": "An otherwise identical specimen was solution annealed above the carbide solvus and rapidly quenched, leaving clean grain edges without precipitate films. It is then subjected to the same standardized intergranular-corrosion qualification test. Which observation is more likely? A: no preferential attack. B: grooves along grain edges. Answer exactly A or B."
+        },
+        {
+          "prompt_id": "corrosion-resistant-ba",
+          "condition": "resistant-evidence",
+          "inferential": true,
+          "option_a": "grooves along grain edges",
+          "option_b": "no preferential attack",
+          "expected_outcome": "no preferential attack",
+          "user": "An otherwise identical specimen was solution annealed above the carbide solvus and rapidly quenched, leaving clean grain edges without precipitate films. It is then subjected to the same standardized intergranular-corrosion qualification test. Which observation is more likely? A: grooves along grain edges. B: no preferential attack. Answer exactly A or B."
+        },
+        {
+          "prompt_id": "corrosion-neutral-ab",
+          "condition": "neutral",
+          "inferential": false,
+          "option_a": "no preferential attack",
+          "option_b": "grooves along grain edges",
+          "expected_outcome": null,
+          "user": "An austenitic stainless-steel specimen received an undocumented thermal treatment before a standardized intergranular-corrosion qualification test. Which observation is more likely? A: no preferential attack. B: grooves along grain edges. Answer exactly A or B."
+        }
+      ]
+    },
+    {
+      "case_id": "transformation-hardness",
+      "concept_positive": "tetragonal",
+      "concept_negative": "diffusion",
+      "outcome_positive": "hard",
+      "outcome_negative": "soft",
+      "primary_layer": 21,
+      "prompts": [
+        {
+          "prompt_id": "transformation-fast-ab",
+          "condition": "rapid-cooling-evidence",
+          "inferential": true,
+          "option_a": "hard",
+          "option_b": "soft",
+          "expected_outcome": "hard",
+          "user": "A 0.8 weight-percent carbon steel is heated into the high-temperature phase and then cooled so rapidly that carbon redistribution is suppressed. Relative to the slowly cooled condition, what is its final state? A: hard. B: soft. Answer exactly A or B."
+        },
+        {
+          "prompt_id": "transformation-fast-ba",
+          "condition": "rapid-cooling-evidence",
+          "inferential": true,
+          "option_a": "soft",
+          "option_b": "hard",
+          "expected_outcome": "hard",
+          "user": "A 0.8 weight-percent carbon steel is heated into the high-temperature phase and then cooled so rapidly that carbon redistribution is suppressed. Relative to the slowly cooled condition, what is its final state? A: soft. B: hard. Answer exactly A or B."
+        },
+        {
+          "prompt_id": "transformation-slow-ab",
+          "condition": "slow-cooling-evidence",
+          "inferential": true,
+          "option_a": "hard",
+          "option_b": "soft",
+          "expected_outcome": "soft",
+          "user": "An otherwise identical 0.8 weight-percent carbon steel is cooled very slowly, allowing carbon redistribution and near-equilibrium products to form. Relative to the rapidly cooled condition, what is its final state? A: hard. B: soft. Answer exactly A or B."
+        },
+        {
+          "prompt_id": "transformation-slow-ba",
+          "condition": "slow-cooling-evidence",
+          "inferential": true,
+          "option_a": "soft",
+          "option_b": "hard",
+          "expected_outcome": "soft",
+          "user": "An otherwise identical 0.8 weight-percent carbon steel is cooled very slowly, allowing carbon redistribution and near-equilibrium products to form. Relative to the rapidly cooled condition, what is its final state? A: soft. B: hard. Answer exactly A or B."
+        },
+        {
+          "prompt_id": "transformation-neutral-ab",
+          "condition": "neutral",
+          "inferential": false,
+          "option_a": "hard",
+          "option_b": "soft",
+          "expected_outcome": null,
+          "user": "A 0.8 weight-percent carbon steel is cooled from the high-temperature phase, but the cooling history is unavailable. Relative to a conventional annealed state, what is its final state? A: hard. B: soft. Answer exactly A or B."
+        }
+      ]
+    }
+  ]
+}

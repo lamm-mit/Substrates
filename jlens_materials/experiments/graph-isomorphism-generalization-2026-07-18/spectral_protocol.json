@@ -1,0 +1,31 @@
+{
+  "study_id": "spectral-gauge-community-2026-07-18",
+  "frozen_at": "2026-07-17T21:46:00-04:00",
+  "status": "post_gin_exploratory_with_frozen_endpoints",
+  "manuscript_in_scope": false,
+  "parent_gauge_protocol_sha256": "beabb4efe6429f10c12b9c67c44c7728cdafda29d59bef48e3c8a8109833d8c8",
+  "primary": {
+    "graph": "weighted_top1_per_other_variant",
+    "partition": "balanced_fiedler_rank_6_6",
+    "metric": "adjusted_rand_index",
+    "null_sets": 10000,
+    "strong_gate": {
+      "positive_ari_families": 6,
+      "gauge_accuracy_above_half_families": 6,
+      "exact_p_max": 0.05
+    }
+  },
+  "ablations": [
+    "binary_top1",
+    "weighted_top1",
+    "weighted_top2",
+    "weighted_complete_candidates"
+  ],
+  "synthetic": {
+    "graphs": 1000,
+    "seed": 20260718,
+    "positive_affinity_offset": 1.0,
+    "positive_mean_ari_min": 0.8,
+    "negative_abs_mean_ari_max": 0.05
+  }
+}

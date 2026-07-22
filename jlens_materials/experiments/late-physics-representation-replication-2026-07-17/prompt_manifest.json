@@ -1,0 +1,1949 @@
+{
+  "study_id": "late-physics-representation-replication-2026-07-17",
+  "created_at": "2026-07-17T11:55:12.902382+00:00",
+  "design": "Disjoint prospective replication of a late-layer transition observed in lexical-adversarial-representation-2026-07-17. No mechanism family or material system is reused.",
+  "families": [
+    {
+      "family_id": "obstacle-spacing-orowan",
+      "family_name": "Obstacle spacing and Orowan stress",
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "positive_numeric_direction": "decrease"
+    },
+    {
+      "family_id": "porosity-modulus",
+      "family_name": "Porosity and elastic modulus",
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "positive_numeric_direction": "decrease"
+    },
+    {
+      "family_id": "pearlite-spacing-strength",
+      "family_name": "Pearlite spacing and yield strength",
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "positive_numeric_direction": "decrease"
+    },
+    {
+      "family_id": "dislocation-density-strength",
+      "family_name": "Dislocation density and flow strength",
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "positive_numeric_direction": "increase"
+    },
+    {
+      "family_id": "particle-fraction-modulus",
+      "family_name": "Stiff-particle fraction and modulus",
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "positive_numeric_direction": "increase"
+    },
+    {
+      "family_id": "crosslink-density-modulus",
+      "family_name": "Crosslink density and rubbery modulus",
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "positive_numeric_direction": "increase"
+    }
+  ],
+  "triplets": [
+    {
+      "triplet_id": "obstacle-spacing-orowan--nickel-superalloy-180-60",
+      "family_id": "obstacle-spacing-orowan",
+      "case_id": "nickel-superalloy-180-60",
+      "anchor_expected_outcome": "higher",
+      "counterfactual_expected_outcome": "lower",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "obstacle-spacing-orowan--nickel-superalloy-180-60--anchor",
+        "physics_paraphrase": "obstacle-spacing-orowan--nickel-superalloy-180-60--physics_paraphrase",
+        "lexical_counterfactual": "obstacle-spacing-orowan--nickel-superalloy-180-60--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "obstacle-spacing-orowan--aluminum-copper-150-50",
+      "family_id": "obstacle-spacing-orowan",
+      "case_id": "aluminum-copper-150-50",
+      "anchor_expected_outcome": "lower",
+      "counterfactual_expected_outcome": "higher",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "obstacle-spacing-orowan--aluminum-copper-150-50--anchor",
+        "physics_paraphrase": "obstacle-spacing-orowan--aluminum-copper-150-50--physics_paraphrase",
+        "lexical_counterfactual": "obstacle-spacing-orowan--aluminum-copper-150-50--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "obstacle-spacing-orowan--ferritic-steel-120-40",
+      "family_id": "obstacle-spacing-orowan",
+      "case_id": "ferritic-steel-120-40",
+      "anchor_expected_outcome": "higher",
+      "counterfactual_expected_outcome": "lower",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "obstacle-spacing-orowan--ferritic-steel-120-40--anchor",
+        "physics_paraphrase": "obstacle-spacing-orowan--ferritic-steel-120-40--physics_paraphrase",
+        "lexical_counterfactual": "obstacle-spacing-orowan--ferritic-steel-120-40--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "obstacle-spacing-orowan--copper-alloy-90-30",
+      "family_id": "obstacle-spacing-orowan",
+      "case_id": "copper-alloy-90-30",
+      "anchor_expected_outcome": "lower",
+      "counterfactual_expected_outcome": "higher",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "obstacle-spacing-orowan--copper-alloy-90-30--anchor",
+        "physics_paraphrase": "obstacle-spacing-orowan--copper-alloy-90-30--physics_paraphrase",
+        "lexical_counterfactual": "obstacle-spacing-orowan--copper-alloy-90-30--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "porosity-modulus--sintered-alumina-12-3",
+      "family_id": "porosity-modulus",
+      "case_id": "sintered-alumina-12-3",
+      "anchor_expected_outcome": "greater",
+      "counterfactual_expected_outcome": "smaller",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "porosity-modulus--sintered-alumina-12-3--anchor",
+        "physics_paraphrase": "porosity-modulus--sintered-alumina-12-3--physics_paraphrase",
+        "lexical_counterfactual": "porosity-modulus--sintered-alumina-12-3--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "porosity-modulus--porous-titanium-20-5",
+      "family_id": "porosity-modulus",
+      "case_id": "porous-titanium-20-5",
+      "anchor_expected_outcome": "smaller",
+      "counterfactual_expected_outcome": "greater",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "porosity-modulus--porous-titanium-20-5--anchor",
+        "physics_paraphrase": "porosity-modulus--porous-titanium-20-5--physics_paraphrase",
+        "lexical_counterfactual": "porosity-modulus--porous-titanium-20-5--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "porosity-modulus--silicon-nitride-8-2",
+      "family_id": "porosity-modulus",
+      "case_id": "silicon-nitride-8-2",
+      "anchor_expected_outcome": "greater",
+      "counterfactual_expected_outcome": "smaller",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "porosity-modulus--silicon-nitride-8-2--anchor",
+        "physics_paraphrase": "porosity-modulus--silicon-nitride-8-2--physics_paraphrase",
+        "lexical_counterfactual": "porosity-modulus--silicon-nitride-8-2--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "porosity-modulus--sandstone-16-4",
+      "family_id": "porosity-modulus",
+      "case_id": "sandstone-16-4",
+      "anchor_expected_outcome": "smaller",
+      "counterfactual_expected_outcome": "greater",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "porosity-modulus--sandstone-16-4--anchor",
+        "physics_paraphrase": "porosity-modulus--sandstone-16-4--physics_paraphrase",
+        "lexical_counterfactual": "porosity-modulus--sandstone-16-4--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "pearlite-spacing-strength--eutectoid-steel-300-100",
+      "family_id": "pearlite-spacing-strength",
+      "case_id": "eutectoid-steel-300-100",
+      "anchor_expected_outcome": "higher",
+      "counterfactual_expected_outcome": "lower",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "pearlite-spacing-strength--eutectoid-steel-300-100--anchor",
+        "physics_paraphrase": "pearlite-spacing-strength--eutectoid-steel-300-100--physics_paraphrase",
+        "lexical_counterfactual": "pearlite-spacing-strength--eutectoid-steel-300-100--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "pearlite-spacing-strength--rail-steel-240-80",
+      "family_id": "pearlite-spacing-strength",
+      "case_id": "rail-steel-240-80",
+      "anchor_expected_outcome": "lower",
+      "counterfactual_expected_outcome": "higher",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "pearlite-spacing-strength--rail-steel-240-80--anchor",
+        "physics_paraphrase": "pearlite-spacing-strength--rail-steel-240-80--physics_paraphrase",
+        "lexical_counterfactual": "pearlite-spacing-strength--rail-steel-240-80--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "pearlite-spacing-strength--wire-steel-180-60",
+      "family_id": "pearlite-spacing-strength",
+      "case_id": "wire-steel-180-60",
+      "anchor_expected_outcome": "higher",
+      "counterfactual_expected_outcome": "lower",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "pearlite-spacing-strength--wire-steel-180-60--anchor",
+        "physics_paraphrase": "pearlite-spacing-strength--wire-steel-180-60--physics_paraphrase",
+        "lexical_counterfactual": "pearlite-spacing-strength--wire-steel-180-60--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "pearlite-spacing-strength--pearlitic-iron-360-120",
+      "family_id": "pearlite-spacing-strength",
+      "case_id": "pearlitic-iron-360-120",
+      "anchor_expected_outcome": "lower",
+      "counterfactual_expected_outcome": "higher",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "pearlite-spacing-strength--pearlitic-iron-360-120--anchor",
+        "physics_paraphrase": "pearlite-spacing-strength--pearlitic-iron-360-120--physics_paraphrase",
+        "lexical_counterfactual": "pearlite-spacing-strength--pearlitic-iron-360-120--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "dislocation-density-strength--copper-1e14-1e12",
+      "family_id": "dislocation-density-strength",
+      "case_id": "copper-1e14-1e12",
+      "anchor_expected_outcome": "higher",
+      "counterfactual_expected_outcome": "lower",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "dislocation-density-strength--copper-1e14-1e12--anchor",
+        "physics_paraphrase": "dislocation-density-strength--copper-1e14-1e12--physics_paraphrase",
+        "lexical_counterfactual": "dislocation-density-strength--copper-1e14-1e12--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "dislocation-density-strength--aluminum-8e13-8e11",
+      "family_id": "dislocation-density-strength",
+      "case_id": "aluminum-8e13-8e11",
+      "anchor_expected_outcome": "lower",
+      "counterfactual_expected_outcome": "higher",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "dislocation-density-strength--aluminum-8e13-8e11--anchor",
+        "physics_paraphrase": "dislocation-density-strength--aluminum-8e13-8e11--physics_paraphrase",
+        "lexical_counterfactual": "dislocation-density-strength--aluminum-8e13-8e11--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "dislocation-density-strength--nickel-5e14-5e12",
+      "family_id": "dislocation-density-strength",
+      "case_id": "nickel-5e14-5e12",
+      "anchor_expected_outcome": "higher",
+      "counterfactual_expected_outcome": "lower",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "dislocation-density-strength--nickel-5e14-5e12--anchor",
+        "physics_paraphrase": "dislocation-density-strength--nickel-5e14-5e12--physics_paraphrase",
+        "lexical_counterfactual": "dislocation-density-strength--nickel-5e14-5e12--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "dislocation-density-strength--ferritic-steel-2e14-2e12",
+      "family_id": "dislocation-density-strength",
+      "case_id": "ferritic-steel-2e14-2e12",
+      "anchor_expected_outcome": "lower",
+      "counterfactual_expected_outcome": "higher",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "dislocation-density-strength--ferritic-steel-2e14-2e12--anchor",
+        "physics_paraphrase": "dislocation-density-strength--ferritic-steel-2e14-2e12--physics_paraphrase",
+        "lexical_counterfactual": "dislocation-density-strength--ferritic-steel-2e14-2e12--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "particle-fraction-modulus--aluminum-sic-30-10",
+      "family_id": "particle-fraction-modulus",
+      "case_id": "aluminum-sic-30-10",
+      "anchor_expected_outcome": "greater",
+      "counterfactual_expected_outcome": "smaller",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "particle-fraction-modulus--aluminum-sic-30-10--anchor",
+        "physics_paraphrase": "particle-fraction-modulus--aluminum-sic-30-10--physics_paraphrase",
+        "lexical_counterfactual": "particle-fraction-modulus--aluminum-sic-30-10--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "particle-fraction-modulus--magnesium-alumina-24-8",
+      "family_id": "particle-fraction-modulus",
+      "case_id": "magnesium-alumina-24-8",
+      "anchor_expected_outcome": "smaller",
+      "counterfactual_expected_outcome": "greater",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "particle-fraction-modulus--magnesium-alumina-24-8--anchor",
+        "physics_paraphrase": "particle-fraction-modulus--magnesium-alumina-24-8--physics_paraphrase",
+        "lexical_counterfactual": "particle-fraction-modulus--magnesium-alumina-24-8--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "particle-fraction-modulus--nickel-wc-18-6",
+      "family_id": "particle-fraction-modulus",
+      "case_id": "nickel-wc-18-6",
+      "anchor_expected_outcome": "greater",
+      "counterfactual_expected_outcome": "smaller",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "particle-fraction-modulus--nickel-wc-18-6--anchor",
+        "physics_paraphrase": "particle-fraction-modulus--nickel-wc-18-6--physics_paraphrase",
+        "lexical_counterfactual": "particle-fraction-modulus--nickel-wc-18-6--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "particle-fraction-modulus--epoxy-silica-36-12",
+      "family_id": "particle-fraction-modulus",
+      "case_id": "epoxy-silica-36-12",
+      "anchor_expected_outcome": "smaller",
+      "counterfactual_expected_outcome": "greater",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "particle-fraction-modulus--epoxy-silica-36-12--anchor",
+        "physics_paraphrase": "particle-fraction-modulus--epoxy-silica-36-12--physics_paraphrase",
+        "lexical_counterfactual": "particle-fraction-modulus--epoxy-silica-36-12--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "crosslink-density-modulus--natural-rubber-800-200",
+      "family_id": "crosslink-density-modulus",
+      "case_id": "natural-rubber-800-200",
+      "anchor_expected_outcome": "greater",
+      "counterfactual_expected_outcome": "smaller",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "crosslink-density-modulus--natural-rubber-800-200--anchor",
+        "physics_paraphrase": "crosslink-density-modulus--natural-rubber-800-200--physics_paraphrase",
+        "lexical_counterfactual": "crosslink-density-modulus--natural-rubber-800-200--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "crosslink-density-modulus--silicone-600-150",
+      "family_id": "crosslink-density-modulus",
+      "case_id": "silicone-600-150",
+      "anchor_expected_outcome": "smaller",
+      "counterfactual_expected_outcome": "greater",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "crosslink-density-modulus--silicone-600-150--anchor",
+        "physics_paraphrase": "crosslink-density-modulus--silicone-600-150--physics_paraphrase",
+        "lexical_counterfactual": "crosslink-density-modulus--silicone-600-150--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "crosslink-density-modulus--polyurethane-1000-250",
+      "family_id": "crosslink-density-modulus",
+      "case_id": "polyurethane-1000-250",
+      "anchor_expected_outcome": "greater",
+      "counterfactual_expected_outcome": "smaller",
+      "presentation_order": "positive-first",
+      "prompt_ids": {
+        "anchor": "crosslink-density-modulus--polyurethane-1000-250--anchor",
+        "physics_paraphrase": "crosslink-density-modulus--polyurethane-1000-250--physics_paraphrase",
+        "lexical_counterfactual": "crosslink-density-modulus--polyurethane-1000-250--lexical_counterfactual"
+      }
+    },
+    {
+      "triplet_id": "crosslink-density-modulus--epdm-720-180",
+      "family_id": "crosslink-density-modulus",
+      "case_id": "epdm-720-180",
+      "anchor_expected_outcome": "smaller",
+      "counterfactual_expected_outcome": "greater",
+      "presentation_order": "negative-first",
+      "prompt_ids": {
+        "anchor": "crosslink-density-modulus--epdm-720-180--anchor",
+        "physics_paraphrase": "crosslink-density-modulus--epdm-720-180--physics_paraphrase",
+        "lexical_counterfactual": "crosslink-density-modulus--epdm-720-180--lexical_counterfactual"
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "prompt_id": "obstacle-spacing-orowan--nickel-superalloy-180-60--anchor",
+      "triplet_id": "obstacle-spacing-orowan--nickel-superalloy-180-60",
+      "family_id": "obstacle-spacing-orowan",
+      "family_name": "Obstacle spacing and Orowan stress",
+      "case_id": "nickel-superalloy-180-60",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 180,
+      "numeric_end": 60,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "In a nickel-based superalloy, mean clear spacing between non-shearable obstacles changes from 180 nanometers to 60 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress?",
+      "user": "In a nickel-based superalloy, mean clear spacing between non-shearable obstacles changes from 180 nanometers to 60 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "obstacle-spacing-orowan--nickel-superalloy-180-60--physics_paraphrase",
+      "triplet_id": "obstacle-spacing-orowan--nickel-superalloy-180-60",
+      "family_id": "obstacle-spacing-orowan",
+      "family_name": "Obstacle spacing and Orowan stress",
+      "case_id": "nickel-superalloy-180-60",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 180,
+      "numeric_end": 60,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "For the same nickel-based superalloy, every obstacle attribute is unchanged except the slip-plane gap, which narrows from 0.18 micrometers to 0.06 micrometers. Select the trend in stress required for a dislocation to bow between impenetrable particles.",
+      "user": "For the same nickel-based superalloy, every obstacle attribute is unchanged except the slip-plane gap, which narrows from 0.18 micrometers to 0.06 micrometers. Select the trend in stress required for a dislocation to bow between impenetrable particles. Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "obstacle-spacing-orowan--nickel-superalloy-180-60--lexical_counterfactual",
+      "triplet_id": "obstacle-spacing-orowan--nickel-superalloy-180-60",
+      "family_id": "obstacle-spacing-orowan",
+      "family_name": "Obstacle spacing and Orowan stress",
+      "case_id": "nickel-superalloy-180-60",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 60,
+      "numeric_end": 180,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In a nickel-based superalloy, mean clear spacing between non-shearable obstacles changes from 60 nanometers to 180 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress?",
+      "user": "In a nickel-based superalloy, mean clear spacing between non-shearable obstacles changes from 60 nanometers to 180 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "obstacle-spacing-orowan--aluminum-copper-150-50--anchor",
+      "triplet_id": "obstacle-spacing-orowan--aluminum-copper-150-50",
+      "family_id": "obstacle-spacing-orowan",
+      "family_name": "Obstacle spacing and Orowan stress",
+      "case_id": "aluminum-copper-150-50",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 50,
+      "numeric_end": 150,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "In a aluminum-copper alloy, mean clear spacing between non-shearable obstacles changes from 50 nanometers to 150 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress?",
+      "user": "In a aluminum-copper alloy, mean clear spacing between non-shearable obstacles changes from 50 nanometers to 150 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "obstacle-spacing-orowan--aluminum-copper-150-50--physics_paraphrase",
+      "triplet_id": "obstacle-spacing-orowan--aluminum-copper-150-50",
+      "family_id": "obstacle-spacing-orowan",
+      "family_name": "Obstacle spacing and Orowan stress",
+      "case_id": "aluminum-copper-150-50",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 50,
+      "numeric_end": 150,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "For the same aluminum-copper alloy, every obstacle attribute is unchanged except the slip-plane gap, which widens from 0.05 micrometers to 0.15 micrometers. Select the trend in stress required for a dislocation to bow between impenetrable particles.",
+      "user": "For the same aluminum-copper alloy, every obstacle attribute is unchanged except the slip-plane gap, which widens from 0.05 micrometers to 0.15 micrometers. Select the trend in stress required for a dislocation to bow between impenetrable particles. Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "obstacle-spacing-orowan--aluminum-copper-150-50--lexical_counterfactual",
+      "triplet_id": "obstacle-spacing-orowan--aluminum-copper-150-50",
+      "family_id": "obstacle-spacing-orowan",
+      "family_name": "Obstacle spacing and Orowan stress",
+      "case_id": "aluminum-copper-150-50",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 150,
+      "numeric_end": 50,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In a aluminum-copper alloy, mean clear spacing between non-shearable obstacles changes from 150 nanometers to 50 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress?",
+      "user": "In a aluminum-copper alloy, mean clear spacing between non-shearable obstacles changes from 150 nanometers to 50 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "obstacle-spacing-orowan--ferritic-steel-120-40--anchor",
+      "triplet_id": "obstacle-spacing-orowan--ferritic-steel-120-40",
+      "family_id": "obstacle-spacing-orowan",
+      "family_name": "Obstacle spacing and Orowan stress",
+      "case_id": "ferritic-steel-120-40",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 120,
+      "numeric_end": 40,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "In a ferritic steel, mean clear spacing between non-shearable obstacles changes from 120 nanometers to 40 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress?",
+      "user": "In a ferritic steel, mean clear spacing between non-shearable obstacles changes from 120 nanometers to 40 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "obstacle-spacing-orowan--ferritic-steel-120-40--physics_paraphrase",
+      "triplet_id": "obstacle-spacing-orowan--ferritic-steel-120-40",
+      "family_id": "obstacle-spacing-orowan",
+      "family_name": "Obstacle spacing and Orowan stress",
+      "case_id": "ferritic-steel-120-40",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 120,
+      "numeric_end": 40,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "For the same ferritic steel, every obstacle attribute is unchanged except the slip-plane gap, which narrows from 0.12 micrometers to 0.04 micrometers. Select the trend in stress required for a dislocation to bow between impenetrable particles.",
+      "user": "For the same ferritic steel, every obstacle attribute is unchanged except the slip-plane gap, which narrows from 0.12 micrometers to 0.04 micrometers. Select the trend in stress required for a dislocation to bow between impenetrable particles. Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "obstacle-spacing-orowan--ferritic-steel-120-40--lexical_counterfactual",
+      "triplet_id": "obstacle-spacing-orowan--ferritic-steel-120-40",
+      "family_id": "obstacle-spacing-orowan",
+      "family_name": "Obstacle spacing and Orowan stress",
+      "case_id": "ferritic-steel-120-40",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 40,
+      "numeric_end": 120,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In a ferritic steel, mean clear spacing between non-shearable obstacles changes from 40 nanometers to 120 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress?",
+      "user": "In a ferritic steel, mean clear spacing between non-shearable obstacles changes from 40 nanometers to 120 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "obstacle-spacing-orowan--copper-alloy-90-30--anchor",
+      "triplet_id": "obstacle-spacing-orowan--copper-alloy-90-30",
+      "family_id": "obstacle-spacing-orowan",
+      "family_name": "Obstacle spacing and Orowan stress",
+      "case_id": "copper-alloy-90-30",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 30,
+      "numeric_end": 90,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "In a copper alloy, mean clear spacing between non-shearable obstacles changes from 30 nanometers to 90 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress?",
+      "user": "In a copper alloy, mean clear spacing between non-shearable obstacles changes from 30 nanometers to 90 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "obstacle-spacing-orowan--copper-alloy-90-30--physics_paraphrase",
+      "triplet_id": "obstacle-spacing-orowan--copper-alloy-90-30",
+      "family_id": "obstacle-spacing-orowan",
+      "family_name": "Obstacle spacing and Orowan stress",
+      "case_id": "copper-alloy-90-30",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 30,
+      "numeric_end": 90,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "For the same copper alloy, every obstacle attribute is unchanged except the slip-plane gap, which widens from 0.03 micrometers to 0.09 micrometers. Select the trend in stress required for a dislocation to bow between impenetrable particles.",
+      "user": "For the same copper alloy, every obstacle attribute is unchanged except the slip-plane gap, which widens from 0.03 micrometers to 0.09 micrometers. Select the trend in stress required for a dislocation to bow between impenetrable particles. Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "obstacle-spacing-orowan--copper-alloy-90-30--lexical_counterfactual",
+      "triplet_id": "obstacle-spacing-orowan--copper-alloy-90-30",
+      "family_id": "obstacle-spacing-orowan",
+      "family_name": "Obstacle spacing and Orowan stress",
+      "case_id": "copper-alloy-90-30",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 90,
+      "numeric_end": 30,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In a copper alloy, mean clear spacing between non-shearable obstacles changes from 90 nanometers to 30 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress?",
+      "user": "In a copper alloy, mean clear spacing between non-shearable obstacles changes from 90 nanometers to 30 nanometers while particle size, volume fraction, dislocation character, shear modulus, and Burgers vector remain fixed. What happens to Orowan bypass stress? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "porosity-modulus--sintered-alumina-12-3--anchor",
+      "triplet_id": "porosity-modulus--sintered-alumina-12-3",
+      "family_id": "porosity-modulus",
+      "family_name": "Porosity and elastic modulus",
+      "case_id": "sintered-alumina-12-3",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 12,
+      "numeric_end": 3,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A sintered alumina specimen changes from 12 percent to 3 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus?",
+      "user": "A sintered alumina specimen changes from 12 percent to 3 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "porosity-modulus--sintered-alumina-12-3--physics_paraphrase",
+      "triplet_id": "porosity-modulus--sintered-alumina-12-3",
+      "family_id": "porosity-modulus",
+      "family_name": "Porosity and elastic modulus",
+      "case_id": "sintered-alumina-12-3",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 12,
+      "numeric_end": 3,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "In the same sintered alumina, void volume fraction falls from 0.12 to 0.03 while the load-bearing solid skeleton and all non-porosity defects are unchanged. Select the trend in macroscopic stiffness.",
+      "user": "In the same sintered alumina, void volume fraction falls from 0.12 to 0.03 while the load-bearing solid skeleton and all non-porosity defects are unchanged. Select the trend in macroscopic stiffness. Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "porosity-modulus--sintered-alumina-12-3--lexical_counterfactual",
+      "triplet_id": "porosity-modulus--sintered-alumina-12-3",
+      "family_id": "porosity-modulus",
+      "family_name": "Porosity and elastic modulus",
+      "case_id": "sintered-alumina-12-3",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 3,
+      "numeric_end": 12,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A sintered alumina specimen changes from 3 percent to 12 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus?",
+      "user": "A sintered alumina specimen changes from 3 percent to 12 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "porosity-modulus--porous-titanium-20-5--anchor",
+      "triplet_id": "porosity-modulus--porous-titanium-20-5",
+      "family_id": "porosity-modulus",
+      "family_name": "Porosity and elastic modulus",
+      "case_id": "porous-titanium-20-5",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 5,
+      "numeric_end": 20,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A porous titanium specimen changes from 5 percent to 20 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus?",
+      "user": "A porous titanium specimen changes from 5 percent to 20 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "porosity-modulus--porous-titanium-20-5--physics_paraphrase",
+      "triplet_id": "porosity-modulus--porous-titanium-20-5",
+      "family_id": "porosity-modulus",
+      "family_name": "Porosity and elastic modulus",
+      "case_id": "porous-titanium-20-5",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 5,
+      "numeric_end": 20,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "In the same porous titanium, void volume fraction rises from 0.05 to 0.2 while the load-bearing solid skeleton and all non-porosity defects are unchanged. Select the trend in macroscopic stiffness.",
+      "user": "In the same porous titanium, void volume fraction rises from 0.05 to 0.2 while the load-bearing solid skeleton and all non-porosity defects are unchanged. Select the trend in macroscopic stiffness. Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "porosity-modulus--porous-titanium-20-5--lexical_counterfactual",
+      "triplet_id": "porosity-modulus--porous-titanium-20-5",
+      "family_id": "porosity-modulus",
+      "family_name": "Porosity and elastic modulus",
+      "case_id": "porous-titanium-20-5",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 20,
+      "numeric_end": 5,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A porous titanium specimen changes from 20 percent to 5 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus?",
+      "user": "A porous titanium specimen changes from 20 percent to 5 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "porosity-modulus--silicon-nitride-8-2--anchor",
+      "triplet_id": "porosity-modulus--silicon-nitride-8-2",
+      "family_id": "porosity-modulus",
+      "family_name": "Porosity and elastic modulus",
+      "case_id": "silicon-nitride-8-2",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 8,
+      "numeric_end": 2,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A silicon nitride specimen changes from 8 percent to 2 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus?",
+      "user": "A silicon nitride specimen changes from 8 percent to 2 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "porosity-modulus--silicon-nitride-8-2--physics_paraphrase",
+      "triplet_id": "porosity-modulus--silicon-nitride-8-2",
+      "family_id": "porosity-modulus",
+      "family_name": "Porosity and elastic modulus",
+      "case_id": "silicon-nitride-8-2",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 8,
+      "numeric_end": 2,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "In the same silicon nitride, void volume fraction falls from 0.08 to 0.02 while the load-bearing solid skeleton and all non-porosity defects are unchanged. Select the trend in macroscopic stiffness.",
+      "user": "In the same silicon nitride, void volume fraction falls from 0.08 to 0.02 while the load-bearing solid skeleton and all non-porosity defects are unchanged. Select the trend in macroscopic stiffness. Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "porosity-modulus--silicon-nitride-8-2--lexical_counterfactual",
+      "triplet_id": "porosity-modulus--silicon-nitride-8-2",
+      "family_id": "porosity-modulus",
+      "family_name": "Porosity and elastic modulus",
+      "case_id": "silicon-nitride-8-2",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 2,
+      "numeric_end": 8,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A silicon nitride specimen changes from 2 percent to 8 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus?",
+      "user": "A silicon nitride specimen changes from 2 percent to 8 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "porosity-modulus--sandstone-16-4--anchor",
+      "triplet_id": "porosity-modulus--sandstone-16-4",
+      "family_id": "porosity-modulus",
+      "family_name": "Porosity and elastic modulus",
+      "case_id": "sandstone-16-4",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 4,
+      "numeric_end": 16,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A quartz-rich sandstone specimen changes from 4 percent to 16 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus?",
+      "user": "A quartz-rich sandstone specimen changes from 4 percent to 16 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "porosity-modulus--sandstone-16-4--physics_paraphrase",
+      "triplet_id": "porosity-modulus--sandstone-16-4",
+      "family_id": "porosity-modulus",
+      "family_name": "Porosity and elastic modulus",
+      "case_id": "sandstone-16-4",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 4,
+      "numeric_end": 16,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "In the same quartz-rich sandstone, void volume fraction rises from 0.04 to 0.16 while the load-bearing solid skeleton and all non-porosity defects are unchanged. Select the trend in macroscopic stiffness.",
+      "user": "In the same quartz-rich sandstone, void volume fraction rises from 0.04 to 0.16 while the load-bearing solid skeleton and all non-porosity defects are unchanged. Select the trend in macroscopic stiffness. Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "porosity-modulus--sandstone-16-4--lexical_counterfactual",
+      "triplet_id": "porosity-modulus--sandstone-16-4",
+      "family_id": "porosity-modulus",
+      "family_name": "Porosity and elastic modulus",
+      "case_id": "sandstone-16-4",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 16,
+      "numeric_end": 4,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A quartz-rich sandstone specimen changes from 16 percent to 4 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus?",
+      "user": "A quartz-rich sandstone specimen changes from 16 percent to 4 percent connected porosity while solid composition, grain structure, moisture, and crack density remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "pearlite-spacing-strength--eutectoid-steel-300-100--anchor",
+      "triplet_id": "pearlite-spacing-strength--eutectoid-steel-300-100",
+      "family_id": "pearlite-spacing-strength",
+      "family_name": "Pearlite spacing and yield strength",
+      "case_id": "eutectoid-steel-300-100",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 300,
+      "numeric_end": 100,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "In fully pearlitic eutectoid steel, ferrite-cementite interlamellar spacing changes from 300 nanometers to 100 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength?",
+      "user": "In fully pearlitic eutectoid steel, ferrite-cementite interlamellar spacing changes from 300 nanometers to 100 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "pearlite-spacing-strength--eutectoid-steel-300-100--physics_paraphrase",
+      "triplet_id": "pearlite-spacing-strength--eutectoid-steel-300-100",
+      "family_id": "pearlite-spacing-strength",
+      "family_name": "Pearlite spacing and yield strength",
+      "case_id": "eutectoid-steel-300-100",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 300,
+      "numeric_end": 100,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "The same pearlitic eutectoid steel keeps its chemistry and colony architecture, but the separation between adjacent ferrite and cementite plates contracts from 0.3 micrometers to 0.1 micrometers. Select the trend in flow strength.",
+      "user": "The same pearlitic eutectoid steel keeps its chemistry and colony architecture, but the separation between adjacent ferrite and cementite plates contracts from 0.3 micrometers to 0.1 micrometers. Select the trend in flow strength. Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "pearlite-spacing-strength--eutectoid-steel-300-100--lexical_counterfactual",
+      "triplet_id": "pearlite-spacing-strength--eutectoid-steel-300-100",
+      "family_id": "pearlite-spacing-strength",
+      "family_name": "Pearlite spacing and yield strength",
+      "case_id": "eutectoid-steel-300-100",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 100,
+      "numeric_end": 300,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In fully pearlitic eutectoid steel, ferrite-cementite interlamellar spacing changes from 100 nanometers to 300 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength?",
+      "user": "In fully pearlitic eutectoid steel, ferrite-cementite interlamellar spacing changes from 100 nanometers to 300 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "pearlite-spacing-strength--rail-steel-240-80--anchor",
+      "triplet_id": "pearlite-spacing-strength--rail-steel-240-80",
+      "family_id": "pearlite-spacing-strength",
+      "family_name": "Pearlite spacing and yield strength",
+      "case_id": "rail-steel-240-80",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 80,
+      "numeric_end": 240,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "In fully pearlitic rail steel, ferrite-cementite interlamellar spacing changes from 80 nanometers to 240 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength?",
+      "user": "In fully pearlitic rail steel, ferrite-cementite interlamellar spacing changes from 80 nanometers to 240 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "pearlite-spacing-strength--rail-steel-240-80--physics_paraphrase",
+      "triplet_id": "pearlite-spacing-strength--rail-steel-240-80",
+      "family_id": "pearlite-spacing-strength",
+      "family_name": "Pearlite spacing and yield strength",
+      "case_id": "rail-steel-240-80",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 80,
+      "numeric_end": 240,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "The same pearlitic rail steel keeps its chemistry and colony architecture, but the separation between adjacent ferrite and cementite plates expands from 0.08 micrometers to 0.24 micrometers. Select the trend in flow strength.",
+      "user": "The same pearlitic rail steel keeps its chemistry and colony architecture, but the separation between adjacent ferrite and cementite plates expands from 0.08 micrometers to 0.24 micrometers. Select the trend in flow strength. Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "pearlite-spacing-strength--rail-steel-240-80--lexical_counterfactual",
+      "triplet_id": "pearlite-spacing-strength--rail-steel-240-80",
+      "family_id": "pearlite-spacing-strength",
+      "family_name": "Pearlite spacing and yield strength",
+      "case_id": "rail-steel-240-80",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 240,
+      "numeric_end": 80,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In fully pearlitic rail steel, ferrite-cementite interlamellar spacing changes from 240 nanometers to 80 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength?",
+      "user": "In fully pearlitic rail steel, ferrite-cementite interlamellar spacing changes from 240 nanometers to 80 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "pearlite-spacing-strength--wire-steel-180-60--anchor",
+      "triplet_id": "pearlite-spacing-strength--wire-steel-180-60",
+      "family_id": "pearlite-spacing-strength",
+      "family_name": "Pearlite spacing and yield strength",
+      "case_id": "wire-steel-180-60",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 180,
+      "numeric_end": 60,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "In fully pearlitic high-carbon wire steel, ferrite-cementite interlamellar spacing changes from 180 nanometers to 60 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength?",
+      "user": "In fully pearlitic high-carbon wire steel, ferrite-cementite interlamellar spacing changes from 180 nanometers to 60 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "pearlite-spacing-strength--wire-steel-180-60--physics_paraphrase",
+      "triplet_id": "pearlite-spacing-strength--wire-steel-180-60",
+      "family_id": "pearlite-spacing-strength",
+      "family_name": "Pearlite spacing and yield strength",
+      "case_id": "wire-steel-180-60",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 180,
+      "numeric_end": 60,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "The same pearlitic high-carbon wire steel keeps its chemistry and colony architecture, but the separation between adjacent ferrite and cementite plates contracts from 0.18 micrometers to 0.06 micrometers. Select the trend in flow strength.",
+      "user": "The same pearlitic high-carbon wire steel keeps its chemistry and colony architecture, but the separation between adjacent ferrite and cementite plates contracts from 0.18 micrometers to 0.06 micrometers. Select the trend in flow strength. Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "pearlite-spacing-strength--wire-steel-180-60--lexical_counterfactual",
+      "triplet_id": "pearlite-spacing-strength--wire-steel-180-60",
+      "family_id": "pearlite-spacing-strength",
+      "family_name": "Pearlite spacing and yield strength",
+      "case_id": "wire-steel-180-60",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 60,
+      "numeric_end": 180,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In fully pearlitic high-carbon wire steel, ferrite-cementite interlamellar spacing changes from 60 nanometers to 180 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength?",
+      "user": "In fully pearlitic high-carbon wire steel, ferrite-cementite interlamellar spacing changes from 60 nanometers to 180 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "pearlite-spacing-strength--pearlitic-iron-360-120--anchor",
+      "triplet_id": "pearlite-spacing-strength--pearlitic-iron-360-120",
+      "family_id": "pearlite-spacing-strength",
+      "family_name": "Pearlite spacing and yield strength",
+      "case_id": "pearlitic-iron-360-120",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 120,
+      "numeric_end": 360,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "In fully pearlitic pearlitic cast iron, ferrite-cementite interlamellar spacing changes from 120 nanometers to 360 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength?",
+      "user": "In fully pearlitic pearlitic cast iron, ferrite-cementite interlamellar spacing changes from 120 nanometers to 360 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "pearlite-spacing-strength--pearlitic-iron-360-120--physics_paraphrase",
+      "triplet_id": "pearlite-spacing-strength--pearlitic-iron-360-120",
+      "family_id": "pearlite-spacing-strength",
+      "family_name": "Pearlite spacing and yield strength",
+      "case_id": "pearlitic-iron-360-120",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 120,
+      "numeric_end": 360,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "The same pearlitic pearlitic cast iron keeps its chemistry and colony architecture, but the separation between adjacent ferrite and cementite plates expands from 0.12 micrometers to 0.36 micrometers. Select the trend in flow strength.",
+      "user": "The same pearlitic pearlitic cast iron keeps its chemistry and colony architecture, but the separation between adjacent ferrite and cementite plates expands from 0.12 micrometers to 0.36 micrometers. Select the trend in flow strength. Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "pearlite-spacing-strength--pearlitic-iron-360-120--lexical_counterfactual",
+      "triplet_id": "pearlite-spacing-strength--pearlitic-iron-360-120",
+      "family_id": "pearlite-spacing-strength",
+      "family_name": "Pearlite spacing and yield strength",
+      "case_id": "pearlitic-iron-360-120",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 360,
+      "numeric_end": 120,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In fully pearlitic pearlitic cast iron, ferrite-cementite interlamellar spacing changes from 360 nanometers to 120 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength?",
+      "user": "In fully pearlitic pearlitic cast iron, ferrite-cementite interlamellar spacing changes from 360 nanometers to 120 nanometers while composition, colony size, texture, prior-austenite grain size, and porosity remain fixed. What happens to yield strength? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "dislocation-density-strength--copper-1e14-1e12--anchor",
+      "triplet_id": "dislocation-density-strength--copper-1e14-1e12",
+      "family_id": "dislocation-density-strength",
+      "family_name": "Dislocation density and flow strength",
+      "case_id": "copper-1e14-1e12",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 1000000000000.0,
+      "numeric_end": 100000000000000.0,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A high-purity copper specimen changes dislocation density from 1e12 per square meter to 1e14 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening?",
+      "user": "A high-purity copper specimen changes dislocation density from 1e12 per square meter to 1e14 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "dislocation-density-strength--copper-1e14-1e12--physics_paraphrase",
+      "triplet_id": "dislocation-density-strength--copper-1e14-1e12",
+      "family_id": "dislocation-density-strength",
+      "family_name": "Dislocation density and flow strength",
+      "case_id": "copper-1e14-1e12",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 1000000000000.0,
+      "numeric_end": 100000000000000.0,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In the same high-purity copper, line-defect content rises from 1 per square micrometer to 100 per square micrometer. No grain, solute, particle, texture, pore, or thermal variable changes. Select the trend in flow stress.",
+      "user": "In the same high-purity copper, line-defect content rises from 1 per square micrometer to 100 per square micrometer. No grain, solute, particle, texture, pore, or thermal variable changes. Select the trend in flow stress. Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "dislocation-density-strength--copper-1e14-1e12--lexical_counterfactual",
+      "triplet_id": "dislocation-density-strength--copper-1e14-1e12",
+      "family_id": "dislocation-density-strength",
+      "family_name": "Dislocation density and flow strength",
+      "case_id": "copper-1e14-1e12",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 100000000000000.0,
+      "numeric_end": 1000000000000.0,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A high-purity copper specimen changes dislocation density from 1e14 per square meter to 1e12 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening?",
+      "user": "A high-purity copper specimen changes dislocation density from 1e14 per square meter to 1e12 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "dislocation-density-strength--aluminum-8e13-8e11--anchor",
+      "triplet_id": "dislocation-density-strength--aluminum-8e13-8e11",
+      "family_id": "dislocation-density-strength",
+      "family_name": "Dislocation density and flow strength",
+      "case_id": "aluminum-8e13-8e11",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 80000000000000.0,
+      "numeric_end": 800000000000.0,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A high-purity aluminum specimen changes dislocation density from 8e13 per square meter to 8e11 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening?",
+      "user": "A high-purity aluminum specimen changes dislocation density from 8e13 per square meter to 8e11 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "dislocation-density-strength--aluminum-8e13-8e11--physics_paraphrase",
+      "triplet_id": "dislocation-density-strength--aluminum-8e13-8e11",
+      "family_id": "dislocation-density-strength",
+      "family_name": "Dislocation density and flow strength",
+      "case_id": "aluminum-8e13-8e11",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 80000000000000.0,
+      "numeric_end": 800000000000.0,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In the same high-purity aluminum, line-defect content falls from 80 per square micrometer to 0.8 per square micrometer. No grain, solute, particle, texture, pore, or thermal variable changes. Select the trend in flow stress.",
+      "user": "In the same high-purity aluminum, line-defect content falls from 80 per square micrometer to 0.8 per square micrometer. No grain, solute, particle, texture, pore, or thermal variable changes. Select the trend in flow stress. Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "dislocation-density-strength--aluminum-8e13-8e11--lexical_counterfactual",
+      "triplet_id": "dislocation-density-strength--aluminum-8e13-8e11",
+      "family_id": "dislocation-density-strength",
+      "family_name": "Dislocation density and flow strength",
+      "case_id": "aluminum-8e13-8e11",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 800000000000.0,
+      "numeric_end": 80000000000000.0,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A high-purity aluminum specimen changes dislocation density from 8e11 per square meter to 8e13 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening?",
+      "user": "A high-purity aluminum specimen changes dislocation density from 8e11 per square meter to 8e13 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "dislocation-density-strength--nickel-5e14-5e12--anchor",
+      "triplet_id": "dislocation-density-strength--nickel-5e14-5e12",
+      "family_id": "dislocation-density-strength",
+      "family_name": "Dislocation density and flow strength",
+      "case_id": "nickel-5e14-5e12",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 5000000000000.0,
+      "numeric_end": 500000000000000.0,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A nickel specimen changes dislocation density from 5e12 per square meter to 5e14 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening?",
+      "user": "A nickel specimen changes dislocation density from 5e12 per square meter to 5e14 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "dislocation-density-strength--nickel-5e14-5e12--physics_paraphrase",
+      "triplet_id": "dislocation-density-strength--nickel-5e14-5e12",
+      "family_id": "dislocation-density-strength",
+      "family_name": "Dislocation density and flow strength",
+      "case_id": "nickel-5e14-5e12",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 5000000000000.0,
+      "numeric_end": 500000000000000.0,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In the same nickel, line-defect content rises from 5 per square micrometer to 500 per square micrometer. No grain, solute, particle, texture, pore, or thermal variable changes. Select the trend in flow stress.",
+      "user": "In the same nickel, line-defect content rises from 5 per square micrometer to 500 per square micrometer. No grain, solute, particle, texture, pore, or thermal variable changes. Select the trend in flow stress. Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "dislocation-density-strength--nickel-5e14-5e12--lexical_counterfactual",
+      "triplet_id": "dislocation-density-strength--nickel-5e14-5e12",
+      "family_id": "dislocation-density-strength",
+      "family_name": "Dislocation density and flow strength",
+      "case_id": "nickel-5e14-5e12",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "higher",
+        "lower"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 500000000000000.0,
+      "numeric_end": 5000000000000.0,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A nickel specimen changes dislocation density from 5e14 per square meter to 5e12 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening?",
+      "user": "A nickel specimen changes dislocation density from 5e14 per square meter to 5e12 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening? Answer exactly one lowercase word from this ordered pair: higher, lower."
+    },
+    {
+      "prompt_id": "dislocation-density-strength--ferritic-steel-2e14-2e12--anchor",
+      "triplet_id": "dislocation-density-strength--ferritic-steel-2e14-2e12",
+      "family_id": "dislocation-density-strength",
+      "family_name": "Dislocation density and flow strength",
+      "case_id": "ferritic-steel-2e14-2e12",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 200000000000000.0,
+      "numeric_end": 2000000000000.0,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A ferritic steel specimen changes dislocation density from 2e14 per square meter to 2e12 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening?",
+      "user": "A ferritic steel specimen changes dislocation density from 2e14 per square meter to 2e12 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "dislocation-density-strength--ferritic-steel-2e14-2e12--physics_paraphrase",
+      "triplet_id": "dislocation-density-strength--ferritic-steel-2e14-2e12",
+      "family_id": "dislocation-density-strength",
+      "family_name": "Dislocation density and flow strength",
+      "case_id": "ferritic-steel-2e14-2e12",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "lower",
+      "numeric_start": 200000000000000.0,
+      "numeric_end": 2000000000000.0,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In the same ferritic steel, line-defect content falls from 200 per square micrometer to 2 per square micrometer. No grain, solute, particle, texture, pore, or thermal variable changes. Select the trend in flow stress.",
+      "user": "In the same ferritic steel, line-defect content falls from 200 per square micrometer to 2 per square micrometer. No grain, solute, particle, texture, pore, or thermal variable changes. Select the trend in flow stress. Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "dislocation-density-strength--ferritic-steel-2e14-2e12--lexical_counterfactual",
+      "triplet_id": "dislocation-density-strength--ferritic-steel-2e14-2e12",
+      "family_id": "dislocation-density-strength",
+      "family_name": "Dislocation density and flow strength",
+      "case_id": "ferritic-steel-2e14-2e12",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "lower",
+        "higher"
+      ],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "expected_outcome": "higher",
+      "numeric_start": 2000000000000.0,
+      "numeric_end": 200000000000000.0,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A ferritic steel specimen changes dislocation density from 2e12 per square meter to 2e14 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening?",
+      "user": "A ferritic steel specimen changes dislocation density from 2e12 per square meter to 2e14 per square meter while grain size, solute content, precipitates, texture, porosity, and temperature remain fixed. What happens to yield strength under Taylor strengthening? Answer exactly one lowercase word from this ordered pair: lower, higher."
+    },
+    {
+      "prompt_id": "particle-fraction-modulus--aluminum-sic-30-10--anchor",
+      "triplet_id": "particle-fraction-modulus--aluminum-sic-30-10",
+      "family_id": "particle-fraction-modulus",
+      "family_name": "Stiff-particle fraction and modulus",
+      "case_id": "aluminum-sic-30-10",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 10,
+      "numeric_end": 30,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A aluminum-matrix composite changes from 10 percent to 30 percent silicon-carbide particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus?",
+      "user": "A aluminum-matrix composite changes from 10 percent to 30 percent silicon-carbide particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "particle-fraction-modulus--aluminum-sic-30-10--physics_paraphrase",
+      "triplet_id": "particle-fraction-modulus--aluminum-sic-30-10",
+      "family_id": "particle-fraction-modulus",
+      "family_name": "Stiff-particle fraction and modulus",
+      "case_id": "aluminum-sic-30-10",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 10,
+      "numeric_end": 30,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In the same aluminum-matrix, the fraction of stiff silicon-carbide reinforcement grows from 0.1 to 0.3 of total volume. Matrix, particle geometry, distribution, void content, bonding, and load axis are unchanged. Select the trend in composite stiffness.",
+      "user": "In the same aluminum-matrix, the fraction of stiff silicon-carbide reinforcement grows from 0.1 to 0.3 of total volume. Matrix, particle geometry, distribution, void content, bonding, and load axis are unchanged. Select the trend in composite stiffness. Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "particle-fraction-modulus--aluminum-sic-30-10--lexical_counterfactual",
+      "triplet_id": "particle-fraction-modulus--aluminum-sic-30-10",
+      "family_id": "particle-fraction-modulus",
+      "family_name": "Stiff-particle fraction and modulus",
+      "case_id": "aluminum-sic-30-10",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 30,
+      "numeric_end": 10,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A aluminum-matrix composite changes from 30 percent to 10 percent silicon-carbide particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus?",
+      "user": "A aluminum-matrix composite changes from 30 percent to 10 percent silicon-carbide particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "particle-fraction-modulus--magnesium-alumina-24-8--anchor",
+      "triplet_id": "particle-fraction-modulus--magnesium-alumina-24-8",
+      "family_id": "particle-fraction-modulus",
+      "family_name": "Stiff-particle fraction and modulus",
+      "case_id": "magnesium-alumina-24-8",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 24,
+      "numeric_end": 8,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A magnesium-matrix composite changes from 24 percent to 8 percent alumina particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus?",
+      "user": "A magnesium-matrix composite changes from 24 percent to 8 percent alumina particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "particle-fraction-modulus--magnesium-alumina-24-8--physics_paraphrase",
+      "triplet_id": "particle-fraction-modulus--magnesium-alumina-24-8",
+      "family_id": "particle-fraction-modulus",
+      "family_name": "Stiff-particle fraction and modulus",
+      "case_id": "magnesium-alumina-24-8",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 24,
+      "numeric_end": 8,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In the same magnesium-matrix, the fraction of stiff alumina reinforcement shrinks from 0.24 to 0.08 of total volume. Matrix, particle geometry, distribution, void content, bonding, and load axis are unchanged. Select the trend in composite stiffness.",
+      "user": "In the same magnesium-matrix, the fraction of stiff alumina reinforcement shrinks from 0.24 to 0.08 of total volume. Matrix, particle geometry, distribution, void content, bonding, and load axis are unchanged. Select the trend in composite stiffness. Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "particle-fraction-modulus--magnesium-alumina-24-8--lexical_counterfactual",
+      "triplet_id": "particle-fraction-modulus--magnesium-alumina-24-8",
+      "family_id": "particle-fraction-modulus",
+      "family_name": "Stiff-particle fraction and modulus",
+      "case_id": "magnesium-alumina-24-8",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 8,
+      "numeric_end": 24,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A magnesium-matrix composite changes from 8 percent to 24 percent alumina particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus?",
+      "user": "A magnesium-matrix composite changes from 8 percent to 24 percent alumina particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "particle-fraction-modulus--nickel-wc-18-6--anchor",
+      "triplet_id": "particle-fraction-modulus--nickel-wc-18-6",
+      "family_id": "particle-fraction-modulus",
+      "family_name": "Stiff-particle fraction and modulus",
+      "case_id": "nickel-wc-18-6",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 6,
+      "numeric_end": 18,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A nickel-matrix composite changes from 6 percent to 18 percent tungsten-carbide particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus?",
+      "user": "A nickel-matrix composite changes from 6 percent to 18 percent tungsten-carbide particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "particle-fraction-modulus--nickel-wc-18-6--physics_paraphrase",
+      "triplet_id": "particle-fraction-modulus--nickel-wc-18-6",
+      "family_id": "particle-fraction-modulus",
+      "family_name": "Stiff-particle fraction and modulus",
+      "case_id": "nickel-wc-18-6",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 6,
+      "numeric_end": 18,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "In the same nickel-matrix, the fraction of stiff tungsten-carbide reinforcement grows from 0.06 to 0.18 of total volume. Matrix, particle geometry, distribution, void content, bonding, and load axis are unchanged. Select the trend in composite stiffness.",
+      "user": "In the same nickel-matrix, the fraction of stiff tungsten-carbide reinforcement grows from 0.06 to 0.18 of total volume. Matrix, particle geometry, distribution, void content, bonding, and load axis are unchanged. Select the trend in composite stiffness. Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "particle-fraction-modulus--nickel-wc-18-6--lexical_counterfactual",
+      "triplet_id": "particle-fraction-modulus--nickel-wc-18-6",
+      "family_id": "particle-fraction-modulus",
+      "family_name": "Stiff-particle fraction and modulus",
+      "case_id": "nickel-wc-18-6",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 18,
+      "numeric_end": 6,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A nickel-matrix composite changes from 18 percent to 6 percent tungsten-carbide particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus?",
+      "user": "A nickel-matrix composite changes from 18 percent to 6 percent tungsten-carbide particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "particle-fraction-modulus--epoxy-silica-36-12--anchor",
+      "triplet_id": "particle-fraction-modulus--epoxy-silica-36-12",
+      "family_id": "particle-fraction-modulus",
+      "family_name": "Stiff-particle fraction and modulus",
+      "case_id": "epoxy-silica-36-12",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 36,
+      "numeric_end": 12,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A epoxy-matrix composite changes from 36 percent to 12 percent silica particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus?",
+      "user": "A epoxy-matrix composite changes from 36 percent to 12 percent silica particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "particle-fraction-modulus--epoxy-silica-36-12--physics_paraphrase",
+      "triplet_id": "particle-fraction-modulus--epoxy-silica-36-12",
+      "family_id": "particle-fraction-modulus",
+      "family_name": "Stiff-particle fraction and modulus",
+      "case_id": "epoxy-silica-36-12",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 36,
+      "numeric_end": 12,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "In the same epoxy-matrix, the fraction of stiff silica reinforcement shrinks from 0.36 to 0.12 of total volume. Matrix, particle geometry, distribution, void content, bonding, and load axis are unchanged. Select the trend in composite stiffness.",
+      "user": "In the same epoxy-matrix, the fraction of stiff silica reinforcement shrinks from 0.36 to 0.12 of total volume. Matrix, particle geometry, distribution, void content, bonding, and load axis are unchanged. Select the trend in composite stiffness. Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "particle-fraction-modulus--epoxy-silica-36-12--lexical_counterfactual",
+      "triplet_id": "particle-fraction-modulus--epoxy-silica-36-12",
+      "family_id": "particle-fraction-modulus",
+      "family_name": "Stiff-particle fraction and modulus",
+      "case_id": "epoxy-silica-36-12",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 12,
+      "numeric_end": 36,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A epoxy-matrix composite changes from 12 percent to 36 percent silica particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus?",
+      "user": "A epoxy-matrix composite changes from 12 percent to 36 percent silica particle volume fraction while matrix composition, particle size, dispersion, porosity, interface quality, and loading direction remain fixed. What happens to effective elastic modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "crosslink-density-modulus--natural-rubber-800-200--anchor",
+      "triplet_id": "crosslink-density-modulus--natural-rubber-800-200",
+      "family_id": "crosslink-density-modulus",
+      "family_name": "Crosslink density and rubbery modulus",
+      "case_id": "natural-rubber-800-200",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 200,
+      "numeric_end": 800,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A natural-rubber network changes crosslink density from 200 moles per cubic meter to 800 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus?",
+      "user": "A natural-rubber network changes crosslink density from 200 moles per cubic meter to 800 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "crosslink-density-modulus--natural-rubber-800-200--physics_paraphrase",
+      "triplet_id": "crosslink-density-modulus--natural-rubber-800-200",
+      "family_id": "crosslink-density-modulus",
+      "family_name": "Crosslink density and rubbery modulus",
+      "case_id": "natural-rubber-800-200",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 200,
+      "numeric_end": 800,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "For the same natural-rubber, the number of elastically active network junctions increases from 0.2 moles per liter to 0.8 moles per liter. Thermal state, polymer chemistry, fillers, order, and loading rate do not change. Select the trend in small-strain network stiffness.",
+      "user": "For the same natural-rubber, the number of elastically active network junctions increases from 0.2 moles per liter to 0.8 moles per liter. Thermal state, polymer chemistry, fillers, order, and loading rate do not change. Select the trend in small-strain network stiffness. Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "crosslink-density-modulus--natural-rubber-800-200--lexical_counterfactual",
+      "triplet_id": "crosslink-density-modulus--natural-rubber-800-200",
+      "family_id": "crosslink-density-modulus",
+      "family_name": "Crosslink density and rubbery modulus",
+      "case_id": "natural-rubber-800-200",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 800,
+      "numeric_end": 200,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A natural-rubber network changes crosslink density from 800 moles per cubic meter to 200 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus?",
+      "user": "A natural-rubber network changes crosslink density from 800 moles per cubic meter to 200 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "crosslink-density-modulus--silicone-600-150--anchor",
+      "triplet_id": "crosslink-density-modulus--silicone-600-150",
+      "family_id": "crosslink-density-modulus",
+      "family_name": "Crosslink density and rubbery modulus",
+      "case_id": "silicone-600-150",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 600,
+      "numeric_end": 150,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A silicone-elastomer network changes crosslink density from 600 moles per cubic meter to 150 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus?",
+      "user": "A silicone-elastomer network changes crosslink density from 600 moles per cubic meter to 150 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "crosslink-density-modulus--silicone-600-150--physics_paraphrase",
+      "triplet_id": "crosslink-density-modulus--silicone-600-150",
+      "family_id": "crosslink-density-modulus",
+      "family_name": "Crosslink density and rubbery modulus",
+      "case_id": "silicone-600-150",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 600,
+      "numeric_end": 150,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "For the same silicone-elastomer, the number of elastically active network junctions decreases from 0.6 moles per liter to 0.15 moles per liter. Thermal state, polymer chemistry, fillers, order, and loading rate do not change. Select the trend in small-strain network stiffness.",
+      "user": "For the same silicone-elastomer, the number of elastically active network junctions decreases from 0.6 moles per liter to 0.15 moles per liter. Thermal state, polymer chemistry, fillers, order, and loading rate do not change. Select the trend in small-strain network stiffness. Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "crosslink-density-modulus--silicone-600-150--lexical_counterfactual",
+      "triplet_id": "crosslink-density-modulus--silicone-600-150",
+      "family_id": "crosslink-density-modulus",
+      "family_name": "Crosslink density and rubbery modulus",
+      "case_id": "silicone-600-150",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 150,
+      "numeric_end": 600,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A silicone-elastomer network changes crosslink density from 150 moles per cubic meter to 600 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus?",
+      "user": "A silicone-elastomer network changes crosslink density from 150 moles per cubic meter to 600 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "crosslink-density-modulus--polyurethane-1000-250--anchor",
+      "triplet_id": "crosslink-density-modulus--polyurethane-1000-250",
+      "family_id": "crosslink-density-modulus",
+      "family_name": "Crosslink density and rubbery modulus",
+      "case_id": "polyurethane-1000-250",
+      "variant": "anchor",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 250,
+      "numeric_end": 1000,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "A polyurethane-elastomer network changes crosslink density from 250 moles per cubic meter to 1000 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus?",
+      "user": "A polyurethane-elastomer network changes crosslink density from 250 moles per cubic meter to 1000 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "crosslink-density-modulus--polyurethane-1000-250--physics_paraphrase",
+      "triplet_id": "crosslink-density-modulus--polyurethane-1000-250",
+      "family_id": "crosslink-density-modulus",
+      "family_name": "Crosslink density and rubbery modulus",
+      "case_id": "polyurethane-1000-250",
+      "variant": "physics_paraphrase",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 250,
+      "numeric_end": 1000,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": true,
+      "stem": "For the same polyurethane-elastomer, the number of elastically active network junctions increases from 0.25 moles per liter to 1 moles per liter. Thermal state, polymer chemistry, fillers, order, and loading rate do not change. Select the trend in small-strain network stiffness.",
+      "user": "For the same polyurethane-elastomer, the number of elastically active network junctions increases from 0.25 moles per liter to 1 moles per liter. Thermal state, polymer chemistry, fillers, order, and loading rate do not change. Select the trend in small-strain network stiffness. Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "crosslink-density-modulus--polyurethane-1000-250--lexical_counterfactual",
+      "triplet_id": "crosslink-density-modulus--polyurethane-1000-250",
+      "family_id": "crosslink-density-modulus",
+      "family_name": "Crosslink density and rubbery modulus",
+      "case_id": "polyurethane-1000-250",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "positive-first",
+      "presented_words": [
+        "greater",
+        "smaller"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 1000,
+      "numeric_end": 250,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": true,
+      "stem": "A polyurethane-elastomer network changes crosslink density from 1000 moles per cubic meter to 250 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus?",
+      "user": "A polyurethane-elastomer network changes crosslink density from 1000 moles per cubic meter to 250 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus? Answer exactly one lowercase word from this ordered pair: greater, smaller."
+    },
+    {
+      "prompt_id": "crosslink-density-modulus--epdm-720-180--anchor",
+      "triplet_id": "crosslink-density-modulus--epdm-720-180",
+      "family_id": "crosslink-density-modulus",
+      "family_name": "Crosslink density and rubbery modulus",
+      "case_id": "epdm-720-180",
+      "variant": "anchor",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 720,
+      "numeric_end": 180,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "A EPDM-elastomer network changes crosslink density from 720 moles per cubic meter to 180 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus?",
+      "user": "A EPDM-elastomer network changes crosslink density from 720 moles per cubic meter to 180 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "crosslink-density-modulus--epdm-720-180--physics_paraphrase",
+      "triplet_id": "crosslink-density-modulus--epdm-720-180",
+      "family_id": "crosslink-density-modulus",
+      "family_name": "Crosslink density and rubbery modulus",
+      "case_id": "epdm-720-180",
+      "variant": "physics_paraphrase",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "smaller",
+      "numeric_start": 720,
+      "numeric_end": 180,
+      "numeric_direction": "decrease",
+      "anchor_expected_positive": false,
+      "stem": "For the same EPDM-elastomer, the number of elastically active network junctions decreases from 0.72 moles per liter to 0.18 moles per liter. Thermal state, polymer chemistry, fillers, order, and loading rate do not change. Select the trend in small-strain network stiffness.",
+      "user": "For the same EPDM-elastomer, the number of elastically active network junctions decreases from 0.72 moles per liter to 0.18 moles per liter. Thermal state, polymer chemistry, fillers, order, and loading rate do not change. Select the trend in small-strain network stiffness. Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    },
+    {
+      "prompt_id": "crosslink-density-modulus--epdm-720-180--lexical_counterfactual",
+      "triplet_id": "crosslink-density-modulus--epdm-720-180",
+      "family_id": "crosslink-density-modulus",
+      "family_name": "Crosslink density and rubbery modulus",
+      "case_id": "epdm-720-180",
+      "variant": "lexical_counterfactual",
+      "presentation_order": "negative-first",
+      "presented_words": [
+        "smaller",
+        "greater"
+      ],
+      "outcome_positive": "greater",
+      "outcome_negative": "smaller",
+      "expected_outcome": "greater",
+      "numeric_start": 180,
+      "numeric_end": 720,
+      "numeric_direction": "increase",
+      "anchor_expected_positive": false,
+      "stem": "A EPDM-elastomer network changes crosslink density from 180 moles per cubic meter to 720 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus?",
+      "user": "A EPDM-elastomer network changes crosslink density from 180 moles per cubic meter to 720 moles per cubic meter while temperature, chain chemistry, filler content, crystallinity, and strain rate remain fixed. What happens to rubbery shear modulus? Answer exactly one lowercase word from this ordered pair: smaller, greater."
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "description": "Exact replication subset from materials-paper-v2. Four strong cases and two prespecified weak/negative cases are rerun only to persist per-layer J/logit trajectories for auditable figures.",
+  "prompts": [
+    {
+      "slug": "paper-v2-assoc-notch-resistance-04",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "notch-resistance",
+      "title": "Resistance to notch-driven failure 4",
+      "description": "Preregistered unnamed materials vignette; compare fixed-band J-lens ranks with the matched logit-lens baseline.",
+      "text": "During a compact-tension test, substantial energy is dissipated near the notch tip before the specimen separates. The material tolerates larger defects than a comparison alloy.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "toughness",
+        "crack",
+        "fracture"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Primary association-suite item. Inclusion requires tokenizer-level input/output absence. The family-level endpoint is paired pass@k/AUC for J-lens versus logit lens over the fixed 38--92% band."
+    },
+    {
+      "slug": "paper-v2-assoc-ductile-02",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "ductile",
+      "title": "Dimpled tensile failure 2",
+      "description": "Preregistered unnamed materials vignette; compare fixed-band J-lens ranks with the matched logit-lens baseline.",
+      "text": "After substantial plastic elongation, a metal bar separated along a surface filled with microscopic pits around second-phase particles. Neighboring pits had joined into larger depressions.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "ductile",
+        "nucleation",
+        "coalescence",
+        "void"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Primary association-suite item. Inclusion requires tokenizer-level input/output absence. The family-level endpoint is paired pass@k/AUC for J-lens versus logit lens over the fixed 38--92% band."
+    },
+    {
+      "slug": "paper-v2-assoc-line-defect-motion-01",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "line-defect-motion",
+      "title": "Crystal line-imperfection motion 1",
+      "description": "Preregistered unnamed materials vignette; compare fixed-band J-lens ranks with the matched logit-lens baseline.",
+      "text": "Under resolved loading, a line imperfection moves across a close-packed plane in the direction of its mismatch vector, leaving a permanent offset at the free surface.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "dislocation",
+        "glide",
+        "slip"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Primary association-suite item. Inclusion requires tokenizer-level input/output absence. The family-level endpoint is paired pass@k/AUC for J-lens versus logit lens over the fixed 38--92% band."
+    },
+    {
+      "slug": "paper-v2-assoc-rapid-transformation-04",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "rapid-transformation",
+      "title": "Rapid diffusionless steel transformation 4",
+      "description": "Preregistered unnamed materials vignette; compare fixed-band J-lens ranks with the matched logit-lens baseline.",
+      "text": "Suppressing atomic redistribution during cooling converts the parent face-centered phase into a hard acicular product. The new body-centered cell has a c-to-a ratio different from one.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "martensite",
+        "shear",
+        "Bain",
+        "tetragonal"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Primary association-suite item. Inclusion requires tokenizer-level input/output absence. The family-level endpoint is paired pass@k/AUC for J-lens versus logit lens over the fixed 38--92% band."
+    },
+    {
+      "slug": "paper-v2-assoc-cleavage-03",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "cleavage",
+      "title": "Faceted low-temperature failure 3",
+      "description": "Preregistered unnamed materials vignette; compare fixed-band J-lens ranks with the matched logit-lens baseline.",
+      "text": "A thick steel plate failed suddenly in cold service without visible plastic distortion. Microscopy revealed flat planes and converging river patterns cutting across grain interiors.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "brittle",
+        "cleavage",
+        "transgranular"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Primary association-suite item. Inclusion requires tokenizer-level input/output absence. The family-level endpoint is paired pass@k/AUC for J-lens versus logit lens over the fixed 38--92% band."
+    },
+    {
+      "slug": "paper-v2-assoc-hot-air-surface-layer-01",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "hot-air-surface-layer",
+      "title": "High-temperature environmental surface layer 1",
+      "description": "Preregistered unnamed materials vignette; compare fixed-band J-lens ranks with the matched logit-lens baseline.",
+      "text": "A nickel alloy held in hot air develops an adherent multilayer surface film as metal atoms react with oxygen. Continued exposure thickens the film according to an approximately parabolic time law.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "oxidation",
+        "oxide",
+        "scale"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Primary association-suite item. Inclusion requires tokenizer-level input/output absence. The family-level endpoint is paired pass@k/AUC for J-lens versus logit lens over the fixed 38--92% band."
+    }
+  ]
+}

@@ -1,0 +1,574 @@
+{
+  "study_id": "lexical-adversarial-representation-2026-07-17",
+  "status": "prospectively frozen before any model forward pass, hidden-state inspection, lens readout, or target-free vocabulary output",
+  "frozen_at": "2026-07-17T11:46:24.759321+00:00",
+  "scientific_question": "When wording and physics disagree, do Gemma's internal states become more similar for physically equivalent descriptions than for near-verbatim descriptions with the opposite physical relation?",
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "lenses": [
+    {
+      "seed": 0,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed0.pt",
+      "sha256": "d15ff55233c458f4289a7aac1b3f5c8e6441d0334a44a7b6fce03e447889aa99"
+    },
+    {
+      "seed": 1,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed1.pt",
+      "sha256": "98bf7c7491c525df5ae9c9ac8040f450cce630dc8257a2ae062e6bdbf76980dd"
+    },
+    {
+      "seed": 2,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed2.pt",
+      "sha256": "51930e2b8d751de78e66ed92fcf6c1724783a4f81f94d0b7021d2278aabe00e5"
+    }
+  ],
+  "source_layers": [
+    0,
+    2,
+    3,
+    5,
+    6,
+    8,
+    10,
+    11,
+    13,
+    15,
+    16,
+    18,
+    20,
+    21,
+    23,
+    24,
+    26,
+    28,
+    29,
+    31,
+    32,
+    34,
+    36,
+    37,
+    39
+  ],
+  "registered_band_percent": [
+    38.0,
+    92.0
+  ],
+  "target_free_layers": [
+    13,
+    20,
+    28,
+    34,
+    39
+  ],
+  "target_free_top_k_retained": 256,
+  "target_free_display_k": 30,
+  "frozen_stopwords": [
+    "a",
+    "about",
+    "after",
+    "again",
+    "against",
+    "all",
+    "also",
+    "am",
+    "an",
+    "and",
+    "answer",
+    "any",
+    "are",
+    "as",
+    "at",
+    "be",
+    "because",
+    "become",
+    "becomes",
+    "been",
+    "before",
+    "being",
+    "between",
+    "both",
+    "but",
+    "by",
+    "can",
+    "choose",
+    "could",
+    "decrease",
+    "did",
+    "do",
+    "does",
+    "doing",
+    "down",
+    "during",
+    "each",
+    "exactly",
+    "for",
+    "from",
+    "further",
+    "greater",
+    "had",
+    "happens",
+    "has",
+    "have",
+    "having",
+    "he",
+    "her",
+    "here",
+    "hers",
+    "herself",
+    "higher",
+    "him",
+    "himself",
+    "his",
+    "how",
+    "i",
+    "if",
+    "in",
+    "increase",
+    "initial",
+    "into",
+    "is",
+    "it",
+    "its",
+    "itself",
+    "just",
+    "likely",
+    "lower",
+    "may",
+    "me",
+    "more",
+    "most",
+    "must",
+    "my",
+    "myself",
+    "no",
+    "nor",
+    "not",
+    "of",
+    "off",
+    "on",
+    "once",
+    "one",
+    "only",
+    "or",
+    "ordered",
+    "other",
+    "our",
+    "ours",
+    "ourselves",
+    "out",
+    "over",
+    "own",
+    "pair",
+    "relative",
+    "result",
+    "resulting",
+    "same",
+    "select",
+    "she",
+    "should",
+    "smaller",
+    "so",
+    "some",
+    "state",
+    "such",
+    "than",
+    "that",
+    "the",
+    "their",
+    "theirs",
+    "them",
+    "themselves",
+    "then",
+    "there",
+    "these",
+    "they",
+    "this",
+    "those",
+    "through",
+    "to",
+    "too",
+    "trend",
+    "under",
+    "until",
+    "up",
+    "very",
+    "was",
+    "we",
+    "were",
+    "what",
+    "when",
+    "where",
+    "which",
+    "while",
+    "who",
+    "whom",
+    "why",
+    "will",
+    "with",
+    "word",
+    "would",
+    "you",
+    "your",
+    "yours",
+    "yourself",
+    "yourselves"
+  ],
+  "inputs": {
+    "prompt_manifest": "experiments/lexical-adversarial-representation-2026-07-17/prompt_manifest.json",
+    "prompt_manifest_sha256": "bcb3fd2853de772a7d4a16c7f5535a7eaddcc91416dc7eca72e906229adf8197",
+    "runner": "scripts/run_lexical_adversarial_representation.py",
+    "runner_sha256": "de6659a0ca75af96bfaac955d8ed1c05c0f701ec99b0780087902a4de086f0b7"
+  },
+  "tokenization_preflight": {
+    "decrease": [
+      122578
+    ],
+    "greater": [
+      89785
+    ],
+    "higher": [
+      87596
+    ],
+    "increase": [
+      70537
+    ],
+    "lower": [
+      11462
+    ],
+    "smaller": [
+      146772
+    ]
+  },
+  "lexical_adversarial_preflight": {
+    "word_tfidf": {
+      "all_lexical_counterfactuals_closer": true,
+      "n_counterfactuals_closer": 24,
+      "n_triplets": 24,
+      "mean_physics_minus_lexical_margin": -0.7463247568273589,
+      "rows": [
+        {
+          "triplet_id": "grain-size-strength--nickel-superalloy-80-20",
+          "anchor_paraphrase_similarity": 0.21084984018364794,
+          "anchor_counterfactual_similarity": 0.9561942507539823,
+          "physics_minus_lexical_margin": -0.7453444105703344
+        },
+        {
+          "triplet_id": "grain-size-strength--ferritic-stainless-60-15",
+          "anchor_paraphrase_similarity": 0.16612788368996212,
+          "anchor_counterfactual_similarity": 0.953165060119118,
+          "physics_minus_lexical_margin": -0.7870371764291558
+        },
+        {
+          "triplet_id": "grain-size-strength--aluminum-alloy-48-12",
+          "anchor_paraphrase_similarity": 0.21329435377912015,
+          "anchor_counterfactual_similarity": 0.9380999032812184,
+          "physics_minus_lexical_margin": -0.7248055495020982
+        },
+        {
+          "triplet_id": "grain-size-strength--alpha-brass-36-9",
+          "anchor_paraphrase_similarity": 0.15214871510251435,
+          "anchor_counterfactual_similarity": 0.9287277144678806,
+          "physics_minus_lexical_margin": -0.7765789993653662
+        },
+        {
+          "triplet_id": "crack-size-fracture--fused-silica-800-200",
+          "anchor_paraphrase_similarity": 0.16514180688134616,
+          "anchor_counterfactual_similarity": 0.9999999999999998,
+          "physics_minus_lexical_margin": -0.8348581931186536
+        },
+        {
+          "triplet_id": "crack-size-fracture--alumina-600-150",
+          "anchor_paraphrase_similarity": 0.16117489096811224,
+          "anchor_counterfactual_similarity": 0.9671281897490874,
+          "physics_minus_lexical_margin": -0.8059532987809752
+        },
+        {
+          "triplet_id": "crack-size-fracture--silicon-carbide-400-100",
+          "anchor_paraphrase_similarity": 0.1429793805262375,
+          "anchor_counterfactual_similarity": 0.9999999999999999,
+          "physics_minus_lexical_margin": -0.8570206194737624
+        },
+        {
+          "triplet_id": "crack-size-fracture--soda-lime-glass-1000-250",
+          "anchor_paraphrase_similarity": 0.18741760354869075,
+          "anchor_counterfactual_similarity": 0.9651241784784553,
+          "physics_minus_lexical_margin": -0.7777065749297646
+        },
+        {
+          "triplet_id": "temperature-diffusion--nickel-self-1300-1100",
+          "anchor_paraphrase_similarity": 0.172129329949876,
+          "anchor_counterfactual_similarity": 0.9366549967111941,
+          "physics_minus_lexical_margin": -0.7645256667613181
+        },
+        {
+          "triplet_id": "temperature-diffusion--carbon-austenite-1250-1050",
+          "anchor_paraphrase_similarity": 0.17843974521254793,
+          "anchor_counterfactual_similarity": 0.9372648820529249,
+          "physics_minus_lexical_margin": -0.758825136840377
+        },
+        {
+          "triplet_id": "temperature-diffusion--oxygen-ysz-1000-800",
+          "anchor_paraphrase_similarity": 0.21463600683746803,
+          "anchor_counterfactual_similarity": 0.9445359429585546,
+          "physics_minus_lexical_margin": -0.7298999361210865
+        },
+        {
+          "triplet_id": "temperature-diffusion--lithium-lco-420-300",
+          "anchor_paraphrase_similarity": 0.23901790503846276,
+          "anchor_counterfactual_similarity": 0.9426003017200598,
+          "physics_minus_lexical_margin": -0.703582396681597
+        },
+        {
+          "triplet_id": "fiber-angle-stiffness--carbon-epoxy-80-10",
+          "anchor_paraphrase_similarity": 0.1653026434390573,
+          "anchor_counterfactual_similarity": 0.9473398070289654,
+          "physics_minus_lexical_margin": -0.782037163589908
+        },
+        {
+          "triplet_id": "fiber-angle-stiffness--glass-epoxy-75-15",
+          "anchor_paraphrase_similarity": 0.174630822520076,
+          "anchor_counterfactual_similarity": 0.9521579173916332,
+          "physics_minus_lexical_margin": -0.7775270948715572
+        },
+        {
+          "triplet_id": "fiber-angle-stiffness--aramid-epoxy-70-20",
+          "anchor_paraphrase_similarity": 0.17161075423697222,
+          "anchor_counterfactual_similarity": 0.9468884762976237,
+          "physics_minus_lexical_margin": -0.7752777220606515
+        },
+        {
+          "triplet_id": "fiber-angle-stiffness--sic-titanium-65-5",
+          "anchor_paraphrase_similarity": 0.20244769306525204,
+          "anchor_counterfactual_similarity": 0.9299568507806929,
+          "physics_minus_lexical_margin": -0.7275091577154409
+        },
+        {
+          "triplet_id": "fiber-fraction-stiffness--carbon-peek-55-25",
+          "anchor_paraphrase_similarity": 0.26831311141619,
+          "anchor_counterfactual_similarity": 0.9405723166669409,
+          "physics_minus_lexical_margin": -0.6722592052507508
+        },
+        {
+          "triplet_id": "fiber-fraction-stiffness--glass-polyester-50-20",
+          "anchor_paraphrase_similarity": 0.1963585804305234,
+          "anchor_counterfactual_similarity": 0.9381901288105154,
+          "physics_minus_lexical_margin": -0.741831548379992
+        },
+        {
+          "triplet_id": "fiber-fraction-stiffness--aramid-epoxy-45-15",
+          "anchor_paraphrase_similarity": 0.25214433962848964,
+          "anchor_counterfactual_similarity": 0.943364141393974,
+          "physics_minus_lexical_margin": -0.6912198017654843
+        },
+        {
+          "triplet_id": "fiber-fraction-stiffness--sic-titanium-40-10",
+          "anchor_paraphrase_similarity": 0.20809949872898276,
+          "anchor_counterfactual_similarity": 0.9366474487972606,
+          "physics_minus_lexical_margin": -0.7285479500682779
+        },
+        {
+          "triplet_id": "martensite-hardness--medium-carbon-steel-80-20",
+          "anchor_paraphrase_similarity": 0.24235101869396874,
+          "anchor_counterfactual_similarity": 0.9518231581639075,
+          "physics_minus_lexical_margin": -0.7094721394699388
+        },
+        {
+          "triplet_id": "martensite-hardness--dual-phase-steel-60-15",
+          "anchor_paraphrase_similarity": 0.26786406907390464,
+          "anchor_counterfactual_similarity": 0.951091459169945,
+          "physics_minus_lexical_margin": -0.6832273900960404
+        },
+        {
+          "triplet_id": "martensite-hardness--low-alloy-steel-70-10",
+          "anchor_paraphrase_similarity": 0.23881223225926884,
+          "anchor_counterfactual_similarity": 0.945132429288645,
+          "physics_minus_lexical_margin": -0.7063201970293762
+        },
+        {
+          "triplet_id": "martensite-hardness--martensitic-stainless-75-25",
+          "anchor_paraphrase_similarity": 0.2988415874453374,
+          "anchor_counterfactual_similarity": 0.9492684224300448,
+          "physics_minus_lexical_margin": -0.6504268349847074
+        }
+      ]
+    },
+    "character_tfidf": {
+      "all_lexical_counterfactuals_closer": true,
+      "n_counterfactuals_closer": 24,
+      "n_triplets": 24,
+      "mean_physics_minus_lexical_margin": -0.6649296122972476,
+      "rows": [
+        {
+          "triplet_id": "grain-size-strength--nickel-superalloy-80-20",
+          "anchor_paraphrase_similarity": 0.38319955190592797,
+          "anchor_counterfactual_similarity": 0.9999999999999991,
+          "physics_minus_lexical_margin": -0.6168004480940712
+        },
+        {
+          "triplet_id": "grain-size-strength--ferritic-stainless-60-15",
+          "anchor_paraphrase_similarity": 0.3116998958484588,
+          "anchor_counterfactual_similarity": 0.999999999999999,
+          "physics_minus_lexical_margin": -0.6883001041515402
+        },
+        {
+          "triplet_id": "grain-size-strength--aluminum-alloy-48-12",
+          "anchor_paraphrase_similarity": 0.40610753420672924,
+          "anchor_counterfactual_similarity": 0.9999999999999989,
+          "physics_minus_lexical_margin": -0.5938924657932696
+        },
+        {
+          "triplet_id": "grain-size-strength--alpha-brass-36-9",
+          "anchor_paraphrase_similarity": 0.2913904598886369,
+          "anchor_counterfactual_similarity": 1.0000000000000013,
+          "physics_minus_lexical_margin": -0.7086095401113645
+        },
+        {
+          "triplet_id": "crack-size-fracture--fused-silica-800-200",
+          "anchor_paraphrase_similarity": 0.3217217171341708,
+          "anchor_counterfactual_similarity": 0.9999999999999997,
+          "physics_minus_lexical_margin": -0.6782782828658289
+        },
+        {
+          "triplet_id": "crack-size-fracture--alumina-600-150",
+          "anchor_paraphrase_similarity": 0.3073386488704158,
+          "anchor_counterfactual_similarity": 0.9999999999999907,
+          "physics_minus_lexical_margin": -0.6926613511295749
+        },
+        {
+          "triplet_id": "crack-size-fracture--silicon-carbide-400-100",
+          "anchor_paraphrase_similarity": 0.3082552720815275,
+          "anchor_counterfactual_similarity": 0.9999999999999998,
+          "physics_minus_lexical_margin": -0.6917447279184723
+        },
+        {
+          "triplet_id": "crack-size-fracture--soda-lime-glass-1000-250",
+          "anchor_paraphrase_similarity": 0.36054829115648873,
+          "anchor_counterfactual_similarity": 1.000000000000007,
+          "physics_minus_lexical_margin": -0.6394517088435183
+        },
+        {
+          "triplet_id": "temperature-diffusion--nickel-self-1300-1100",
+          "anchor_paraphrase_similarity": 0.3116695477055018,
+          "anchor_counterfactual_similarity": 1.0000000000000004,
+          "physics_minus_lexical_margin": -0.6883304522944986
+        },
+        {
+          "triplet_id": "temperature-diffusion--carbon-austenite-1250-1050",
+          "anchor_paraphrase_similarity": 0.3038621719362976,
+          "anchor_counterfactual_similarity": 1.0000000000000044,
+          "physics_minus_lexical_margin": -0.6961378280637068
+        },
+        {
+          "triplet_id": "temperature-diffusion--oxygen-ysz-1000-800",
+          "anchor_paraphrase_similarity": 0.37811187377759653,
+          "anchor_counterfactual_similarity": 1.0000000000000016,
+          "physics_minus_lexical_margin": -0.621888126222405
+        },
+        {
+          "triplet_id": "temperature-diffusion--lithium-lco-420-300",
+          "anchor_paraphrase_similarity": 0.3881692846420419,
+          "anchor_counterfactual_similarity": 0.9999999999999998,
+          "physics_minus_lexical_margin": -0.6118307153579579
+        },
+        {
+          "triplet_id": "fiber-angle-stiffness--carbon-epoxy-80-10",
+          "anchor_paraphrase_similarity": 0.27852348261004045,
+          "anchor_counterfactual_similarity": 0.9999999999999992,
+          "physics_minus_lexical_margin": -0.7214765173899588
+        },
+        {
+          "triplet_id": "fiber-angle-stiffness--glass-epoxy-75-15",
+          "anchor_paraphrase_similarity": 0.28612511087602144,
+          "anchor_counterfactual_similarity": 1.0,
+          "physics_minus_lexical_margin": -0.7138748891239786
+        },
+        {
+          "triplet_id": "fiber-angle-stiffness--aramid-epoxy-70-20",
+          "anchor_paraphrase_similarity": 0.29014874828117915,
+          "anchor_counterfactual_similarity": 1.0000000000000002,
+          "physics_minus_lexical_margin": -0.7098512517188211
+        },
+        {
+          "triplet_id": "fiber-angle-stiffness--sic-titanium-65-5",
+          "anchor_paraphrase_similarity": 0.3374505254642913,
+          "anchor_counterfactual_similarity": 0.9999999999999978,
+          "physics_minus_lexical_margin": -0.6625494745357066
+        },
+        {
+          "triplet_id": "fiber-fraction-stiffness--carbon-peek-55-25",
+          "anchor_paraphrase_similarity": 0.2793676861032384,
+          "anchor_counterfactual_similarity": 1.0000000000000013,
+          "physics_minus_lexical_margin": -0.720632313896763
+        },
+        {
+          "triplet_id": "fiber-fraction-stiffness--glass-polyester-50-20",
+          "anchor_paraphrase_similarity": 0.3059032050137924,
+          "anchor_counterfactual_similarity": 1.0000000000000004,
+          "physics_minus_lexical_margin": -0.694096794986208
+        },
+        {
+          "triplet_id": "fiber-fraction-stiffness--aramid-epoxy-45-15",
+          "anchor_paraphrase_similarity": 0.2854999438086236,
+          "anchor_counterfactual_similarity": 1.0000000000000004,
+          "physics_minus_lexical_margin": -0.7145000561913768
+        },
+        {
+          "triplet_id": "fiber-fraction-stiffness--sic-titanium-40-10",
+          "anchor_paraphrase_similarity": 0.3289651353505858,
+          "anchor_counterfactual_similarity": 1.000000000000001,
+          "physics_minus_lexical_margin": -0.6710348646494153
+        },
+        {
+          "triplet_id": "martensite-hardness--medium-carbon-steel-80-20",
+          "anchor_paraphrase_similarity": 0.40278955760072,
+          "anchor_counterfactual_similarity": 1.0000000000000084,
+          "physics_minus_lexical_margin": -0.5972104423992884
+        },
+        {
+          "triplet_id": "martensite-hardness--dual-phase-steel-60-15",
+          "anchor_paraphrase_similarity": 0.38593953616676807,
+          "anchor_counterfactual_similarity": 1.0000000000000064,
+          "physics_minus_lexical_margin": -0.6140604638332383
+        },
+        {
+          "triplet_id": "martensite-hardness--low-alloy-steel-70-10",
+          "anchor_paraphrase_similarity": 0.37166287810736726,
+          "anchor_counterfactual_similarity": 1.000000000000002,
+          "physics_minus_lexical_margin": -0.6283371218926348
+        },
+        {
+          "triplet_id": "martensite-hardness--martensitic-stainless-75-25",
+          "anchor_paraphrase_similarity": 0.41723924632965614,
+          "anchor_counterfactual_similarity": 1.0000000000000002,
+          "physics_minus_lexical_margin": -0.5827607536703441
+        }
+      ]
+    }
+  },
+  "primary_endpoint": {
+    "representation": "mean of three Jacobian transported states in the final decoder basis, centered across all frozen prompts at each layer",
+    "triplet_margin": "cosine(anchor, physics_paraphrase) minus cosine(anchor, lexical_counterfactual)",
+    "scalar": "mean triplet margin over the fixed 38-92 percent band",
+    "independent_units": "24 material-system triplets in six mechanism families",
+    "inference": "30000 two-stage bootstrap resamples: mechanism families, then triplets within resampled families; seed 20260717"
+  },
+  "secondary_endpoints": [
+    "direct-unembedding-basis and raw-residual triplet margins",
+    "paired Jacobian-minus-direct triplet margin",
+    "fraction of triplets and family means with positive band margin",
+    "clean answer accuracy and anchor-paraphrase-counterfactual consistency",
+    "target-free top-30 word-set Jaccard margin at the five frozen layers after triplet-union prompt morphology filtering",
+    "word and character TF-IDF lexical margins"
+  ],
+  "success_rule": {
+    "primary": "the two-stage 95 percent bootstrap interval for the Jacobian ensemble band margin is above zero",
+    "breadth": "at least 18 of 24 triplets and at least five of six family means have positive Jacobian band margins",
+    "all_outputs_retained": true
+  },
+  "guardrails": [
+    "Similarity is evidence of representation organization, not causal use.",
+    "A positive result does not reveal a literal chain of thought.",
+    "The suite tests six monotonic textbook relations, not unrestricted materials reasoning.",
+    "No prompt, family, layer, or word is excluded after execution."
+  ]
+}

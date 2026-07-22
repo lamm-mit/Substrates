@@ -1,0 +1,93 @@
+{
+  "study_id": "cross-mechanism-activation-patching-2026-07-18",
+  "frozen_at": "2026-07-17T17:50:28-04:00",
+  "status": "frozen before any cross-mechanism patching output",
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "question": "Does an option-free donor state causally transfer its physical increase/decrease outcome across mechanisms, answer vocabularies, and reversed numerical trends?",
+  "inputs": {
+    "runner": {
+      "path": "scripts/run_cross_mechanism_activation_patching.py",
+      "sha256": "4402b2c6327c07c1a0ff6eda75c89bd57496f08e148d8f6d42a8ab3957e67a44"
+    },
+    "prompt_manifest": {
+      "path": "experiments/answer-code-binding-2026-07-17/prompt_manifest.json",
+      "sha256": "9ec1bdc3d12960cdcb2538bd214a1771d9f45ce5d1243fa4a2ab2ff3f83d8de5",
+      "field_used": "stem",
+      "variant_used": "anchor"
+    },
+    "representations": {
+      "path": "experiments/option-free-question-end-2026-07-18/representations.npz",
+      "sha256": "2451d643f94934c2ea5ef73acd06dbaf1ea58f43065a724c9190423a5be9b9dc",
+      "array_used": "raw_states",
+      "position_used": "question_end"
+    }
+  },
+  "source_layers": [
+    16,
+    24,
+    32,
+    37
+  ],
+  "registered_band_percent": [
+    38,
+    92
+  ],
+  "prompt_design": {
+    "receivers": "all 24 anchor stems: four material cases in each of six mechanisms",
+    "donors_per_receiver": "all four anchor cases in each of the five other mechanisms",
+    "n_receiver_donor_pairs": 480,
+    "n_layers": 4,
+    "n_patches": 1920,
+    "answer_scaffold": "none in receiver or donor",
+    "receiver_readout": "receiver-specific positive minus negative answer logit",
+    "answer_vocabularies": [
+      [
+        "higher",
+        "lower"
+      ],
+      [
+        "greater",
+        "smaller"
+      ]
+    ]
+  },
+  "primary_endpoint": {
+    "definition": "For each ordered donor-family to receiver-family pair and layer, subtract the mean patched receiver margin under the donor family's two negative-outcome cases from the mean under its two positive-outcome cases. Average first over receivers and the four frozen layers, then over both directions of each unordered mechanism pair.",
+    "subsets": [
+      "all 15 unordered mechanism pairs",
+      "nine cross-answer-vocabulary pairs",
+      "nine opposite-response-orientation pairs",
+      "five pairs that are both cross-vocabulary and opposite-orientation"
+    ]
+  },
+  "secondary_endpoints": {
+    "numeric_direction_contrast": "increase-donor minus decrease-donor patched receiver margin, calculated with the same grouping",
+    "donor_family_breadth": "number of six donor mechanisms with positive physical-outcome contrast",
+    "layer_curves": "descriptive outcome and numerical-direction contrasts at each of four frozen layers",
+    "state_distance": "receiver-donor raw-state Euclidean distance, retained for diagnostic adjustment only"
+  },
+  "inference": {
+    "exact_test": "two-sided sign-flip enumeration over unordered mechanism-pair effects; all 2^n assignments retained",
+    "bootstrap": "30000 fixed-seed resamples of unordered mechanism pairs",
+    "seed": 20260718,
+    "unit": "unordered mechanism pair after averaging both patching directions, all receiver cases, all donor cases, and frozen layers"
+  },
+  "success_rule": {
+    "strong_option_free_outcome_transfer_requires": [
+      "overall physical-outcome contrast above zero with exact p <= 0.05",
+      "cross-answer-vocabulary contrast above zero with exact p <= 0.05",
+      "opposite-response-orientation contrast above zero with exact p <= 0.05",
+      "at least five of six donor-family contrasts above zero"
+    ],
+    "partial": "one or two inferential subset gates pass, or fewer than five donor families are positive",
+    "none": "the overall endpoint fails or no transfer subset passes"
+  },
+  "guardrails": [
+    "The natural question-end cohort and its observational graph result were already inspected before this protocol.",
+    "No Jacobian lens performs the intervention; this is a causal test of archived Gemma residual states.",
+    "Cross-vocabulary transfer can rule out transplantation of a specific answer token, but not a general answer-polarity or decision-state account.",
+    "A positive result is causal sufficiency in a constrained forced-pair readout, not necessity, unrestricted generation, or a literal chain of thought.",
+    "Every receiver, donor, layer, and negative result is retained."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "candidate_success_rule": {
+    "behavior_accuracy_minimum": 0.85,
+    "formula_surface_agreement_minimum": 0.75,
+    "mean_replication_law_auc_minimum": 0.75,
+    "positive_replication_laws_minimum": 7,
+    "replication_laws_total": 8
+  },
+  "development_rule": "Select position/layer and a linear decoder using discovery laws only. Evaluate once on the eight internal replication laws.",
+  "frozen_at": "2026-07-18T19:38:32.011822+00:00",
+  "guardrails": [
+    "The law marker precedes every numerical case.",
+    "The decision marker precedes the answer words.",
+    "The same generic algorithm is used for every direct and inverse law.",
+    "No generated chain of thought or intermediate label is supplied.",
+    "All outputs are retained, including failures."
+  ],
+  "inputs": {
+    "prompt_manifest": {
+      "path": "experiments/elicited-physics-abstraction-2026-07-18/prompt_manifest.json",
+      "sha256": "4b2a691badae5519410d60250cae7fcb3f60922d00feae063ce5cc999f341894"
+    },
+    "runner": {
+      "path": "scripts/run_elicited_physics_abstraction.py",
+      "sha256": "29d257f7d1c81ba1c6e7727dc24bb3b2b4b91b924fb83c83fe94ee99cb231dbe"
+    }
+  },
+  "interpretation_limit": "All laws appeared in earlier studies. This run is method development, not a confirmatory result. A successful method must be frozen and rerun on entirely fresh laws.",
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "positions": [
+    "law",
+    "comparison",
+    "decision",
+    "final_prompt"
+  ],
+  "purpose": "Test whether an invariant, answer-free two-stage instruction elicits relation-sign, numerical-sign, and composed physical-sign variables that generalize across constitutive laws.",
+  "status": "frozen-before-scaffolded-output",
+  "study_id": "elicited-physics-abstraction-2026-07-18"
+}

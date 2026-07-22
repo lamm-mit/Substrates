@@ -1,0 +1,15 @@
+{
+  "study_id": "graph-topology-rigorous-2026-07-17-amendment-v2",
+  "status": "Post-hoc robustness amendment frozen after the v1 surface-form diagnostics and before computing the endpoints below",
+  "frozen_utc": "2026-07-17T19:24:33Z",
+  "parent_statistics_sha256": "788f42791f74ae622227652e1f4cea452450eb18cb66295e962b8a22e3e1e232",
+  "parent_analysis_script_sha256": "888549a6ef1d165f185628f60362a29b5e8fd5eb278de3a79c6007b22f15453a",
+  "reason": "The signed-relation graph survived the answer-order and surface-variant checks. These additional endpoints test whether the result depends on a single top-neighbor threshold or an overly permissive null that breaks the three surface variants belonging to one material case.",
+  "endpoints": [
+    "Enumerate the exact 6^6 = 46,656 balanced outcome assignments across four material cases in each of six mechanism families, assigning the same permuted outcome to all three surface variants of a case. Report exact plus-one p-values and the exact-null mean for every fixed graph.",
+    "For every source prompt and each other surface variant, rank all three eligible prompts after excluding the same material case. Report top-1 accuracy, mean reciprocal rank, and pairwise ranking AUC for the unique same-outcome candidate.",
+    "Report leave-one-mechanism-out ranges for top-1 accuracy and ranking AUC.",
+    "Retain Jacobian, direct, raw, word-TF-IDF, character-TF-IDF, answer-order-only, and numeric-direction-oracle comparisons. The oracle remains a ceiling, not model evidence."
+  ],
+  "interpretation_rule": "A robust relation result should have exact case-preserving p<0.05, ranking AUC above 0.5, and leave-one-mechanism-out values above chance. Equality of Jacobian, direct, and raw representations must remain explicit."
+}

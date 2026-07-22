@@ -1,0 +1,197 @@
+{
+  "study_id": "ensemble-steering-v2",
+  "status": "frozen before calibration intervention outputs; implementation-only amendment recorded below",
+  "frozen_at": "2026-07-16T15:05:00-04:00",
+  "amendments": [
+    {
+      "time": "2026-07-16T15:18:00-04:00",
+      "reason": "Candidate layer 12 is absent from the fitted checkpoints; the attempted run stopped with zero calibration intervention rows.",
+      "change": "Replace unavailable layer 12 with registered layer 10; all other protocol fields remain unchanged."
+    }
+  ],
+  "purpose": "Develop semantic-ensemble Jacobian steering on calibration prompts, freeze one causal layer per family, and test on disjoint held-out prompts before any manuscript edit.",
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "lens_paths": [
+    "lenses/hub/gemma4-e4b-it/paper/seed0.pt",
+    "lenses/hub/gemma4-e4b-it/paper/seed1.pt",
+    "lenses/hub/gemma4-e4b-it/paper/seed2.pt"
+  ],
+  "candidate_layers": [10, 16, 20, 24, 28],
+  "calibration": {
+    "lens_seed": 0,
+    "doses_percent_residual_norm": [-4.0, 0.0, 4.0],
+    "selection_score": "mean signed endpoint across calibration prompt orders minus one population standard deviation",
+    "tie_break": "lower layer index"
+  },
+  "confirmation": {
+    "doses_percent_residual_norm": [-4.0, -2.0, 0.0, 2.0, 4.0],
+    "jacobian_lens_seeds": [0, 1, 2],
+    "random_seeds": [0, 1, 2, 3, 4],
+    "position": "final prompt token only",
+    "clean_acceptance": "global top-1 must be A or B; expected physical answer is audited but not used to exclude",
+    "primary_endpoint": "positive semantic answer log-odds at +4 percent minus the value at -4 percent",
+    "independent_unit": "physical condition after averaging A/B and B/A option orders",
+    "success_criteria": {
+      "condition_direction_fraction": 0.8,
+      "option_order_same_sign_fraction": 0.8,
+      "jacobian_minus_random_cluster_interval_above_zero": true,
+      "minimum_valid_choice_probability": 0.95
+    }
+  },
+  "families": [
+    {
+      "family_id": "intergranular-corrosion",
+      "concept_positive": ["sensitization", "corrosion", "anodic", "depletion"],
+      "concept_negative": ["passivation", "protected", "resistant", "passive"],
+      "outcome_positive": "grooves",
+      "outcome_negative": "clean",
+      "direction_fit_prompts": [
+        "Consider the internal metallurgical state that governs localized attack at stainless-steel grain boundaries.",
+        "Analyze how thermal processing changes the chemical and electrochemical condition of stainless-steel grain edges.",
+        "Reason about the mechanism that determines whether stainless steel retains protection during an aggressive qualification test."
+      ],
+      "calibration_prompts": [
+        {
+          "condition_id": "cal-sensitized",
+          "expected_outcome": "grooves",
+          "stem": "A conventional austenitic stainless steel was held for several hours near 650 degrees Celsius, producing chromium-rich carbide films and adjacent chromium-depleted grain-boundary regions. In an intergranular-corrosion test, which surface is more likely?"
+        },
+        {
+          "condition_id": "cal-protected",
+          "expected_outcome": "clean",
+          "stem": "A low-carbon austenitic stainless steel was solution annealed and water quenched before testing, with no continuous carbide network detected at grain boundaries. In an intergranular-corrosion test, which surface is more likely?"
+        },
+        {
+          "condition_id": "cal-uncertain",
+          "expected_outcome": null,
+          "stem": "An austenitic stainless-steel coupon has an undocumented thermal history near the sensitization range, and its grain-boundary chemistry was not measured. In an intergranular-corrosion test, which surface is more likely?"
+        }
+      ],
+      "confirmation_prompts": [
+        {
+          "condition_id": "weld-heat-affected-zone",
+          "expected_outcome": "grooves",
+          "stem": "The heat-affected zone of an unstabilized austenitic stainless-steel weld experienced repeated dwell near 650 degrees Celsius. Microscopy shows a nearly continuous grain-boundary carbide network. After an intergranular-corrosion qualification test, which surface is more likely?"
+        },
+        {
+          "condition_id": "stabilized-solution-annealed",
+          "expected_outcome": "clean",
+          "stem": "A niobium-stabilized austenitic stainless steel was correctly solution treated and rapidly quenched. No chromium-depleted grain-boundary zone is detected. After an intergranular-corrosion qualification test, which surface is more likely?"
+        },
+        {
+          "condition_id": "borderline-thermal-exposure",
+          "expected_outcome": null,
+          "stem": "An austenitic stainless-steel component briefly crossed 625 degrees Celsius during service, but the dwell time and subsequent cooling rate are uncertain. After an intergranular-corrosion qualification test, which surface is more likely?"
+        },
+        {
+          "condition_id": "slow-cool-through-sensitization",
+          "expected_outcome": "grooves",
+          "stem": "An unstabilized austenitic stainless steel was cooled slowly from solution-treatment temperature through the carbide-precipitation range, allowing grain-boundary precipitation. After an intergranular-corrosion qualification test, which surface is more likely?"
+        }
+      ]
+    },
+    {
+      "family_id": "martensitic-transformation",
+      "concept_positive": ["tetragonal", "quenched", "quench", "shear"],
+      "concept_negative": ["diffusion", "annealed", "equilibrium", "ferrite"],
+      "outcome_positive": "hard",
+      "outcome_negative": "soft",
+      "direction_fit_prompts": [
+        "Consider the transformation mechanism selected when carbon steel leaves its high-temperature phase during cooling.",
+        "Analyze how cooling history controls atomic rearrangement and crystal distortion in carbon steel.",
+        "Reason about the competing transformation pathways available to austenitized carbon steel."
+      ],
+      "calibration_prompts": [
+        {
+          "condition_id": "cal-fast-quench",
+          "expected_outcome": "hard",
+          "stem": "A fully austenitized 0.8 weight-percent carbon steel is quenched rapidly enough to suppress long-range carbon redistribution. Relative to the annealed condition, which final state is more likely?"
+        },
+        {
+          "condition_id": "cal-slow-cool",
+          "expected_outcome": "soft",
+          "stem": "A fully austenitized 0.8 weight-percent carbon steel is furnace cooled sufficiently slowly for near-equilibrium transformation products to form. Relative to the quenched condition, which final state is more likely?"
+        },
+        {
+          "condition_id": "cal-unknown-rate",
+          "expected_outcome": null,
+          "stem": "A 0.8 weight-percent carbon steel was austenitized, but its cooling curve through the transformation range was not recorded. Relative to an annealed reference, which final state is more likely?"
+        }
+      ],
+      "confirmation_prompts": [
+        {
+          "condition_id": "brine-quenched",
+          "expected_outcome": "hard",
+          "stem": "A thin 0.8 weight-percent carbon-steel specimen is fully austenitized and immediately brine quenched, preventing appreciable diffusional decomposition before reaching low temperature. Relative to a furnace-cooled specimen, which final state is more likely?"
+        },
+        {
+          "condition_id": "furnace-cooled",
+          "expected_outcome": "soft",
+          "stem": "An identical austenitized carbon-steel specimen cools inside an insulated furnace over many hours, allowing carbon redistribution and equilibrium products. Relative to a brine-quenched specimen, which final state is more likely?"
+        },
+        {
+          "condition_id": "borderline-oil-quench",
+          "expected_outcome": null,
+          "stem": "A medium-section carbon-steel part is oil quenched at a rate close to its critical cooling rate; section thickness and bath agitation are not reported. Relative to an annealed part, which final state is more likely?"
+        },
+        {
+          "condition_id": "interrupted-slow-cooling",
+          "expected_outcome": "soft",
+          "stem": "An austenitized eutectoid-steel sample is held within the diffusional-transformation range until transformation is nearly complete and is only then cooled to room temperature. Relative to a directly quenched sample, which final state is more likely?"
+        }
+      ]
+    },
+    {
+      "family_id": "grain-size-strengthening",
+      "concept_positive": ["boundaries", "blocking", "barriers", "strengthening"],
+      "concept_negative": ["coarse", "glide", "slip", "mobility"],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "direction_fit_prompts": [
+        "Consider how polycrystalline microstructural length scale changes dislocation motion during yielding.",
+        "Analyze how interfaces between grains alter the stress required for plastic flow.",
+        "Reason about the mechanism connecting grain refinement to the onset of yielding in a conventional polycrystal."
+      ],
+      "calibration_prompts": [
+        {
+          "condition_id": "cal-refined",
+          "expected_outcome": "higher",
+          "stem": "Two otherwise identical conventional polycrystals have average grain sizes of 8 and 80 micrometers. For the 8-micrometer material, which yield strength is more likely relative to the 80-micrometer material?"
+        },
+        {
+          "condition_id": "cal-coarsened",
+          "expected_outcome": "lower",
+          "stem": "Heat treatment increases the average grain size of a conventional polycrystal from 15 to 90 micrometers without changing composition or precipitates. After coarsening, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "cal-unknown-size",
+          "expected_outcome": null,
+          "stem": "Two conventional polycrystalline specimens have the same composition and heat treatment, but their grain sizes were not measured. For the first specimen, which yield strength is more likely relative to the second?"
+        }
+      ],
+      "confirmation_prompts": [
+        {
+          "condition_id": "grain-refined-plate",
+          "expected_outcome": "higher",
+          "stem": "Thermomechanical processing refines a conventional alloy plate from an 80-micrometer to an 8-micrometer average grain size while holding composition, texture, and precipitates fixed. After refinement, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "abnormal-grain-growth",
+          "expected_outcome": "lower",
+          "stem": "Abnormal grain growth increases the mean grain size of a conventional polycrystal from 12 to 100 micrometers without changing its phase fraction or precipitate state. After growth, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "near-threshold-refinement",
+          "expected_outcome": "higher",
+          "stem": "Two otherwise identical conventional polycrystals have mean grain sizes of 28 and 32 micrometers. For the 28-micrometer specimen, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "undocumented-grain-size",
+          "expected_outcome": null,
+          "stem": "Two conventional alloy coupons share composition, texture, and precipitate state, but their grain-size measurements were lost. For the first coupon, which yield strength is more likely relative to the second?"
+        }
+      ]
+    }
+  ]
+}

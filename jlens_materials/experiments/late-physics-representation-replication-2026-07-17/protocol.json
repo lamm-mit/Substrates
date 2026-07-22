@@ -1,0 +1,571 @@
+{
+  "study_id": "late-physics-representation-replication-2026-07-17",
+  "status": "prospectively frozen before any forward pass on this disjoint replication cohort; late window was selected from the completed discovery cohort and is not an independent choice",
+  "frozen_at": "2026-07-17T11:55:14.186577+00:00",
+  "scientific_question": "Does the late-layer shift from lexical similarity toward physical equivalence replicate across six new materials mechanism families?",
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "lenses": [
+    {
+      "seed": 0,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed0.pt",
+      "sha256": "d15ff55233c458f4289a7aac1b3f5c8e6441d0334a44a7b6fce03e447889aa99"
+    },
+    {
+      "seed": 1,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed1.pt",
+      "sha256": "98bf7c7491c525df5ae9c9ac8040f450cce630dc8257a2ae062e6bdbf76980dd"
+    },
+    {
+      "seed": 2,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed2.pt",
+      "sha256": "51930e2b8d751de78e66ed92fcf6c1724783a4f81f94d0b7021d2278aabe00e5"
+    }
+  ],
+  "source_layers": [
+    0,
+    2,
+    3,
+    5,
+    6,
+    8,
+    10,
+    11,
+    13,
+    15,
+    16,
+    18,
+    20,
+    21,
+    23,
+    24,
+    26,
+    28,
+    29,
+    31,
+    32,
+    34,
+    36,
+    37,
+    39
+  ],
+  "registered_band_percent": [
+    80.0,
+    96.0
+  ],
+  "secondary_full_band_percent": [
+    38.0,
+    92.0
+  ],
+  "target_free_layers": [
+    34,
+    36,
+    37,
+    39
+  ],
+  "target_free_top_k_retained": 256,
+  "target_free_display_k": 30,
+  "frozen_stopwords": [
+    "a",
+    "about",
+    "after",
+    "again",
+    "against",
+    "all",
+    "also",
+    "am",
+    "an",
+    "and",
+    "answer",
+    "any",
+    "are",
+    "as",
+    "at",
+    "be",
+    "because",
+    "become",
+    "becomes",
+    "been",
+    "before",
+    "being",
+    "between",
+    "both",
+    "but",
+    "by",
+    "can",
+    "choose",
+    "could",
+    "decrease",
+    "did",
+    "do",
+    "does",
+    "doing",
+    "down",
+    "during",
+    "each",
+    "exactly",
+    "for",
+    "from",
+    "further",
+    "greater",
+    "had",
+    "happens",
+    "has",
+    "have",
+    "having",
+    "he",
+    "her",
+    "here",
+    "hers",
+    "herself",
+    "higher",
+    "him",
+    "himself",
+    "his",
+    "how",
+    "i",
+    "if",
+    "in",
+    "increase",
+    "initial",
+    "into",
+    "is",
+    "it",
+    "its",
+    "itself",
+    "just",
+    "likely",
+    "lower",
+    "may",
+    "me",
+    "more",
+    "most",
+    "must",
+    "my",
+    "myself",
+    "no",
+    "nor",
+    "not",
+    "of",
+    "off",
+    "on",
+    "once",
+    "one",
+    "only",
+    "or",
+    "ordered",
+    "other",
+    "our",
+    "ours",
+    "ourselves",
+    "out",
+    "over",
+    "own",
+    "pair",
+    "relative",
+    "result",
+    "resulting",
+    "same",
+    "select",
+    "she",
+    "should",
+    "smaller",
+    "so",
+    "some",
+    "state",
+    "such",
+    "than",
+    "that",
+    "the",
+    "their",
+    "theirs",
+    "them",
+    "themselves",
+    "then",
+    "there",
+    "these",
+    "they",
+    "this",
+    "those",
+    "through",
+    "to",
+    "too",
+    "trend",
+    "under",
+    "until",
+    "up",
+    "very",
+    "was",
+    "we",
+    "were",
+    "what",
+    "when",
+    "where",
+    "which",
+    "while",
+    "who",
+    "whom",
+    "why",
+    "will",
+    "with",
+    "word",
+    "would",
+    "you",
+    "your",
+    "yours",
+    "yourself",
+    "yourselves"
+  ],
+  "inputs": {
+    "prompt_manifest": "experiments/late-physics-representation-replication-2026-07-17/prompt_manifest.json",
+    "prompt_manifest_sha256": "da49f9d57b870404beabb7401f40a677d90d0b93d49d58170a0ab9750268d634",
+    "runner": "scripts/run_lexical_adversarial_representation.py",
+    "runner_sha256": "de6659a0ca75af96bfaac955d8ed1c05c0f701ec99b0780087902a4de086f0b7",
+    "discovery_statistics": "experiments/lexical-adversarial-representation-2026-07-17/statistics.json",
+    "discovery_statistics_sha256": "f64e45bec840e32abb91de7a164d83db040a270768cf8c58b72da77b2922e440"
+  },
+  "tokenization_preflight": {
+    "greater": [
+      89785
+    ],
+    "higher": [
+      87596
+    ],
+    "lower": [
+      11462
+    ],
+    "smaller": [
+      146772
+    ]
+  },
+  "lexical_adversarial_preflight": {
+    "word_tfidf": {
+      "all_lexical_counterfactuals_closer": true,
+      "n_counterfactuals_closer": 24,
+      "n_triplets": 24,
+      "mean_physics_minus_lexical_margin": -0.7275773685202497,
+      "rows": [
+        {
+          "triplet_id": "obstacle-spacing-orowan--nickel-superalloy-180-60",
+          "anchor_paraphrase_similarity": 0.1674784669973341,
+          "anchor_counterfactual_similarity": 0.9488115838628808,
+          "physics_minus_lexical_margin": -0.7813331168655466
+        },
+        {
+          "triplet_id": "obstacle-spacing-orowan--aluminum-copper-150-50",
+          "anchor_paraphrase_similarity": 0.14849824850734658,
+          "anchor_counterfactual_similarity": 0.9397949391243015,
+          "physics_minus_lexical_margin": -0.7912966906169548
+        },
+        {
+          "triplet_id": "obstacle-spacing-orowan--ferritic-steel-120-40",
+          "anchor_paraphrase_similarity": 0.11893785683105233,
+          "anchor_counterfactual_similarity": 0.9371804470835878,
+          "physics_minus_lexical_margin": -0.8182425902525355
+        },
+        {
+          "triplet_id": "obstacle-spacing-orowan--copper-alloy-90-30",
+          "anchor_paraphrase_similarity": 0.12038972412019466,
+          "anchor_counterfactual_similarity": 0.9374431705766773,
+          "physics_minus_lexical_margin": -0.8170534464564826
+        },
+        {
+          "triplet_id": "porosity-modulus--sintered-alumina-12-3",
+          "anchor_paraphrase_similarity": 0.20905995270549577,
+          "anchor_counterfactual_similarity": 0.9435778349814918,
+          "physics_minus_lexical_margin": -0.7345178822759961
+        },
+        {
+          "triplet_id": "porosity-modulus--porous-titanium-20-5",
+          "anchor_paraphrase_similarity": 0.17452203954068235,
+          "anchor_counterfactual_similarity": 0.9300772094889433,
+          "physics_minus_lexical_margin": -0.755555169948261
+        },
+        {
+          "triplet_id": "porosity-modulus--silicon-nitride-8-2",
+          "anchor_paraphrase_similarity": 0.17302176349347698,
+          "anchor_counterfactual_similarity": 1.0,
+          "physics_minus_lexical_margin": -0.826978236506523
+        },
+        {
+          "triplet_id": "porosity-modulus--sandstone-16-4",
+          "anchor_paraphrase_similarity": 0.26757101642394004,
+          "anchor_counterfactual_similarity": 0.9376998602109964,
+          "physics_minus_lexical_margin": -0.6701288437870563
+        },
+        {
+          "triplet_id": "pearlite-spacing-strength--eutectoid-steel-300-100",
+          "anchor_paraphrase_similarity": 0.21633280028783278,
+          "anchor_counterfactual_similarity": 0.9286121992231056,
+          "physics_minus_lexical_margin": -0.7122793989352728
+        },
+        {
+          "triplet_id": "pearlite-spacing-strength--rail-steel-240-80",
+          "anchor_paraphrase_similarity": 0.2073061813453383,
+          "anchor_counterfactual_similarity": 0.9286121992231049,
+          "physics_minus_lexical_margin": -0.7213060178777666
+        },
+        {
+          "triplet_id": "pearlite-spacing-strength--wire-steel-180-60",
+          "anchor_paraphrase_similarity": 0.2740678371648589,
+          "anchor_counterfactual_similarity": 0.9451258500095387,
+          "physics_minus_lexical_margin": -0.6710580128446799
+        },
+        {
+          "triplet_id": "pearlite-spacing-strength--pearlitic-iron-360-120",
+          "anchor_paraphrase_similarity": 0.2600463592864299,
+          "anchor_counterfactual_similarity": 0.9367998915871139,
+          "physics_minus_lexical_margin": -0.6767535323006839
+        },
+        {
+          "triplet_id": "dislocation-density-strength--copper-1e14-1e12",
+          "anchor_paraphrase_similarity": 0.25576386247855193,
+          "anchor_counterfactual_similarity": 0.9367871394864109,
+          "physics_minus_lexical_margin": -0.681023277007859
+        },
+        {
+          "triplet_id": "dislocation-density-strength--aluminum-8e13-8e11",
+          "anchor_paraphrase_similarity": 0.25576386247855204,
+          "anchor_counterfactual_similarity": 0.9367871394864128,
+          "physics_minus_lexical_margin": -0.6810232770078608
+        },
+        {
+          "triplet_id": "dislocation-density-strength--nickel-5e14-5e12",
+          "anchor_paraphrase_similarity": 0.20601615460312825,
+          "anchor_counterfactual_similarity": 0.932058375423991,
+          "physics_minus_lexical_margin": -0.7260422208208627
+        },
+        {
+          "triplet_id": "dislocation-density-strength--ferritic-steel-2e14-2e12",
+          "anchor_paraphrase_similarity": 0.2284547284521446,
+          "anchor_counterfactual_similarity": 0.934152291519275,
+          "physics_minus_lexical_margin": -0.7056975630671305
+        },
+        {
+          "triplet_id": "particle-fraction-modulus--aluminum-sic-30-10",
+          "anchor_paraphrase_similarity": 0.2177889073878841,
+          "anchor_counterfactual_similarity": 0.9356390058988138,
+          "physics_minus_lexical_margin": -0.7178500985109297
+        },
+        {
+          "triplet_id": "particle-fraction-modulus--magnesium-alumina-24-8",
+          "anchor_paraphrase_similarity": 0.2386980853744998,
+          "anchor_counterfactual_similarity": 0.9483033594730241,
+          "physics_minus_lexical_margin": -0.7096052740985244
+        },
+        {
+          "triplet_id": "particle-fraction-modulus--nickel-wc-18-6",
+          "anchor_paraphrase_similarity": 0.2613600573683294,
+          "anchor_counterfactual_similarity": 0.9539415572853502,
+          "physics_minus_lexical_margin": -0.6925814999170208
+        },
+        {
+          "triplet_id": "particle-fraction-modulus--epoxy-silica-36-12",
+          "anchor_paraphrase_similarity": 0.27311404008849816,
+          "anchor_counterfactual_similarity": 0.945062726505375,
+          "physics_minus_lexical_margin": -0.6719486864168769
+        },
+        {
+          "triplet_id": "crosslink-density-modulus--natural-rubber-800-200",
+          "anchor_paraphrase_similarity": 0.2264354369803303,
+          "anchor_counterfactual_similarity": 0.9437954265695611,
+          "physics_minus_lexical_margin": -0.7173599895892308
+        },
+        {
+          "triplet_id": "crosslink-density-modulus--silicone-600-150",
+          "anchor_paraphrase_similarity": 0.21873351615120343,
+          "anchor_counterfactual_similarity": 0.9450318530677302,
+          "physics_minus_lexical_margin": -0.7262983369165268
+        },
+        {
+          "triplet_id": "crosslink-density-modulus--polyurethane-1000-250",
+          "anchor_paraphrase_similarity": 0.21685714653605634,
+          "anchor_counterfactual_similarity": 0.940610742872816,
+          "physics_minus_lexical_margin": -0.7237535963367596
+        },
+        {
+          "triplet_id": "crosslink-density-modulus--epdm-720-180",
+          "anchor_paraphrase_similarity": 0.2158227160904741,
+          "anchor_counterfactual_similarity": 0.9479928022191285,
+          "physics_minus_lexical_margin": -0.7321700861286544
+        }
+      ]
+    },
+    "character_tfidf": {
+      "all_lexical_counterfactuals_closer": true,
+      "n_counterfactuals_closer": 24,
+      "n_triplets": 24,
+      "mean_physics_minus_lexical_margin": -0.6294259629264453,
+      "rows": [
+        {
+          "triplet_id": "obstacle-spacing-orowan--nickel-superalloy-180-60",
+          "anchor_paraphrase_similarity": 0.3881776987740337,
+          "anchor_counterfactual_similarity": 0.9999999999999986,
+          "physics_minus_lexical_margin": -0.6118223012259649
+        },
+        {
+          "triplet_id": "obstacle-spacing-orowan--aluminum-copper-150-50",
+          "anchor_paraphrase_similarity": 0.35601140340816995,
+          "anchor_counterfactual_similarity": 0.9999999999999981,
+          "physics_minus_lexical_margin": -0.6439885965918282
+        },
+        {
+          "triplet_id": "obstacle-spacing-orowan--ferritic-steel-120-40",
+          "anchor_paraphrase_similarity": 0.3142447201420966,
+          "anchor_counterfactual_similarity": 1.0000000000000013,
+          "physics_minus_lexical_margin": -0.6857552798579047
+        },
+        {
+          "triplet_id": "obstacle-spacing-orowan--copper-alloy-90-30",
+          "anchor_paraphrase_similarity": 0.3132508999397192,
+          "anchor_counterfactual_similarity": 1.000000000000008,
+          "physics_minus_lexical_margin": -0.6867491000602888
+        },
+        {
+          "triplet_id": "porosity-modulus--sintered-alumina-12-3",
+          "anchor_paraphrase_similarity": 0.27090400812908133,
+          "anchor_counterfactual_similarity": 1.000000000000008,
+          "physics_minus_lexical_margin": -0.7290959918709267
+        },
+        {
+          "triplet_id": "porosity-modulus--porous-titanium-20-5",
+          "anchor_paraphrase_similarity": 0.3027660383652905,
+          "anchor_counterfactual_similarity": 0.9999999999999992,
+          "physics_minus_lexical_margin": -0.6972339616347087
+        },
+        {
+          "triplet_id": "porosity-modulus--silicon-nitride-8-2",
+          "anchor_paraphrase_similarity": 0.2825524228383977,
+          "anchor_counterfactual_similarity": 1.000000000000003,
+          "physics_minus_lexical_margin": -0.7174475771616053
+        },
+        {
+          "triplet_id": "porosity-modulus--sandstone-16-4",
+          "anchor_paraphrase_similarity": 0.35634429947484936,
+          "anchor_counterfactual_similarity": 1.0000000000000042,
+          "physics_minus_lexical_margin": -0.6436557005251549
+        },
+        {
+          "triplet_id": "pearlite-spacing-strength--eutectoid-steel-300-100",
+          "anchor_paraphrase_similarity": 0.3627982499380427,
+          "anchor_counterfactual_similarity": 0.9999999999999986,
+          "physics_minus_lexical_margin": -0.6372017500619558
+        },
+        {
+          "triplet_id": "pearlite-spacing-strength--rail-steel-240-80",
+          "anchor_paraphrase_similarity": 0.32698178762108054,
+          "anchor_counterfactual_similarity": 1.0000000000000036,
+          "physics_minus_lexical_margin": -0.673018212378923
+        },
+        {
+          "triplet_id": "pearlite-spacing-strength--wire-steel-180-60",
+          "anchor_paraphrase_similarity": 0.3855769975437878,
+          "anchor_counterfactual_similarity": 1.000000000000007,
+          "physics_minus_lexical_margin": -0.6144230024562193
+        },
+        {
+          "triplet_id": "pearlite-spacing-strength--pearlitic-iron-360-120",
+          "anchor_paraphrase_similarity": 0.395484768069112,
+          "anchor_counterfactual_similarity": 1.0000000000000002,
+          "physics_minus_lexical_margin": -0.6045152319308882
+        },
+        {
+          "triplet_id": "dislocation-density-strength--copper-1e14-1e12",
+          "anchor_paraphrase_similarity": 0.40310574419583217,
+          "anchor_counterfactual_similarity": 0.999999999999999,
+          "physics_minus_lexical_margin": -0.5968942558041668
+        },
+        {
+          "triplet_id": "dislocation-density-strength--aluminum-8e13-8e11",
+          "anchor_paraphrase_similarity": 0.39519004250184536,
+          "anchor_counterfactual_similarity": 1.0000000000000013,
+          "physics_minus_lexical_margin": -0.604809957498156
+        },
+        {
+          "triplet_id": "dislocation-density-strength--nickel-5e14-5e12",
+          "anchor_paraphrase_similarity": 0.34937653556885784,
+          "anchor_counterfactual_similarity": 1.0,
+          "physics_minus_lexical_margin": -0.6506234644311422
+        },
+        {
+          "triplet_id": "dislocation-density-strength--ferritic-steel-2e14-2e12",
+          "anchor_paraphrase_similarity": 0.36476212172067074,
+          "anchor_counterfactual_similarity": 1.0000000000000007,
+          "physics_minus_lexical_margin": -0.63523787827933
+        },
+        {
+          "triplet_id": "particle-fraction-modulus--aluminum-sic-30-10",
+          "anchor_paraphrase_similarity": 0.42344375389103506,
+          "anchor_counterfactual_similarity": 1.0000000000000109,
+          "physics_minus_lexical_margin": -0.5765562461089758
+        },
+        {
+          "triplet_id": "particle-fraction-modulus--magnesium-alumina-24-8",
+          "anchor_paraphrase_similarity": 0.4102555434273572,
+          "anchor_counterfactual_similarity": 0.9999999999999984,
+          "physics_minus_lexical_margin": -0.5897444565726413
+        },
+        {
+          "triplet_id": "particle-fraction-modulus--nickel-wc-18-6",
+          "anchor_paraphrase_similarity": 0.4424029511109499,
+          "anchor_counterfactual_similarity": 0.9999999999999982,
+          "physics_minus_lexical_margin": -0.5575970488890483
+        },
+        {
+          "triplet_id": "particle-fraction-modulus--epoxy-silica-36-12",
+          "anchor_paraphrase_similarity": 0.3903169527792235,
+          "anchor_counterfactual_similarity": 0.9999999999999996,
+          "physics_minus_lexical_margin": -0.609683047220776
+        },
+        {
+          "triplet_id": "crosslink-density-modulus--natural-rubber-800-200",
+          "anchor_paraphrase_similarity": 0.41508972282485024,
+          "anchor_counterfactual_similarity": 1.0000000000000013,
+          "physics_minus_lexical_margin": -0.5849102771751511
+        },
+        {
+          "triplet_id": "crosslink-density-modulus--silicone-600-150",
+          "anchor_paraphrase_similarity": 0.4047880831298992,
+          "anchor_counterfactual_similarity": 0.9999999999999986,
+          "physics_minus_lexical_margin": -0.5952119168700993
+        },
+        {
+          "triplet_id": "crosslink-density-modulus--polyurethane-1000-250",
+          "anchor_paraphrase_similarity": 0.43992423605956354,
+          "anchor_counterfactual_similarity": 0.9999999999999994,
+          "physics_minus_lexical_margin": -0.5600757639404359
+        },
+        {
+          "triplet_id": "crosslink-density-modulus--epdm-720-180",
+          "anchor_paraphrase_similarity": 0.4000279083116023,
+          "anchor_counterfactual_similarity": 1.0,
+          "physics_minus_lexical_margin": -0.5999720916883977
+        }
+      ]
+    }
+  },
+  "primary_endpoint": {
+    "representation": "mean of three Jacobian transported states in the final decoder basis, centered across all replication prompts at each layer",
+    "triplet_margin": "cosine(anchor, physics_paraphrase) minus cosine(anchor, lexical_counterfactual)",
+    "scalar": "mean triplet margin over the frozen 80-96 percent late window",
+    "inference": "30000 two-stage bootstrap resamples over families and triplets; seed 20260718"
+  },
+  "secondary_endpoints": [
+    "late-window direct and raw-state margins",
+    "Jacobian-minus-direct late-window contrast",
+    "38-92 percent full-band margins retained for comparison with discovery",
+    "late 80-96 minus middle 38-70 percent transition contrast",
+    "clean scientific answer consistency",
+    "target-free top-word Jaccard margins at layers 34, 36, 37, and 39"
+  ],
+  "success_rule": {
+    "primary": "two-stage 95 percent CI for late Jacobian margin above zero",
+    "breadth": "at least 18 of 24 triplets and five of six family means positive",
+    "all_outputs_retained": true
+  },
+  "guardrails": [
+    "The late window was motivated by a completed prior cohort and must be labeled as a prospective replication, not an original preregistered hypothesis.",
+    "Similarity does not establish causal use or a literal chain of thought.",
+    "No prompt, family, layer, clean error, or target-free word is excluded after execution."
+  ]
+}

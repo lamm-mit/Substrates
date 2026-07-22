@@ -1,0 +1,29 @@
+{
+  "format_version": 1,
+  "study": "materials-heldout-v1-smoke",
+  "source_manifest_sha256": "8c034cf33d287d379fddf842971914ec035a22b9e31d29f457258bf85c52e203",
+  "prompts": [
+    {
+      "slug": "heldout-v1-assoc-ductile-01",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "ductile",
+      "target_family": "ductile",
+      "phrasing_id": "heldout-ductile-01",
+      "title": "Energy-absorbing dimpled separation 1",
+      "description": "Held-out unnamed materials description; compare predetermined full-vocabulary ranks and target-free discovery under matched lenses.",
+      "text": "A round aluminum bar stretched into a pronounced waist before separating. The mating faces contained hemispherical pits centered on inclusions and a slanted tearing rim.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "ductile",
+        "nucleation",
+        "coalescence",
+        "void"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Frozen held-out item. Predetermined terms are used only for the rank endpoint; open-vocabulary generation and ranking cannot use them."
+    }
+  ]
+}

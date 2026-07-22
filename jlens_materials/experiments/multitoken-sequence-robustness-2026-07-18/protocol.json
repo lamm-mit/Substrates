@@ -1,0 +1,120 @@
+{
+  "study_id": "multitoken-sequence-robustness-2026-07-18",
+  "frozen_at": "2026-07-18T02:15:00-04:00",
+  "status": "prospectively frozen new scoring run on two already inspected held-out families; post-hoc robustness, not a replacement primary endpoint",
+  "scientific_question": "Do intermediate readouts favor exact excluded multi-token technical terms over equal-piece scientific alternatives?",
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "source_layers": [
+    0,
+    2,
+    3,
+    5,
+    6,
+    8,
+    10,
+    11,
+    13,
+    15,
+    16,
+    18,
+    20,
+    21,
+    23,
+    24,
+    26,
+    28,
+    29,
+    31,
+    32,
+    34,
+    36,
+    37,
+    39
+  ],
+  "registered_band_percent": [
+    38.0,
+    92.0
+  ],
+  "inputs": {
+    "runner": {
+      "path": "scripts/run_multitoken_sequence_robustness.py",
+      "sha256": "276374b814a347a40c53738ea71db90164e32ce33e1bb95aa2dacfe11f694ce1"
+    },
+    "prompt_manifest": {
+      "path": "prompts/materials-heldout-v1-preregistered.json",
+      "sha256": "8c034cf33d287d379fddf842971914ec035a22b9e31d29f457258bf85c52e203"
+    }
+  },
+  "lenses": [
+    {
+      "seed": 0,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed0.pt",
+      "sha256": "d15ff55233c458f4289a7aac1b3f5c8e6441d0334a44a7b6fce03e447889aa99"
+    },
+    {
+      "seed": 1,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed1.pt",
+      "sha256": "98bf7c7491c525df5ae9c9ac8040f450cce630dc8257a2ae062e6bdbf76980dd"
+    },
+    {
+      "seed": 2,
+      "path": "lenses/hub/gemma4-e4b-it/paper/seed2.pt",
+      "sha256": "51930e2b8d751de78e66ed92fcf6c1724783a4f81f94d0b7021d2278aabe00e5"
+    }
+  ],
+  "contrasts": {
+    "cleavage": {
+      "target": "transgranular",
+      "contrast": "intergranular",
+      "rationale": "competing fracture path; equal two-piece tokenization"
+    },
+    "rapid-transformation": {
+      "target": "martensite",
+      "contrast": "bainite",
+      "rationale": "competing steel transformation product; equal three-piece tokenization"
+    }
+  },
+  "tokenization_preflight": {
+    "cleavage": {
+      "target": [
+        3849,
+        198597
+      ],
+      "contrast": [
+        2266,
+        198597
+      ]
+    },
+    "rapid-transformation": {
+      "target": [
+        26348,
+        832,
+        785
+      ],
+      "contrast": [
+        236763,
+        662,
+        785
+      ]
+    }
+  },
+  "endpoint": {
+    "first_piece": "direct or Jacobian next-token logit at the original final prompt position",
+    "remaining_pieces": "teacher-forced conditional log probabilities under unchanged Gemma",
+    "sequence_margin": "target first-piece logit plus target remaining log probabilities minus the equal-length contrast score",
+    "primary_summary": "mean across registered band, then five prompts per family"
+  },
+  "success_rule": {
+    "both_family_jacobian_margins_positive": true,
+    "minimum_positive_prompt_margins": 8,
+    "all_three_seed_family_margins_positive": true,
+    "jacobian_specific": "Jacobian-minus-direct family mean positive in both families"
+  },
+  "guardrails": [
+    "two-term targeted post-hoc robustness analysis",
+    "does not alter original single-token vocabulary-rank endpoint",
+    "no broad multi-token recovery claim",
+    "all prompts, layers, fits, and negative results retained"
+  ]
+}

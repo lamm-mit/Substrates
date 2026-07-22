@@ -1,0 +1,72 @@
+{
+  "freshness": "All 16 constitutive relations are absent from the preceding abstract-physics composition and elicitation cohorts. No fresh model output was inspected before this protocol was written.",
+  "frozen_at": "2026-07-18T19:51:31.649626+00:00",
+  "guardrails": [
+    "No layer, position, decoder, or prompt suffix is selected on fresh laws.",
+    "The physical label is the XOR/product of law sign and numerical sign.",
+    "Direct and inverse laws are balanced.",
+    "Answer-word order is counterbalanced within every law and case.",
+    "Two algebraically equivalent formula surfaces are tested per law.",
+    "The decoder is fitted only on completed old-law data.",
+    "All prompts and outputs are retained, including failures."
+  ],
+  "inference": {
+    "bootstrap_resamples": 50000,
+    "bootstrap_seed": 20260721,
+    "exact_test": "two-sided sign-flip test of per-law AUC minus 0.5"
+  },
+  "inputs": {
+    "development_manifest": {
+      "path": "experiments/elicited-physics-abstraction-2026-07-18/prompt_manifest.json",
+      "sha256": "4b2a691badae5519410d60250cae7fcb3f60922d00feae063ce5cc999f341894"
+    },
+    "development_states": {
+      "path": "experiments/elicited-physics-abstraction-2026-07-18/representations.npz",
+      "sha256": "59208905855998049e3dc338dbfcb8c9fac48b935b2f946c3b33b9239d56680e"
+    },
+    "prompt_manifest": {
+      "path": "experiments/fresh-law-abstraction-confirmation-2026-07-18/prompt_manifest.json",
+      "sha256": "364f0620399e618e6b14b7ada201b78823af0808c74b65dfc60b975b90e8cc62"
+    },
+    "runner": {
+      "path": "scripts/run_elicited_physics_abstraction.py",
+      "sha256": "29d257f7d1c81ba1c6e7727dc24bb3b2b4b91b924fb83c83fe94ee99cb231dbe"
+    }
+  },
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "positions": [
+    "law",
+    "comparison",
+    "decision",
+    "final_prompt"
+  ],
+  "primary_decoder": {
+    "fit_data": "all 16 completed development laws",
+    "fit_method": "parameter-free physical-sign centroid difference; midpoint is the mean of the positive and negative centroids",
+    "fresh_refit": "none",
+    "layer": 34,
+    "normalization": "unit L2 norm per state",
+    "position": "final_prompt"
+  },
+  "primary_endpoint": "Mean of 16 fresh-law ROC AUC values for physical outcome. Each law AUC pools two algebraic surfaces, two material cases, two numerical directions, and two answer-word orders.",
+  "secondary_frozen_endpoints": [
+    "Per-law AUC separately for each algebraic surface.",
+    "Per-law AUC separately for each answer-word order.",
+    "Direct-law and inverse-law means.",
+    "Behavioral accuracy by law, surface, and answer order.",
+    "Word- and character-TF-IDF controls trained only on development text.",
+    "Numerical-direction AUC of the frozen physical direction."
+  ],
+  "status": "frozen-before-any-fresh-model-output",
+  "study_id": "fresh-law-abstraction-confirmation-2026-07-18",
+  "success_rule": {
+    "behavior_accuracy_minimum": 0.8,
+    "bootstrap_95_lower_above": 0.5,
+    "both_answer_order_mean_auc_minimum": 0.7,
+    "both_surface_mean_auc_minimum": 0.7,
+    "laws_total": 16,
+    "mean_fresh_law_auc_minimum": 0.75,
+    "positive_laws_minimum": 13
+  }
+}

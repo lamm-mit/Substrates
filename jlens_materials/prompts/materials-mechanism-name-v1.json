@@ -1,0 +1,905 @@
+{
+  "description": "Frozen 50-item mechanism-versus-eponym materials evaluation: five principles, ten independent wordings each.",
+  "prompts": [
+    {
+      "slug": "mechanism-name-grain-size-strength-01",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "grain-size-strength",
+      "title": "Grain-size strengthening 1",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Two specimens of the same alloy receive different heat treatments. The one with much smaller crystallites requires a larger applied stress before permanent deformation begins.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "boundary",
+        "Hall"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'boundary' against eponym token 'Hall'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-grain-size-strength-02",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "grain-size-strength",
+      "title": "Grain-size strengthening 2",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A polycrystalline metal is processed until its average crystallite diameter is reduced by half. Its resistance to the onset of plastic flow increases.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "boundary",
+        "Hall"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'boundary' against eponym token 'Hall'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-grain-size-strength-03",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "grain-size-strength",
+      "title": "Grain-size strengthening 3",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "An ultrafine-grained steel yields at a higher stress than a coarse-grained specimen with the same composition and phase fractions.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "boundary",
+        "Hall"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'boundary' against eponym token 'Hall'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-grain-size-strength-04",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "grain-size-strength",
+      "title": "Grain-size strengthening 4",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Repeated rolling and recrystallization create many small crystallites. Moving line defects encounter interfaces more frequently, and the measured yield stress rises.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "boundary",
+        "Hall"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'boundary' against eponym token 'Hall'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-grain-size-strength-05",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "grain-size-strength",
+      "title": "Grain-size strengthening 5",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A metal with coarse crystallites is compared with an otherwise identical fine-crystallite version. The refined material better resists the start of irreversible strain.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "boundary",
+        "Hall"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'boundary' against eponym token 'Hall'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-grain-size-strength-06",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "grain-size-strength",
+      "title": "Grain-size strengthening 6",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Thermomechanical processing reduces the characteristic crystal-region size without changing chemistry. The resulting sheet shows higher yield strength.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "boundary",
+        "Hall"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'boundary' against eponym token 'Hall'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-grain-size-strength-07",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "grain-size-strength",
+      "title": "Grain-size strengthening 7",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A line defect moving through one crystallite is blocked at the interface with a differently oriented neighbor. Making the crystallites smaller increases the number of such obstacles.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "boundary",
+        "Hall"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'boundary' against eponym token 'Hall'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-grain-size-strength-08",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "grain-size-strength",
+      "title": "Grain-size strengthening 8",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Two copper samples differ mainly in crystallite size. The sample containing more interfaces per unit volume begins plastic flow at the larger stress.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "boundary",
+        "Hall"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'boundary' against eponym token 'Hall'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-grain-size-strength-09",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "grain-size-strength",
+      "title": "Grain-size strengthening 9",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Recrystallized grains are refined from tens of micrometers to only a few micrometers. The stress needed to initiate slip increases approximately with the inverse square root of size.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "boundary",
+        "Hall"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'boundary' against eponym token 'Hall'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-grain-size-strength-10",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "grain-size-strength",
+      "title": "Grain-size strengthening 10",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A structural alloy is strengthened by subdividing it into smaller misoriented crystal regions, creating more barriers to the passage of moving line imperfections.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "boundary",
+        "Hall"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'boundary' against eponym token 'Hall'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-flaw-controlled-failure-01",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "flaw-controlled-failure",
+      "title": "Flaw-controlled brittle failure 1",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Two brittle plates carry the same remote tensile load, but one contains a surface flaw four times longer. The plate with the larger flaw becomes unstable at a lower applied stress.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "crack",
+        "Griffith"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'crack' against eponym token 'Griffith'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-flaw-controlled-failure-02",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "flaw-controlled-failure",
+      "title": "Flaw-controlled brittle failure 2",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A glass specimen with a sharp internal slit fails well below its theoretical bond strength because the local intensity at the slit tip is strongly amplified.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "crack",
+        "Griffith"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'crack' against eponym token 'Griffith'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-flaw-controlled-failure-03",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "flaw-controlled-failure",
+      "title": "Flaw-controlled brittle failure 3",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Doubling the length of a sharp flaw in an elastic ceramic reduces the remote stress required for unstable extension by roughly the square root of two.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "crack",
+        "Griffith"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'crack' against eponym token 'Griffith'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-flaw-controlled-failure-04",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "flaw-controlled-failure",
+      "title": "Flaw-controlled brittle failure 4",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A brittle solid separates when the elastic energy released by extending a sharp defect exceeds the energy needed to create two new surfaces.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "crack",
+        "Griffith"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'crack' against eponym token 'Griffith'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-flaw-controlled-failure-05",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "flaw-controlled-failure",
+      "title": "Flaw-controlled brittle failure 5",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A polished glass fiber is much stronger than a scratched one of the same diameter because the scratch concentrates tensile loading at its tip.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "crack",
+        "Griffith"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'crack' against eponym token 'Griffith'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-flaw-controlled-failure-06",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "flaw-controlled-failure",
+      "title": "Flaw-controlled brittle failure 6",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "An elastic plate containing a central slit is loaded in tension. Instability begins when the energy-release rate reaches the material's surface-formation resistance.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "crack",
+        "Griffith"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'crack' against eponym token 'Griffith'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-flaw-controlled-failure-07",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "flaw-controlled-failure",
+      "title": "Flaw-controlled brittle failure 7",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A ceramic component survives a given tensile stress when its largest flaw is short, but fails after processing introduces a much longer sharp flaw.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "crack",
+        "Griffith"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'crack' against eponym token 'Griffith'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-flaw-controlled-failure-08",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "flaw-controlled-failure",
+      "title": "Flaw-controlled brittle failure 8",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "The nominal strength of a brittle specimen scales approximately with the inverse square root of the size of its dominant sharp defect.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "crack",
+        "Griffith"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'crack' against eponym token 'Griffith'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-flaw-controlled-failure-09",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "flaw-controlled-failure",
+      "title": "Flaw-controlled brittle failure 9",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A sharp notch in a glass sheet locally magnifies stress, allowing separation to start even though the average applied stress is modest.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "crack",
+        "Griffith"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'crack' against eponym token 'Griffith'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-flaw-controlled-failure-10",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "flaw-controlled-failure",
+      "title": "Flaw-controlled brittle failure 10",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A brittle plate with a pre-existing slit becomes unstable when additional extension lowers the total elastic-plus-surface energy of the system.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "crack",
+        "Griffith"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'crack' against eponym token 'Griffith'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-resolved-slip-threshold-01",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "resolved-slip-threshold",
+      "title": "Resolved slip threshold 1",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A single crystal is pulled along an axis that places 120 MPa of resolved shear on its favored slip system. The critical value is 80 MPa, so microscopic plastic motion begins.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "dislocation",
+        "Schmid"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'dislocation' against eponym token 'Schmid'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-resolved-slip-threshold-02",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "resolved-slip-threshold",
+      "title": "Resolved slip threshold 2",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "An applied uniaxial stress is projected onto a crystal's slip-plane normal and slip direction. Plastic flow starts when that resolved component exceeds a critical threshold.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "dislocation",
+        "Schmid"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'dislocation' against eponym token 'Schmid'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-resolved-slip-threshold-03",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "resolved-slip-threshold",
+      "title": "Resolved slip threshold 3",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Two identically loaded crystals have different orientations. The crystal with the larger product of the two direction cosines activates its favored slip system first.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "dislocation",
+        "Schmid"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'dislocation' against eponym token 'Schmid'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-resolved-slip-threshold-04",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "resolved-slip-threshold",
+      "title": "Resolved slip threshold 4",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A crystal remains elastic until the shear component acting along a permitted direction on a permitted plane reaches a material-specific critical value.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "dislocation",
+        "Schmid"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'dislocation' against eponym token 'Schmid'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-resolved-slip-threshold-05",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "resolved-slip-threshold",
+      "title": "Resolved slip threshold 5",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Under tension, only part of the applied load drives shear on a close-packed system. Once this projected driving force is large enough, line imperfections begin to glide.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "dislocation",
+        "Schmid"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'dislocation' against eponym token 'Schmid'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-resolved-slip-threshold-06",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "resolved-slip-threshold",
+      "title": "Resolved slip threshold 6",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Rotating a single crystal changes the axial stress required to initiate slip even though the critical resolved shear resistance is unchanged.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "dislocation",
+        "Schmid"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'dislocation' against eponym token 'Schmid'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-resolved-slip-threshold-07",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "resolved-slip-threshold",
+      "title": "Resolved slip threshold 7",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A favorably oriented slip system reaches its critical shear value before any other system, producing the first permanent surface steps.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "dislocation",
+        "Schmid"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'dislocation' against eponym token 'Schmid'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-resolved-slip-threshold-08",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "resolved-slip-threshold",
+      "title": "Resolved slip threshold 8",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "The onset of plasticity in a single crystal is predicted by multiplying the applied tensile stress by geometric factors for the plane normal and slip direction.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "dislocation",
+        "Schmid"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'dislocation' against eponym token 'Schmid'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-resolved-slip-threshold-09",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "resolved-slip-threshold",
+      "title": "Resolved slip threshold 9",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "One crystal orientation converts a larger fraction of the applied normal stress into shear on an allowed system, so it yields before a less favorable orientation.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "dislocation",
+        "Schmid"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'dislocation' against eponym token 'Schmid'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-resolved-slip-threshold-10",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "resolved-slip-threshold",
+      "title": "Resolved slip threshold 10",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "When the resolved driving force on the most favorably oriented plane-direction pair exceeds its critical resistance, mobile line defects sweep across the crystal.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "dislocation",
+        "Schmid"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'dislocation' against eponym token 'Schmid'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-lattice-diffusion-creep-01",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "lattice-diffusion-creep",
+      "title": "Lattice-diffusion creep 1",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A fine polycrystal held at high temperature and low stress lengthens as atoms diffuse through crystal interiors from compressed faces toward tensile faces.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "vacancy",
+        "Herring"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'vacancy' against eponym token 'Herring'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-lattice-diffusion-creep-02",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "lattice-diffusion-creep",
+      "title": "Lattice-diffusion creep 2",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "At elevated temperature, atoms move through the lattice between oppositely loaded grain faces, producing slow elongation without extensive line-defect glide.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "vacancy",
+        "Herring"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'vacancy' against eponym token 'Herring'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-lattice-diffusion-creep-03",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "lattice-diffusion-creep",
+      "title": "Lattice-diffusion creep 3",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A polycrystalline solid changes shape under a small sustained load because empty lattice sites migrate through grain interiors in the direction opposite atomic transport.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "vacancy",
+        "Herring"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'vacancy' against eponym token 'Herring'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-lattice-diffusion-creep-04",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "lattice-diffusion-creep",
+      "title": "Lattice-diffusion creep 4",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Slow deformation at high homologous temperature is controlled by bulk atomic transport, and its rate increases strongly as crystallite size decreases.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "vacancy",
+        "Herring"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'vacancy' against eponym token 'Herring'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-lattice-diffusion-creep-05",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "lattice-diffusion-creep",
+      "title": "Lattice-diffusion creep 5",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Material is transported through crystal interiors from interfaces under compression to interfaces under tension, gradually elongating the specimen.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "vacancy",
+        "Herring"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'vacancy' against eponym token 'Herring'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-lattice-diffusion-creep-06",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "lattice-diffusion-creep",
+      "title": "Lattice-diffusion creep 6",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A fine-grained ceramic deforms under low stress near its melting temperature through diffusion across the volume of each crystallite rather than along interfaces.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "vacancy",
+        "Herring"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'vacancy' against eponym token 'Herring'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-lattice-diffusion-creep-07",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "lattice-diffusion-creep",
+      "title": "Lattice-diffusion creep 7",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Atoms leave compressed grain faces, traverse the crystal lattice, and attach at tensile faces, leading to time-dependent shape change.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "vacancy",
+        "Herring"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'vacancy' against eponym token 'Herring'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-lattice-diffusion-creep-08",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "lattice-diffusion-creep",
+      "title": "Lattice-diffusion creep 8",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "The steady deformation rate varies inversely with the square of crystallite size and is controlled by bulk self-diffusion.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "vacancy",
+        "Herring"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'vacancy' against eponym token 'Herring'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-lattice-diffusion-creep-09",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "lattice-diffusion-creep",
+      "title": "Lattice-diffusion creep 9",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A high-temperature specimen elongates as missing-site defects carry mass transport through the interiors of its constituent crystals.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "vacancy",
+        "Herring"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'vacancy' against eponym token 'Herring'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-lattice-diffusion-creep-10",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "lattice-diffusion-creep",
+      "title": "Lattice-diffusion creep 10",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Under a small tensile load, bulk diffusion moves atoms toward faces normal to the loading direction, producing gradual axial extension.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "vacancy",
+        "Herring"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'vacancy' against eponym token 'Herring'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-diffusionless-lattice-change-01",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "diffusionless-lattice-change",
+      "title": "Diffusionless lattice change 1",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Rapid cooling converts a face-centered parent lattice into a body-centered product whose vertical cell dimension differs from the two horizontal dimensions.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "tetragonal",
+        "Bain"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'tetragonal' against eponym token 'Bain'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-diffusionless-lattice-change-02",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "diffusionless-lattice-change",
+      "title": "Diffusionless lattice change 2",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A quenched carbon steel forms a hard phase by coordinated atomic motion. The product unit cell is stretched along one axis relative to the other two.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "tetragonal",
+        "Bain"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'tetragonal' against eponym token 'Bain'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-diffusionless-lattice-change-03",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "diffusionless-lattice-change",
+      "title": "Diffusionless lattice change 3",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Long-range solute redistribution is suppressed during cooling, leaving a body-centered cell with an axial ratio different from unity.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "tetragonal",
+        "Bain"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'tetragonal' against eponym token 'Bain'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-diffusionless-lattice-change-04",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "diffusionless-lattice-change",
+      "title": "Diffusionless lattice change 4",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "The parent face-centered cell transforms through compression along one crystallographic axis and expansion along the other two, creating a distorted body-centered product.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "tetragonal",
+        "Bain"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'tetragonal' against eponym token 'Bain'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-diffusionless-lattice-change-05",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "diffusionless-lattice-change",
+      "title": "Diffusionless lattice change 5",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A rapid diffusionless transformation produces an acicular phase whose unit cell has two equal short axes and one longer axis.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "tetragonal",
+        "Bain"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'tetragonal' against eponym token 'Bain'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-diffusionless-lattice-change-06",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "diffusionless-lattice-change",
+      "title": "Diffusionless lattice change 6",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Carbon trapped during quenching distorts the body-centered product so that its c dimension is not equal to a and b.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "tetragonal",
+        "Bain"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'tetragonal' against eponym token 'Bain'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-diffusionless-lattice-change-07",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "diffusionless-lattice-change",
+      "title": "Diffusionless lattice change 7",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "A coordinated lattice deformation maps the parent cubic arrangement into a body-centered cell elongated in one direction.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "tetragonal",
+        "Bain"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'tetragonal' against eponym token 'Bain'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-diffusionless-lattice-change-08",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "diffusionless-lattice-change",
+      "title": "Diffusionless lattice change 8",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "The hard lath-shaped product of severe quenching has a c-to-a lattice ratio measurably greater than one.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "tetragonal",
+        "Bain"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'tetragonal' against eponym token 'Bain'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-diffusionless-lattice-change-09",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "diffusionless-lattice-change",
+      "title": "Diffusionless lattice change 9",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "Atoms move cooperatively over short distances during a rapid transformation, generating a body-centered structure with unequal axial dimensions.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "tetragonal",
+        "Bain"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'tetragonal' against eponym token 'Bain'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    },
+    {
+      "slug": "mechanism-name-diffusionless-lattice-change-10",
+      "shape": "ASSOCIATION",
+      "protocol": "lens_eval",
+      "domain": "materials",
+      "category": "diffusionless-lattice-change",
+      "title": "Diffusionless lattice change 10",
+      "description": "Frozen mechanism-versus-eponym vignette; both tracked words are absent from the input and generated output.",
+      "text": "X-ray peaks from the quenched product split because one unit-cell axis differs from the two equivalent perpendicular axes.",
+      "readout_selector": "final_prompt_token",
+      "tracked": [
+        "tetragonal",
+        "Bain"
+      ],
+      "must_be_absent_from_input": true,
+      "must_be_absent_from_output": true,
+      "note": "Paired comparison of physical carrier 'tetragonal' against eponym token 'Bain'. Primary endpoint is the within-item log10 rank difference, summarized separately for J-lens and logit lens."
+    }
+  ]
+}

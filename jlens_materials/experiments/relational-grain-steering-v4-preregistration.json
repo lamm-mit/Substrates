@@ -1,0 +1,193 @@
+{
+  "study_id": "relational-grain-steering-v4-confirmatory",
+  "status": "frozen before any v4 model forward pass or intervention output",
+  "frozen_at": "2026-07-16T17:28:00-04:00",
+  "purpose": "Prospectively confirm the post-hoc v3 observation that one frozen grain-size mechanism direction changes sign with the physical relation: toward higher yield strength after refinement and toward lower yield strength after coarsening.",
+  "model": "google/gemma-4-E4B-it",
+  "model_revision": "a4c2d58be94dda072b918d9db64ee85c8ed34e3f",
+  "lens_paths": [
+    "lenses/hub/gemma4-e4b-it/paper/seed0.pt",
+    "lenses/hub/gemma4-e4b-it/paper/seed1.pt",
+    "lenses/hub/gemma4-e4b-it/paper/seed2.pt"
+  ],
+  "source_observation": {
+    "v3_protocol": "experiments/semantic-steering-v3-preregistration.json",
+    "v3_protocol_sha256": "dcf5e5b3784d54d184543b2973fe007318780736809d854d4d7f60b8d03aa6ea",
+    "v3_raw": "experiments/semantic-steering-v3_raw.json",
+    "v3_raw_sha256": "8edb7f5ed6c45c9e206b89a82702d8b18df242cd6885ade66d7d0781853dc5c7",
+    "v3_statistics": "experiments/semantic-steering-v3_statistics.json",
+    "v3_statistics_sha256": "832b87811d1a3ec8eab27f6aeae1fa2ecc9182f301e32257119a7fd782eca9fd",
+    "observation": "In the non-preregistered expected-answer-aligned analysis, all four refinement cases moved higher and all four coarsening cases moved lower under the matched grain-size Jacobian direction."
+  },
+  "design": {
+    "target_family_ids": ["grain-size-strengthening"],
+    "fixed_layer": 16,
+    "doses_percent_residual_norm": [-4.0, -2.0, 0.0, 2.0, 4.0],
+    "position": "final prompt token only",
+    "jacobian_lens_seeds": [0, 1, 2],
+    "random_seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "direction_construction": "Identical to v3: average gradients from the three frozen direction-fitting prompts through each independently fitted Jacobian and Gemma final norm. No v4 direction fitting prompt, concept word, layer, or dose was tuned.",
+    "semantic_answer_test": "Score the complete no-leading-space answer strings 'higher' and 'lower' by teacher-forced sequence log probability in both answer-word presentation orders.",
+    "matched_pair_design": "Six new materials each contribute a refinement prompt and a coarsening prompt with matched alloy identity, grain-size values, covariate controls, and answer words. Only the direction of the physical grain-size change is reversed.",
+    "cross_mechanism_test": "At layer 16, compare the grain-size direction with corrosion and transformation directions reconstructed at the same layer, plus matched direct-decoder and ten random controls.",
+    "clean_inclusion": "Retain every frozen prompt order regardless of clean correctness or confidence.",
+    "raw_endpoint": "higher-minus-lower answer-string log probability at +4 percent minus the value at -4 percent",
+    "primary_endpoint": "expected-answer-aligned endpoint: raw endpoint for refinement and its negative for coarsening",
+    "independent_unit": "matched material pair after averaging lens seeds and answer-word orders within each refinement/coarsening condition, then averaging the two expected-aligned conditions",
+    "uncertainty": "95 percent cluster bootstrap interval over six matched material pairs; 30000 resamples with seed 20260716",
+    "success_criteria": {
+      "individual_conditions_expected_aligned_positive_fraction_at_least": 0.8,
+      "matched_pairs_both_relations_correct_fraction_at_least": 0.8,
+      "presentation_orders_same_nonzero_raw_sign_fraction_at_least": 0.8,
+      "matched_minus_random_pair_bootstrap_interval_above_zero": true,
+      "matched_minus_wrong_mechanisms_pair_bootstrap_interval_above_zero": true,
+      "matched_minus_direct_pair_bootstrap_interval_above_zero": true,
+      "registered_answer_first_token_is_global_top_fraction_at_least": 0.9
+    },
+    "interpretation_guardrail": "Passing shows context-dependent causal control of a materials relation in these prompts. It does not establish a literal chain of thought or unrestricted physical understanding."
+  },
+  "families": [
+    {
+      "family_id": "intergranular-corrosion",
+      "role": "wrong-mechanism source control only",
+      "fixed_layer": 16,
+      "concept_positive": ["sensitization", "corrosion", "anodic", "depletion"],
+      "concept_negative": ["passivation", "protected", "resistant", "passive"],
+      "outcome_positive": "grooves",
+      "outcome_negative": "clean",
+      "direction_fit_prompts": [
+        "Consider the internal metallurgical state that governs localized attack at stainless-steel grain boundaries.",
+        "Analyze how thermal processing changes the chemical and electrochemical condition of stainless-steel grain edges.",
+        "Reason about the mechanism that determines whether stainless steel retains protection during an aggressive qualification test."
+      ],
+      "confirmation_prompts": []
+    },
+    {
+      "family_id": "martensitic-transformation",
+      "role": "wrong-mechanism source control only",
+      "fixed_layer": 16,
+      "concept_positive": ["tetragonal", "quenched", "quench", "shear"],
+      "concept_negative": ["diffusion", "annealed", "equilibrium", "ferrite"],
+      "outcome_positive": "hard",
+      "outcome_negative": "soft",
+      "direction_fit_prompts": [
+        "Consider the transformation mechanism selected when carbon steel leaves its high-temperature phase during cooling.",
+        "Analyze how cooling history controls atomic rearrangement and crystal distortion in carbon steel.",
+        "Reason about the competing transformation pathways available to austenitized carbon steel."
+      ],
+      "confirmation_prompts": []
+    },
+    {
+      "family_id": "grain-size-strengthening",
+      "role": "confirmatory target and matched source",
+      "fixed_layer": 16,
+      "concept_positive": ["boundaries", "blocking", "barriers", "strengthening"],
+      "concept_negative": ["coarse", "glide", "slip", "mobility"],
+      "outcome_positive": "higher",
+      "outcome_negative": "lower",
+      "direction_fit_prompts": [
+        "Consider how polycrystalline microstructural length scale changes dislocation motion during yielding.",
+        "Analyze how interfaces between grains alter the stress required for plastic flow.",
+        "Reason about the mechanism connecting grain refinement to the onset of yielding in a conventional polycrystal."
+      ],
+      "confirmation_prompts": [
+        {
+          "condition_id": "titanium-64-8--refinement",
+          "pair_id": "titanium-64-8",
+          "relation": "refinement",
+          "expected_outcome": "higher",
+          "regime": "positive",
+          "stem": "A conventional polycrystalline titanium alloy changes from 64-micrometer to 8-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. After this grain-size change, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "titanium-64-8--coarsening",
+          "pair_id": "titanium-64-8",
+          "relation": "coarsening",
+          "expected_outcome": "lower",
+          "regime": "negative",
+          "stem": "A conventional polycrystalline titanium alloy changes from 8-micrometer to 64-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. After this grain-size change, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "magnesium-48-12--refinement",
+          "pair_id": "magnesium-48-12",
+          "relation": "refinement",
+          "expected_outcome": "higher",
+          "regime": "positive",
+          "stem": "A conventional polycrystalline magnesium alloy changes from 48-micrometer to 12-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. After this grain-size change, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "magnesium-48-12--coarsening",
+          "pair_id": "magnesium-48-12",
+          "relation": "coarsening",
+          "expected_outcome": "lower",
+          "regime": "negative",
+          "stem": "A conventional polycrystalline magnesium alloy changes from 12-micrometer to 48-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. After this grain-size change, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "low-carbon-steel-72-18--refinement",
+          "pair_id": "low-carbon-steel-72-18",
+          "relation": "refinement",
+          "expected_outcome": "higher",
+          "regime": "positive",
+          "stem": "A conventional polycrystalline low-carbon steel changes from 72-micrometer to 18-micrometer equiaxed ferrite grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. After this grain-size change, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "low-carbon-steel-72-18--coarsening",
+          "pair_id": "low-carbon-steel-72-18",
+          "relation": "coarsening",
+          "expected_outcome": "lower",
+          "regime": "negative",
+          "stem": "A conventional polycrystalline low-carbon steel changes from 18-micrometer to 72-micrometer equiaxed ferrite grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. After this grain-size change, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "silver-40-10--refinement",
+          "pair_id": "silver-40-10",
+          "relation": "refinement",
+          "expected_outcome": "higher",
+          "regime": "positive",
+          "stem": "A conventional fully dense polycrystalline silver sample changes from 40-micrometer to 10-micrometer equiaxed grains while composition, texture, porosity, and dislocation density are held fixed. After this grain-size change, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "silver-40-10--coarsening",
+          "pair_id": "silver-40-10",
+          "relation": "coarsening",
+          "expected_outcome": "lower",
+          "regime": "negative",
+          "stem": "A conventional fully dense polycrystalline silver sample changes from 10-micrometer to 40-micrometer equiaxed grains while composition, texture, porosity, and dislocation density are held fixed. After this grain-size change, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "cobalt-alloy-56-14--refinement",
+          "pair_id": "cobalt-alloy-56-14",
+          "relation": "refinement",
+          "expected_outcome": "higher",
+          "regime": "positive",
+          "stem": "A conventional polycrystalline cobalt alloy changes from 56-micrometer to 14-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. After this grain-size change, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "cobalt-alloy-56-14--coarsening",
+          "pair_id": "cobalt-alloy-56-14",
+          "relation": "coarsening",
+          "expected_outcome": "lower",
+          "regime": "negative",
+          "stem": "A conventional polycrystalline cobalt alloy changes from 14-micrometer to 56-micrometer equiaxed grains while composition, texture, precipitates, porosity, and dislocation density are held fixed. After this grain-size change, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "bronze-36-9--refinement",
+          "pair_id": "bronze-36-9",
+          "relation": "refinement",
+          "expected_outcome": "higher",
+          "regime": "positive",
+          "stem": "A conventional fully dense polycrystalline bronze changes from 36-micrometer to 9-micrometer equiaxed grains while composition, texture, porosity, and dislocation density are held fixed. After this grain-size change, which yield strength is more likely?"
+        },
+        {
+          "condition_id": "bronze-36-9--coarsening",
+          "pair_id": "bronze-36-9",
+          "relation": "coarsening",
+          "expected_outcome": "lower",
+          "regime": "negative",
+          "stem": "A conventional fully dense polycrystalline bronze changes from 9-micrometer to 36-micrometer equiaxed grains while composition, texture, porosity, and dislocation density are held fixed. After this grain-size change, which yield strength is more likely?"
+        }
+      ]
+    }
+  ]
+}
