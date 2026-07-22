@@ -6,10 +6,13 @@ release applies the [Jacobian Lens](https://github.com/lamm-mit/jacobian-lens)
 to open-weight Hugging Face language models, with materials-science experiments
 for readable concepts, relational state changes, and causal interventions.
 
-The repository is intentionally source-only. It contains the implementation,
-registered prompts, experiment scripts, tests, and documentation needed to run
-the study. Model weights, fitted lenses, caches, raw run records, figures, and
-reports are generated locally and are not distributed here.
+The repository contains the implementation, registered prompts, experiment
+scripts, tests, and documentation needed to run the study. The selected
+overview figures below are included for orientation; model weights, fitted
+lenses, caches, raw run records, and generated reports are not distributed
+here.
+
+![Overview of the prompt-to-model workflow and readable, relational, and causal evidence](assets/overview.png)
 
 ## 🤗 Hugging Face resources
 
@@ -31,6 +34,8 @@ GitHub release:
   prompt-reuse map separating development, evaluation, falsification, and
   exploratory cohorts.
 
+![Relation graphs for six materials-science mechanism families](assets/graph-visualization.png)
+
 ## What is included
 
 - `jlens_materials/*.py`: fitting, readout, analysis, reporting, comparison,
@@ -49,6 +54,8 @@ GitHub release:
 The package does **not** expose or reconstruct a model's private chain of
 thought. Its vocabulary readouts and state interventions are measurements of
 model activations and behavior.
+
+![Layerwise vocabulary readouts for boundary attack and notch resistance examples](assets/thoughts.png)
 
 ## Installation
 
