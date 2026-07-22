@@ -1,6 +1,6 @@
-# Substrates
+# Reading and Steering Materials Science-Mechanism Representations in an Open-Weight Language Model
 
-Research code and frozen prompt sets for **“Reading and Steering Materials
+Research code and data for **“Reading and Steering Materials
 Science-Mechanism Representations in an Open-Weight Language Model.”** This
 release applies the [Jacobian Lens](https://github.com/lamm-mit/jacobian-lens)
 to open-weight Hugging Face language models, with materials-science experiments
