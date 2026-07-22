@@ -55,6 +55,7 @@ dev = [
 ]
 
 [project.urls]
+"Repository" = "https://github.com/lamm-mit/Substrates"
 "Jacobian Lens (upstream)" = "https://github.com/lamm-mit/jacobian-lens"
 
 [tool.setuptools]
