@@ -14,6 +14,7 @@ here.
 
 ![Overview of the prompt-to-model workflow and readable, relational, and causal evidence](assets/overview.png)
 
+
 ## 🤗 Hugging Face resources
 
 Companion Hugging Face repositories provide the reusable fitted artifacts and
@@ -36,6 +37,9 @@ GitHub release:
 
 ![Relation graphs for six materials-science mechanism families](assets/graph-visualization.png)
 
+The method allows us to visualize the internal representations of many materials-science prompts, revealing how they move through Gemma’s internal representation space across model depth. Each trajectory is derived from real hidden states projected into three dimensions; together, they reveal the evolving geometry of scientific information processing.  
+
+![alt text](assets/movements-3d-rotation-black-quality.gif)
 ## What is included
 
 - `jlens_materials/*.py`: fitting, readout, analysis, reporting, comparison,
