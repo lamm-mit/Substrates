@@ -227,44 +227,14 @@ The arXiv identifier has not yet been assigned. Until it is available, cite the
 preprint as follows:
 
 ```bibtex
-@misc{buehler2026reading,
-  author        = {Buehler, Markus J.},
-  title         = {Reading and Steering Representations of Materials-Science
-                   Mechanisms in an Open-Weight Language Model},
-  year          = {2026},
-  archiveprefix = {arXiv},
-  note          = {arXiv identifier forthcoming},
-  url           = {https://github.com/lamm-mit/Substrates},
-  abstract      = {Large language models can answer scientific questions, yet a
-                   correct output does not reveal whether the model represents or
-                   uses the governing physics. Here we show that materials science
-                   mechanism information in the open-weight
-                   {google/gemma-4-E4B-it} model has three experimentally separable
-                   forms: concepts are readable in individual hidden states,
-                   constitutive orientation is carried by controlled transformations
-                   between states, and selected internal representations causally
-                   control engineering answers. We combine matched direct and
-                   Jacobian vocabulary readouts, option-free state geometry, a
-                   60-law counterfactual benchmark and causal interventions. In 50
-                   held-out materials descriptions, three independently fitted
-                   Jacobian lenses reproduced concept ranks, and target-free word
-                   sets from both readouts enabled blinded identification of 9 of 10
-                   mechanism families. A separate 72-prompt benchmark produced
-                   mechanism-specific hidden-state neighborhoods, but an exact graph
-                   audit showed that this apparent physical organization was equally
-                   explained by numerical comparison. We therefore compared
-                   otherwise identical prompts in which only the direction of the
-                   physical input was reversed, asking whether the resulting
-                   hidden-state movement followed the supplied constitutive law.
-                   These state transformations ordered direct, physically neutral
-                   and inverse laws across 60 frozen relations and correctly
-                   oriented 39 of 40 directional laws, whereas lexical controls were
-                   near chance. Bidirectional interventions shifted answer
-                   probabilities toward or away from the physically appropriate
-                   outcome across all 12 matched cases, while counterfactual state
-                   patches transferred opposing decision signals across mechanisms
-                   and answer formats. Physical relationships were therefore more
-                   visible in controlled state changes than in absolute states
-                   alone.}
+
+@misc{buehler2026readingsteeringrepresentationsmaterialsscience,
+      title={Reading and Steering Representations of Materials-Science Mechanisms in an Open-Weight Language Model}, 
+      author={Markus J. Buehler},
+      year={2026},
+      eprint={2607.20058},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2607.20058},
 }
 ```
